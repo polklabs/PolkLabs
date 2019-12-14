@@ -1,0 +1,55 @@
+{
+    "name": "Andrew Polk",
+    "photo": "me_1.jpg",
+    "title": "Computer Engineer",
+    "bio": "Mission-driven full stack developer with a passion for thoughtful UI design, collaboration, and teaching.",
+    "summary": "I’ve always sought out opportunities and challenges that are meaningful to me. Although my professional path has taken many twists and turns — from touring and recording artist, to employee of the year at a non-profit, to dean's scholar at UPenn, to small business owner and entrepreneur — I've never stopped engaging my passion to help others and solve problems.\n\nAs a web developer, I enjoy using my obsessive attention to detail, my unequivocal love for making things, and my mission-driven work ethic to literally change the world. That's why I’m excited to make a big impact at a high growth company.",
+    "currentFocus": "Accessibility // Angular // ASP.NET",
+    "resume": "resume.pdf",
+    "experience": [
+        {
+            "logo": "https://....",
+            "Company": "Wespire",
+            "title": "Full-Stack Software Developer",
+            "summary": "SaaS platform that enables enterprise companies to build, run, and measure their positive impact campaigns",
+            "items": {
+                "type": "list",
+                "title": "Develop Product",
+                "items": [
+                    "Contribute core features across entire stack (20k+ lines of code, 250+ pulls)",
+                    "Lead front-end development, creating and documenting app-wide design system"
+                ]
+            },
+            "dates": "Jan 2016 - Present",
+            "location": "Boston, MA"
+        }
+    ],
+    "skills": [
+        {
+            "title": "WEB DESIGN",
+            "items": [
+                {
+                    "text": "HTML5",
+                    "logo": "https://...."
+                }
+            ]
+        }
+    ],
+    "awards": [
+        {
+            "title": "Student Choice Award",
+            "location": "WeSpire",
+            "date": "April 2017",
+            "summary": "Awarded by students in the Full-Time Web Development track to one instructor as recognition for \"outstanding teaching, listening, mentoring.\""
+        }
+    ],
+    "education": [
+        {
+            "school": "University Of California, Santa Barbara",
+            "location": "Santa Barbara, CA",
+            "bullets": [
+                "B.S. Computer Engineering"
+            ]
+        }
+    ]
+}

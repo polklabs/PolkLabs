@@ -1,0 +1,52 @@
+<div *ngIf="data" style="margin: auto; margin-top: 16px; margin-bottom: 16px;" fxLayout="row" fxLayoutAlign="center start">
+
+    <!-- <mat-card *ngIf="showCards && olderProject !== null && olderProject !== undefined" appMaterialElevation class="project-outer" [routerLink]="'/project/'+olderProject.id">
+        <app-project-card [project]="olderProject"></app-project-card>
+    </mat-card> -->
+
+    <div class="display-container">
+        <!-- Header -->
+        <div class="bgimg grayscale-min" [style.background-image]="'url(' + 'assets/images/' + id + '/' + data.bgimg + ')'">
+            <div class="display-bottomleft center padding-large">
+                <span class="tag">{{data.type}}</span>
+            </div>
+            <div class="display-middle center">
+                <span class="text-white jumbo tag" style="font-family:'Limelight', cursive">{{data.title}}</span>
+            </div>
+            <div class="display-bottomright center padding-large">
+                <span class="tag">By {{data.authors}}</span>
+            </div>
+        </div>
+
+        <mat-card>
+
+            <!-- Page Links -->
+            <div fxLayout="row" fxLayoutAlign="space-around">
+                <div *ngFor="let section of sectionTitles">
+                    <a routerLink="." fragment="{{getId(section)}}">{{section}}</a>
+                    <!-- <a routerLink="." fragment="" (click)="fragment = getId(section)">{{section}}</a> -->
+                </div>
+            </div>
+
+            <!-- Link Buttons -->
+            <div class="center" style="padding-top: 32px;" fxLayout="row" fxLayoutGap="16px" fxLayoutAlign="center center">
+                <button mat-raised-button appMaterialElevation (click)="openPage(data.demo)" type="button" *ngIf="data.demo !== ''" class="link-button">
+                    <i class="fa fa-spinner link-icon"></i>Try It Out
+                </button>
+                <button mat-raised-button appMaterialElevation (click)="openPage(data.github)" type="button" *ngIf="data.github !== ''" class="link-button">
+                    <i class="fa fa-github link-icon"></i>The Repo
+                </button>
+            </div>
+            
+            <!-- Sections -->
+            <div *ngFor="let section of data.sections">
+                <app-tmpl-wrapper [section]="section" [id]="id"></app-tmpl-wrapper>
+            </div>
+        </mat-card>
+    </div>
+
+    <!-- <mat-card *ngIf="showCards && newerProject !== null && newerProject !== undefined" appMaterialElevation class="project-outer" [routerLink]="'/project/'+newerProject.id">
+        <app-project-card [project]="newerProject"></app-project-card>
+    </mat-card> -->
+    
+</div>

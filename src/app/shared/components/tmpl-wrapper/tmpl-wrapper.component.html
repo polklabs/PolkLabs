@@ -1,0 +1,51 @@
+<ng-template [ngTemplateOutlet]="getTemplate(section.type)" [ngTemplateOutletContext]="{item: section}"></ng-template>
+
+<!-- Section Template -->
+<ng-template #sectionTmpl let-item="item">
+    <app-tmpl-wrapper *ngFor="let t of item.items" [section]="t" [id]="id"></app-tmpl-wrapper>
+</ng-template>
+
+<!-- Header Template -->
+<ng-template #headerTmpl let-item="item">
+    <app-header-tmpl [section]="item"></app-header-tmpl>
+</ng-template>
+
+<!-- Text Template -->
+<ng-template #textTmpl let-item="item">
+    <app-text-tmpl [section]="item"></app-text-tmpl>
+</ng-template>
+
+<!-- List Template -->
+<ng-template #listTmpl let-item="item">
+    <app-list-tmpl [section]="item"></app-list-tmpl>
+</ng-template>
+
+<!-- Picture Template -->
+<ng-template #picTmpl let-item="item">
+    <app-picture-tmpl [section]="item" [id]="id"></app-picture-tmpl>
+</ng-template>
+
+<!-- Grid Template -->
+<ng-template #gridTmpl let-item="item">
+    <app-grid-tmpl [section]="item" [id]="id"></app-grid-tmpl>
+</ng-template>
+
+<!-- Dictionary Template -->
+<ng-template #dictTmpl let-item="item">
+    <app-dict-tmpl [section]="item"></app-dict-tmpl>
+</ng-template>
+
+<!-- Fieldset Template -->
+<ng-template #fieldTmpl let-item="item">
+    <app-fieldset-tmpl [section]="item" [id]="id"></app-fieldset-tmpl>
+</ng-template>
+
+<!-- Code Template -->
+<ng-template #codeTmpl let-item="item">
+    <app-code-tmpl [section]="item"></app-code-tmpl>
+</ng-template>
+
+<!-- HTML Template -->
+<ng-template #htmlTmpl let-item="item">
+    <app-html-tmpl [section]="item"></app-html-tmpl>
+</ng-template>

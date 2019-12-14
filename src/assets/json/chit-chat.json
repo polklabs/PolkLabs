@@ -1,0 +1,73 @@
+{
+    "id": "chit-chat",
+    "title": "Chit Chat\nAndroid\nChat Roomn\nApp",
+    "authors": "Andrew Polk",
+    "type": "UCSB ECE150 project",
+    "bgimg": "message_bottle.jpg",
+    "github": "https://github.com/polklabs/ChipChatV2",
+    "demo": "",
+    "sections": [
+        {
+            "type": "header",
+            "text": "About"
+        },
+        {
+            "type": "text",
+            "text": [
+                "Chip Chat is an app that will allow a user to join a chat room with other users by typing in the chat room name and password if needed. People can choose from chat rooms listed, or from local chat rooms, or create their own!"
+            ]
+        },
+        {
+            "type": "dict",
+            "keyValue": [
+                {
+                    "key": "School",
+                    "value": "UC Santa Barbara"
+                },
+                {
+                    "key": "Class",
+                    "value": "Mobile Embedded Systems"
+                },
+                {
+                    "key": "Hardware",
+                    "value": "2 Android Phones as Clients, Raspberry Pi as Server"
+                },
+                {
+                    "key": "Languages",
+                    "value": "Java"
+                }
+            ]
+        },
+        {
+            "type": "header",
+            "text": "How It Works"
+        },
+        {
+            "type": "text",
+            "text": [
+                "Using TCP Sockets/Server\n Can join chat room by entering a chat room name which will automatically connect you to the correct server and port number\n A third node/server will be in place where the chat rooms will be hosted\n  The server will act as a bridge between users in a chat room\n Chat room will stay open on the server as long as at least a single user is connected.\n  Saving processing power by not keeping rooms open indefinitely."
+            ]
+        },
+        {
+            "type": "header",
+            "text": "The Result"
+        },
+        {
+            "type": "grid",
+            "items": [
+                {
+                    "type": "pic",
+                    "src": "chatroom.jpg",
+                    "alt": "Chat Room",
+                    "width": "400px"
+                },
+                {
+                    "type": "pic",
+                    "src": "login.jpg",
+                    "alt": "Login",
+                    "width": "400px"
+                }
+            ]
+        }
+    ]
+}

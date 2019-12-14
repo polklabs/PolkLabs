@@ -1,0 +1,5 @@
+<div fxLayout="row wrap" fxLayoutGap="16px">
+    <div fxFlex="48" *ngFor="let item of section.items">
+        <app-tmpl-wrapper [section]="item" [id]="id"></app-tmpl-wrapper>
+    </div>
+</div>

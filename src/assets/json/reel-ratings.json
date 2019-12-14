@@ -1,0 +1,146 @@
+{
+    "id": "reel-ratings",
+    "title": "Reel Ratings",
+    "authors": "Andrew Polk",
+    "type": "UCSB Data Science Project",
+    "bgimg": "chairs.jpg",
+    "github": "https://github.com/UCSB-dataScience-ProjectGroup/movie_rating_prediction",
+    "demo": "",
+    "sections": [
+        {
+            "type": "header",
+            "text": "About"
+        },
+        {
+            "type": "text",
+            "text": [
+                "The goal of this project is to predict the movie rating of a movie title entered by the user. Our prediction relies on IMDb and TMDb datasets, using our statistical model. We also implemented a rudimentary algorithm that allows the model to learn and improve from past predictions."
+            ]
+        },
+        {
+            "type": "dict",
+            "keyValue": [
+                {
+                    "key": "School",
+                    "value": "UC Santa Barbara"
+                },
+                {
+                    "key": "Club",
+                    "value": "Data Science"
+                },
+                {
+                    "key": "Data Sources",
+                    "value": "IMDB, TheMovieDB"
+                },
+                {
+                    "key": "Languages",
+                    "value": "Python, HTML, JS"
+                }
+            ]
+        },
+        {
+            "type": "header",
+            "text": "How It Works"
+        },
+        {
+            "type": "text",
+            "text": [
+                "The goal of this project is to predict the movie rating of a movie title entered by the user. Our prediction relies on IMDb and TMDb datasets, using our statistical model. We also implemented a rudimentary algorithm that allows the model to learn and improve from past predictions.",
+                "The main program takes in a name of a movie from the user. It then downloads the ID's of the actors and other parameters from TheMovieDB.org. Those ID's are then compared against the previous ratings of movies those actors have starred in. The final resulting list of ratings is then averaged and weighted together to form the final rating guess."
+            ]
+        },
+        {
+            "type": "pic",
+            "src": "flowchart.png",
+            "alt": "Flow Chart"
+        },
+
+        {
+            "type": "header",
+            "text": "The Results"
+        },
+        {
+            "type": "grid",
+            "items": [
+                {
+                    "type": "pic",
+                    "src": "Company.png",
+                    "alt": "Graph",
+                    "width": "500px",
+                    "text": "The correlation of producing company to actual ratings"
+                },
+                {
+                    "type": "pic",
+                    "src": "Actors.png",
+                    "alt": "Graph",
+                    "width": "500px",
+                    "text": "The correlation of actor's previous works to actual ratings"
+                },
+                {
+                    "type": "pic",
+                    "src": "Directors.png",
+                    "alt": "Graph",
+                    "width": "500px",
+                    "text": "The correlation of director's previous works to actual ratings"
+                },
+                {
+                    "type": "pic",
+                    "src": "Genre.png",
+                    "alt": "Graph",
+                    "width": "500px",
+                    "text": "The correlation of genre to actual ratings"
+                },
+                {
+                    "type": "pic",
+                    "src": "Producers.png",
+                    "alt": "Graph",
+                    "width": "500px",
+                    "text": "The correlation of producer's previous works to actual ratings"
+                },
+                {
+                    "type": "pic",
+                    "src": "Writers.png",
+                    "alt": "Graph",
+                    "width": "500px",
+                    "text": "The correlation of writer's previous works to actual ratings"
+                },
+                {
+                    "type": "pic",
+                    "src": "Year.png",
+                    "alt": "Graph",
+                    "width": "500px",
+                    "text": "The correlation of year to actual ratings"
+                }
+            ]
+        },
+        {
+            "type": "header",
+            "text": "The Team"
+        },
+        {
+            "type": "text",        
+            "text": [
+                "In September 2017, we joined forces under UCSB's Data Science Club with the ambitious idea of creating a website that would predict movie ratings. We are a small group of 3rd year UCSB students with majors ranging from Computer Engineering to Actuarial Science."
+            ]
+        },
+        {
+            "type": "pic",
+            "src": "ReelTeam.jpg",
+            "alt": "Group Photo"
+        },
+        {
+            "type": "list",
+            "title": "Contributors (Left to Right)",
+            "list_style": "none",
+            "list": [
+                "Danielle Robinson (Data Query)",
+                "Victoria Sneddon (Project Manager)",
+                "Brandon Tran (Data Query)",
+				"Jake Hickey (Statistical Analysis)",
+                "Ari Gilmore (Statistical Analysis)",
+                "Andrew Polk (Everything)",
+				"Ivy Tran (Statistical Analysis)"
+            ]
+        }
+    ]
+}

@@ -1,0 +1,45 @@
+<div *ngIf="loading else content">
+    Loading...
+</div>
+
+<ng-template #content>
+    <!-- <mat-card class="display-container" style="margin: auto;">
+        <div fxLayout="row">
+
+            <div fxFlex>
+                <mat-card-title>
+                    {{data.name}}
+                </mat-card-title>
+                <mat-card-subtitle>
+                    {{data.title}}
+                </mat-card-subtitle>
+                <p>
+                    <strong>
+                        {{data.bio}}
+                    </strong>
+                </p>
+                <p>
+                    {{data.summary}}
+                </p>
+
+                <p>
+                    <strong>
+                        Current Focus: 
+                    </strong>
+                    {{data.currentFocus}}
+                </p>
+
+            </div>
+
+            <div fxFlex fxLayoutAlign="center">
+                <img style="width: 50%; margin: auto; border-radius: 16px;" [src]="'assets/images/' + data.photo">
+            </div>
+
+        </div>
+    </mat-card> -->
+
+    <mat-card class="display-container" style="margin: auto;">
+        <app-tmpl-wrapper *ngFor="let section of data.sections" [section]="section" [id]="data.id"></app-tmpl-wrapper>
+    </mat-card>
+
+</ng-template>

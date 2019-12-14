@@ -1,0 +1,20 @@
+<div class="card-container">
+    <mat-card fxLayout="row wrap" fxLayoutAlign="center" style="margin: 16px;">
+        
+        <div></div>
+        
+        <mat-card *ngFor="let project of projectList" appMaterialElevation class="project-outer project-card"
+            [routerLink]="'/project/'+project.id" fxLayout="column">
+            <img fxFlex="200px" [src]="'assets/images/' + project.id + '/' + project.image" [alt]="project.imageAlt" width="100%"
+                class="image">
+
+            <div fxFlex="16px"></div>
+
+            <mat-card-title fxFlex="none">{{project.title}}</mat-card-title>
+            <mat-card-subtitle fxFlex="none">{{project.subtitle}}</mat-card-subtitle>
+        </mat-card>
+
+        <div></div>
+
+    </mat-card>
+</div>

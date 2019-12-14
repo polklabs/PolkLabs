@@ -1,0 +1,40 @@
+{
+    "id": "naval-postgraduate-school",
+    "title": "Anomaly detection using\nmachine learning and\nbig data platforms",
+    "authors": "Andrew Polk",
+    "type": "Internship Monterey Naval Postgraduate School",
+    "bgimg": "chairs.jpg",
+    "github": "",
+    "demo": "",
+    "sections": [
+        {
+            "type": "text",
+            "title": "About",
+            "text": [
+                "Our aim was to be able to detect anomalies in different datasets to allow humans to make better decisions related to the data. The methods we used to accomplish this aim were using machine learning, big data platforms and visuals. I was assigned to create different visualizations such as charts and graphs along with assessing different open source visualization programs. My contributions were creating Sankey, scatter, heat map, and bar graphs for massive datasets with Plotly, along with testing Tableau and Gephi for big data purposes."
+            ]
+        },
+        {
+            "type": "text",
+            "title": "Results",
+            "text": [
+                "We demonstrated that the tools we used have the potential to help decision process and speeds. The impact for the Navy is faster and near real time assessments of potential problems and threats. What’s most important is the groundwork we laid for future work and research into the field and areas of anomaly detection. In the future this work will be able to allow humans to focus on points of interest in the data rather than the entire datasets."
+            ]
+        },
+		{
+			"type": "html",
+			"html": "<div style=\"margin: auto; width: fit-content;\"><iframe width=\"720\" height=\"480\" src=\"https://www.youtube.com/embed/ipo7zUEckGU?start=2\" frameborder=\"0\" allow=\"accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></iframe></div>"
+        },
+        {
+            "type": "list",
+            "title": "Contributors:",
+            "list_style": "none",
+            "list": [
+                "Andrew Polk - Computer Engineering - University of California, Santa Barbara",
+                "Richard Wu - Mechanical Engineering - University of Massachusetts, Dartmouth",
+                "Matthew Xi - Computer Science - Indiana University, Bloomington",
+                "Shaun Kallis - Software Engineering - Cal State University, Monterey Bar"
+            ]
+        }
+    ]
+}

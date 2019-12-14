@@ -1,0 +1,6 @@
+<div class="width center">
+    <h4 *ngIf="section.title !== ''" style="margin-bottom: 8px; text-decoration: underline;">{{section.title}}</h4>
+    <ul [style.list-style-type]="section.list_style" style="padding: 0; margin-top: 8px;">
+        <li *ngFor="let item of section.list">{{item}}</li>
+    </ul>
+</div>

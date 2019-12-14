@@ -1,0 +1,5 @@
+<div class="width">
+    <h2 *ngIf="section.title" style="text-align: center; text-decoration: underline;">{{section.title}}</h2>
+    <h3 *ngIf="section.subtitle">{{section.subtitle}}</h3>
+    <p *ngFor="let item of section.text" style="white-space: pre-line;">{{item}}</p>
+</div>

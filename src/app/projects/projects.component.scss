@@ -1,0 +1,15 @@
+.card-container {
+    width: 1218px;
+    margin: auto;
+}
+
+.image {
+    border-radius: 8px;
+    border: 4px solid black;
+}
+
+.project-card {
+    &:hover{
+        cursor: pointer;
+    }
+}
