@@ -4,7 +4,7 @@
         <app-project-card [project]="olderProject"></app-project-card>
     </mat-card> -->
 
-    <div class="display-container">
+    <div class="display-container" id="home">
         <!-- Header -->
         <div class="bgimg grayscale-min" [style.background-image]="'url(' + 'assets/images/' + id + '/' + data.bgimg + ')'">
             <div class="display-bottomleft center padding-large">
@@ -21,12 +21,13 @@
         <mat-card>
 
             <!-- Page Links -->
-            <div fxLayout="row" fxLayoutAlign="space-around">
+            <mat-toolbar fxLayout="row" fxLayoutAlign="space-around" class="sticky-toolbar">
+                <a routerLink="." fragment="home">Home</a>
                 <div *ngFor="let section of sectionTitles">
                     <a routerLink="." fragment="{{getId(section)}}">{{section}}</a>
-                    <!-- <a routerLink="." fragment="" (click)="fragment = getId(section)">{{section}}</a> -->
                 </div>
-            </div>
+
+            </mat-toolbar>
 
             <!-- Link Buttons -->
             <div class="center" style="padding-top: 32px;" fxLayout="row" fxLayoutGap="16px" fxLayoutAlign="center center">
@@ -34,7 +35,7 @@
                     <i class="fa fa-spinner link-icon"></i>Try It Out
                 </button>
                 <button mat-raised-button appMaterialElevation (click)="openPage(data.github)" type="button" *ngIf="data.github !== ''" class="link-button">
-                    <i class="fa fa-github link-icon"></i>The Repo
+                    <i class="fab fa-github link-icon"></i>The Repo
                 </button>
             </div>
             

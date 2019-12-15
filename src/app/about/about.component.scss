@@ -1,0 +1,60 @@
+.mat-card-divider {
+    width: 96%; 
+    margin-left: 2%;
+}
+
+/* Experience Section */
+.mat-card-experience {
+    max-width: 800px; 
+    width: 800px; 
+    background-color: whitesmoke; 
+    padding: 0;
+}
+
+.experience-header {
+    padding-top: 16px;
+    padding-left: 16px;
+    padding-right: 16px;
+    background-color: white;
+}
+
+.experience-content {
+    background-color: white;
+    padding: 16px;
+}
+
+.experience-footer {
+    padding: 16px;
+    margin: 4px;
+}
+
+/* Skills Section */
+.mat-card-skills {
+    max-width: 800px; 
+    width: 800px;
+}
+
+.skill-content {
+    padding: 16px;
+}
+
+.skill-text {
+    text-align: center;
+    margin-bottom: 0;;
+}
+
+/* Awards Section */
+.mat-card-awards {
+    max-width: 400px; 
+    width: 400px;
+    margin-right: 8px; 
+    margin-left: 8px;
+}
+
+/* Education Section */
+.mat-card-education {
+    max-width: 400px; 
+    width: 400px; 
+    margin-right: 8px; 
+    margin-left: 8px;
+}

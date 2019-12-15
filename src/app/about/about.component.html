@@ -3,43 +3,129 @@
 </div>
 
 <ng-template #content>
-    <!-- <mat-card class="display-container" style="margin: auto;">
+    <mat-card class="display-container" style="margin: auto;">
         <div fxLayout="row">
 
             <div fxFlex>
-                <mat-card-title>
-                    {{data.name}}
-                </mat-card-title>
-                <mat-card-subtitle>
-                    {{data.title}}
-                </mat-card-subtitle>
-                <p>
-                    <strong>
-                        {{data.bio}}
-                    </strong>
-                </p>
-                <p>
-                    {{data.summary}}
-                </p>
-
-                <p>
-                    <strong>
-                        Current Focus: 
-                    </strong>
-                    {{data.currentFocus}}
-                </p>
-
+                <mat-card-title>{{data.name}}</mat-card-title>
+                <mat-card-subtitle>{{data.title}}</mat-card-subtitle>
+                <p><strong>{{data.bio}}</strong></p>
+                <p>{{data.summary}}</p>
+                <p><strong>Current Focus:</strong>{{data.currentFocus}}</p>
             </div>
 
             <div fxFlex fxLayoutAlign="center">
-                <img style="width: 50%; margin: auto; border-radius: 16px;" [src]="'assets/images/' + data.photo">
+                <img style="width: 50%; margin: auto; border-radius: 16px;" [src]="'assets/images/about/' + data.photo">
             </div>
 
         </div>
-    </mat-card> -->
 
-    <mat-card class="display-container" style="margin: auto;">
-        <app-tmpl-wrapper *ngFor="let section of data.sections" [section]="section" [id]="data.id"></app-tmpl-wrapper>
+        <!-- Experience -->
+        <div fxLayout="column" fxLayoutGap="16px" fxLayoutAlign="center center" *ngIf="data.experience.length > 0">
+
+            <!-- <h1>Experience</h1> -->
+            <app-tmpl-wrapper [section]="{ type: 'header', text: 'Experience'}"></app-tmpl-wrapper>
+
+            <mat-card *ngFor="let exp of data.experience"
+                class="mat-elevation-z16 mat-card-experience">
+                <div fxLayout="row" fxLayoutGap="16px" class="experience-header">
+                    <div fxFlex="none">
+                        <img [src]="" [alt]="exp.company + ' Logo'">
+                    </div>
+                    <div fxFlex>
+                        <mat-card-title>
+                            {{exp.company}}
+                        </mat-card-title>
+                    </div>
+                    <div fxFlex="none">{{exp.title}}</div>
+                </div>
+
+                <mat-divider class="mat-card-divider"></mat-divider>
+
+                <div class="experience-content">
+                    <mat-card-content>
+                        <p><em>
+                                {{exp.summary}}
+                            </em></p>
+
+                        <div *ngFor="let item of exp.items">
+                            <h3>
+                                {{item.title}}
+                            </h3>
+                            <ul>
+                                <li *ngFor="let li of item.items">
+                                    {{li}}
+                                </li>
+                            </ul>
+                        </div>
+
+                    </mat-card-content>
+                </div>
+
+                <p class="experience-footer">{{exp.dates}} | {{exp.location}}</p>
+            </mat-card>
+
+        </div>
+
+        <!-- Skills -->
+        <div fxLayout="column" fxLayoutGap="16px" fxLayoutAlign="center center" *ngIf="data.skills.length > 0">
+
+            <!-- <h1>Skills</h1> -->
+            <app-tmpl-wrapper [section]="{ type: 'header', text: 'Skills'}"></app-tmpl-wrapper>
+
+            <mat-card *ngFor="let skill of data.skills" class="mat-elevation-z16 mat-card-skills">
+                <mat-card-title>
+                    {{skill.title}}
+                </mat-card-title>
+
+                <mat-divider class="mat-card-divider"></mat-divider>
+
+                <div fxLayout="row" fxLayoutAlign="space-evenly center" class="skill-content">
+                    <div *ngFor="let item of skill.items" fxLayout="column">
+                        <img [src]="'assets/images/about/' + item.logo" [alt]="item.text + 'Logo'" height="100px">
+                        <p class="skill-text">{{item.text}}</p>
+                    </div>
+                </div>
+            </mat-card>
+
+        </div>
+
+        <!-- Awards -->
+        <div fxLayout="column" fxLayoutGap="16px" fxLayoutAlign="center center" *ngIf="data.awards.length> 0">
+
+            <!-- <h1>Awards</h1> -->
+            <app-tmpl-wrapper [section]="{ type: 'header', text: 'Awards'}"></app-tmpl-wrapper>
+
+            <div fxLayout="row wrap">
+                <mat-card *ngFor="let award of data.awards" class="mat-elevation-z16 mat-card-awards">
+                    <mat-card-title>{{award.title}}</mat-card-title>
+                    <mat-card-subtitle>{{award.location}} | {{award.date}}</mat-card-subtitle>
+                    <ul>
+                        <li>{{award.summary}}</li>
+                    </ul>
+                </mat-card>
+            </div>
+
+        </div>
+
+        <!-- Education -->
+        <div fxLayout="column" fxLayoutGap="16px" fxLayoutAlign="center center" *ngIf="data.education.length> 0">
+
+            <!-- <h1>Education</h1> -->
+            <app-tmpl-wrapper [section]="{ type: 'header', text: 'Education'}"></app-tmpl-wrapper>
+
+            <div fxLayout="row wrap">
+                <mat-card *ngFor="let edu of data.education" class="mat-elevation-z16 mat-card-education">
+                    <mat-card-title>{{edu.school}}</mat-card-title>
+                    <mat-card-subtitle>{{edu.location}}</mat-card-subtitle>
+                    <ul>
+                        <li>{{edu.bullets}}</li>
+                    </ul>
+                </mat-card>
+            </div>
+
+        </div>
+
     </mat-card>
 
 </ng-template>

@@ -4,10 +4,10 @@
         <button mat-button type="button" [routerLink]="'/about'">About</button>
         <button mat-button type="button" [routerLink]="'/featured'">Featured</button>
         <button mat-button type="button" [routerLink]="'/projects'" fragment="">Projects</button>
-        <a *ngIf="header.email !== ''" mat-button [href]="'mailto:'+header.email"><i class="fa fa-envelope"></i></a>
-        <a *ngIf="header.twitter !== ''" mat-button [href]="header.twitter"><i class="fab fa-twitter"></i></a>
-        <a *ngIf="header.linkedIn !== ''" mat-button [href]="header.linkedIn"><i class="fab fa-linkedin-in"></i></a>
-        <a *ngIf="header.facebook !== ''" mat-button [href]="header.facebook"><i class="fab fa-facebook-f"></i></a>
-        <a *ngIf="header.flickr !== ''" mat-button [href]="header.flickr"><i class="fab fa-flickr"></i></a>
+        <a fxHide.sm fxHide.xs *ngIf="header.email !== ''" mat-button [href]="'mailto:'+header.email"><i class="fa fa-envelope"></i></a>
+        <a fxHide.sm fxHide.xs *ngIf="header.twitter !== ''" mat-button [href]="header.twitter"><i class="fab fa-twitter"></i></a>
+        <a fxHide.sm fxHide.xs *ngIf="header.linkedIn !== ''" mat-button [href]="header.linkedIn"><i class="fab fa-linkedin-in"></i></a>
+        <a fxHide.sm fxHide.xs *ngIf="header.facebook !== ''" mat-button [href]="header.facebook"><i class="fab fa-facebook-f"></i></a>
+        <a fxHide.sm fxHide.xs *ngIf="header.flickr !== ''" mat-button [href]="header.flickr"><i class="fab fa-flickr"></i></a>
     </div>
 </mat-toolbar>

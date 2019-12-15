@@ -9,17 +9,19 @@
     "experience": [
         {
             "logo": "https://....",
-            "Company": "Wespire",
+            "company": "Wespire",
             "title": "Full-Stack Software Developer",
             "summary": "SaaS platform that enables enterprise companies to build, run, and measure their positive impact campaigns",
-            "items": {
-                "type": "list",
-                "title": "Develop Product",
-                "items": [
-                    "Contribute core features across entire stack (20k+ lines of code, 250+ pulls)",
-                    "Lead front-end development, creating and documenting app-wide design system"
-                ]
-            },
+            "items": [
+                {
+                    "type": "list",
+                    "title": "Develop Product",
+                    "items": [
+                        "Contribute core features across entire stack (20k+ lines of code, 250+ pulls)",
+                        "Lead front-end development, creating and documenting app-wide design system"
+                    ]
+                }
+            ],
             "dates": "Jan 2016 - Present",
             "location": "Boston, MA"
         }
@@ -29,8 +31,20 @@
             "title": "WEB DESIGN",
             "items": [
                 {
+                    "text": "Angular",
+                    "logo": "angular.png"
+                },
+                {
                     "text": "HTML5",
-                    "logo": "https://...."
+                    "logo": "html5.png"
+                },
+                {
+                    "text": "Java Script",
+                    "logo": "javascript.png"
+                },
+                {
+                    "text": "Sass",
+                    "logo": "sass.png"
                 }
             ]
         }
@@ -49,6 +63,13 @@
             "location": "Santa Barbara, CA",
             "bullets": [
                 "B.S. Computer Engineering"
+            ]
+        },
+        {
+            "school": "Freedom High School",
+            "location": "Oakley, CA",
+            "bullets": [
+                "GE"
             ]
         }
     ]

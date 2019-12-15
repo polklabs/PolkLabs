@@ -1,5 +1,12 @@
 <app-header></app-header>
 
-<div class="content-margin">
-  <router-outlet></router-outlet>
+<div style="height: calc(100% - 64px); overflow: auto;">
+  <div class="content-margin">
+    <router-outlet></router-outlet>
+  </div>
+
+  <mat-toolbar>
+    <a href="https://polklabs.com">© 2019 Andrew Polk</a>
+  </mat-toolbar>
+
 </div>

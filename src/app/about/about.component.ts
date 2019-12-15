@@ -16,7 +16,7 @@ export class AboutComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.httpService.get(`./assets/json/about.v2.json`).subscribe(
+    this.httpService.get(`./assets/json/about.json`).subscribe(
       (data: any[]) => {
         this.data = data;
         this.loading = false;
