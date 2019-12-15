@@ -21,10 +21,10 @@
         <mat-card>
 
             <!-- Page Links -->
-            <mat-toolbar fxLayout="row" fxLayoutAlign="space-around" class="sticky-toolbar">
-                <a routerLink="." fragment="home">Home</a>
+            <mat-toolbar fxLayout="row wrap" fxLayoutAlign="space-evenly" class="sticky-toolbar">
+                <a routerLink="." fragment="home" class="page-link">Home</a>
                 <div *ngFor="let section of sectionTitles">
-                    <a routerLink="." fragment="{{getId(section)}}">{{section}}</a>
+                    <a routerLink="." fragment="{{getId(section)}}" class="page-link">{{section}}</a>
                 </div>
 
             </mat-toolbar>

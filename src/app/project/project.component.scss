@@ -1,7 +1,7 @@
 .sticky-toolbar {
     position: sticky; 
     top: 0; 
-    height: 32px; 
+    height: auto; 
     z-index: 900;
     background-color: white;
 }
@@ -70,3 +70,7 @@
     text-align: center;
 }
 
+.page-link {
+    padding-left: 4px;
+    padding-right: 4px;
+}

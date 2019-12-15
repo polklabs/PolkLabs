@@ -1,5 +1,5 @@
-<div fxLayout="row wrap" fxLayoutGap="16px">
-    <div fxFlex="48" *ngFor="let item of section.items">
+<div fxLayout="row wrap" fxLayoutGap="16px" fxLayoutAlign="center center">
+    <div fxFlex.xs="400px" fxFlex.sm="400px" fxFlex.md="48" fxFlex.lg="48" *ngFor="let item of section.items" style="min-width: 350px;">
         <app-tmpl-wrapper [section]="item" [id]="id"></app-tmpl-wrapper>
     </div>
 </div>

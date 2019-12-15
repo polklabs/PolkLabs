@@ -1,4 +1,4 @@
-<div  class="" style="padding: 32px; max-width: 100%; margin: auto;" [style.width]="(!section.width || section.width === '') ? '500px' : section.width">
+<div  class="" style="padding: 32px; width: auto; margin: auto;" [style.max-width]="(!section.width || section.width === '') ? '500px' : section.width">
     <img [src]="'assets/images/' + id + '/' + section.src" [alt]="section.alt" style="margin: auto; width: 100%;" [style.max-width]="(!section.width || section.width === '') ? '700px' : section.width">
     <span><i>{{section.text}}</i></span>
 </div>

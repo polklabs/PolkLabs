@@ -1,9 +1,11 @@
 <mat-toolbar>
     <div fxLayout="row" fxLayoutGap="16px" style="width: 100%;" *ngIf="header">
         <span fxFlex>{{header.title}}</span>
+
         <button mat-button type="button" [routerLink]="'/about'">About</button>
-        <button mat-button type="button" [routerLink]="'/featured'">Featured</button>
+        <!-- <button mat-button type="button" [routerLink]="'/featured'">Featured</button> -->
         <button mat-button type="button" [routerLink]="'/projects'" fragment="">Projects</button>
+        
         <a fxHide.sm fxHide.xs *ngIf="header.email !== ''" mat-button [href]="'mailto:'+header.email"><i class="fa fa-envelope"></i></a>
         <a fxHide.sm fxHide.xs *ngIf="header.twitter !== ''" mat-button [href]="header.twitter"><i class="fab fa-twitter"></i></a>
         <a fxHide.sm fxHide.xs *ngIf="header.linkedIn !== ''" mat-button [href]="header.linkedIn"><i class="fab fa-linkedin-in"></i></a>
