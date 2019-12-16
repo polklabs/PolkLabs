@@ -8,10 +8,10 @@
     "resume": "resume.pdf",
     "experience": [
         {
-            "logo": "https://....",
-            "company": "Wespire",
+            "logo": "tecolote.png",
+            "company": "Tecolote Research",
             "title": "Full-Stack Software Developer",
-            "summary": "SaaS platform that enables enterprise companies to build, run, and measure their positive impact campaigns",
+            "summary": "Company intranet that interfaces with an internal database.",
             "items": [
                 {
                     "type": "list",
@@ -22,8 +22,8 @@
                     ]
                 }
             ],
-            "dates": "Jan 2016 - Present",
-            "location": "Boston, MA"
+            "dates": "May 2019 - Present",
+            "location": "Goleta, CA"
         }
     ],
     "skills": [

@@ -1,6 +1,9 @@
-<mat-toolbar>
-    <div fxLayout="row" fxLayoutGap="16px" style="width: 100%;" *ngIf="header">
-        <span fxFlex>{{header.title}}</span>
+<mat-toolbar class="header-color">
+    <div fxLayout="row" fxLayoutGap="16px" style="max-width: 1218px; width: 1218px; margin: auto;" *ngIf="header">
+        <!-- <img src="assets/images/128x128.png" alt="Polklabs" height="64px"> -->
+        <span>{{header.title}}</span>
+
+        <div fxFlex></div>
 
         <button mat-button type="button" [routerLink]="'/about'">About</button>
         <!-- <button mat-button type="button" [routerLink]="'/featured'">Featured</button> -->

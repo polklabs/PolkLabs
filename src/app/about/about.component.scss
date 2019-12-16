@@ -1,14 +1,13 @@
 .mat-card-divider {
-    width: 96%; 
-    margin-left: 2%;
+    width: 96% !important;
+    margin-left: 2% !important;
 }
 
 /* Experience Section */
 .mat-card-experience {
     max-width: 800px; 
-    width: 800px; 
-    background-color: whitesmoke; 
-    padding: 0;
+    width: 100%;
+    min-width: 350px;
 }
 
 .experience-header {
@@ -31,7 +30,8 @@
 /* Skills Section */
 .mat-card-skills {
     max-width: 800px; 
-    width: 800px;
+    width: 100%;
+    min-width: 350px;
 }
 
 .skill-content {
@@ -40,21 +40,20 @@
 
 .skill-text {
     text-align: center;
-    margin-bottom: 0;;
+    margin-bottom: 0;
 }
 
 /* Awards Section */
 .mat-card-awards {
     max-width: 400px; 
-    width: 400px;
-    margin-right: 8px; 
-    margin-left: 8px;
+    width: 100%;
+    min-width: 350px;
+    margin: 8px; 
 }
 
 /* Education Section */
 .mat-card-education {
     max-width: 400px; 
     width: 400px; 
-    margin-right: 8px; 
-    margin-left: 8px;
+    margin: 8px;
 }
