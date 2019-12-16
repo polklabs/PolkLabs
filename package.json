@@ -28,6 +28,7 @@
     "highlightjs-line-numbers.js": "^2.7.0",
     "ngx-highlightjs": "^4.0.0",
     "rxjs": "~6.4.0",
+    "serialize-javascript": "^2.1.2",
     "tslib": "^1.10.0",
     "zone.js": "~0.9.1"
   },
