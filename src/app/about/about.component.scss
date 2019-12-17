@@ -8,6 +8,7 @@
     max-width: 800px; 
     width: 100%;
     min-width: 350px;
+    margin: auto;
 }
 
 .experience-header {
@@ -32,6 +33,7 @@
     max-width: 800px; 
     width: 100%;
     min-width: 350px;
+    margin: auto;
 }
 
 .skill-content {
@@ -41,6 +43,13 @@
 .skill-text {
     text-align: center;
     margin-bottom: 0;
+}
+
+.mat-card-row {
+    max-width: 100%; 
+    width: 100%;
+    min-width: 350px;
+    margin: auto;
 }
 
 /* Awards Section */
@@ -54,6 +63,7 @@
 /* Education Section */
 .mat-card-education {
     max-width: 400px; 
-    width: 400px; 
+    // width: 400px;
+    min-width: 350px;
     margin: 8px;
 }

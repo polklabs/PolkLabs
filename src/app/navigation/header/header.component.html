@@ -1,7 +1,7 @@
 <mat-toolbar class="header-color">
     <div fxLayout="row" fxLayoutGap="16px" style="max-width: 1218px; width: 1218px; margin: auto;" *ngIf="header">
         <!-- <img src="assets/images/128x128.png" alt="Polklabs" height="64px"> -->
-        <span>{{header.title}}</span>
+        <span routerLink="/home"  matTooltip="Home">{{header.title}}</span>
 
         <div fxFlex></div>
 
@@ -9,10 +9,10 @@
         <!-- <button mat-button type="button" [routerLink]="'/featured'">Featured</button> -->
         <button mat-button type="button" [routerLink]="'/projects'" fragment="">Projects</button>
         
-        <a fxHide.sm fxHide.xs *ngIf="header.email !== ''" mat-button [href]="'mailto:'+header.email"><i class="fa fa-envelope"></i></a>
-        <a fxHide.sm fxHide.xs *ngIf="header.twitter !== ''" mat-button [href]="header.twitter"><i class="fab fa-twitter"></i></a>
-        <a fxHide.sm fxHide.xs *ngIf="header.linkedIn !== ''" mat-button [href]="header.linkedIn"><i class="fab fa-linkedin-in"></i></a>
-        <a fxHide.sm fxHide.xs *ngIf="header.facebook !== ''" mat-button [href]="header.facebook"><i class="fab fa-facebook-f"></i></a>
-        <a fxHide.sm fxHide.xs *ngIf="header.flickr !== ''" mat-button [href]="header.flickr"><i class="fab fa-flickr"></i></a>
+        <a fxHide.sm fxHide.xs *ngIf="header.email !== ''" mat-button [href]="'mailto:'+header.email" matTooltip="Copy email to clipboard"><i class="fa fa-envelope"></i></a>
+        <a fxHide.sm fxHide.xs *ngIf="header.twitter !== ''" mat-button [href]="header.twitter" matTooltip="Twitter"><i class="fab fa-twitter"></i></a>
+        <a fxHide.sm fxHide.xs *ngIf="header.linkedIn !== ''" mat-button [href]="header.linkedIn" matTooltip="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+        <a fxHide.sm fxHide.xs *ngIf="header.facebook !== ''" mat-button [href]="header.facebook" matTooltip="Facebook"><i class="fab fa-facebook-f"></i></a>
+        <a fxHide.sm fxHide.xs *ngIf="header.flickr !== ''" mat-button [href]="header.flickr" matTooltip="Flickr"><i class="fab fa-flickr"></i></a>
     </div>
 </mat-toolbar>

@@ -24,6 +24,24 @@
             ],
             "dates": "May 2019 - Present",
             "location": "Goleta, CA"
+        },
+        {
+            "logo": "nps.png",
+            "company": "NPS",
+            "title": "Research Intern",
+            "summary": "Company intranet that interfaces with an internal database.",
+            "items": [
+                {
+                    "type": "list",
+                    "title": "Develop Product",
+                    "items": [
+                        "Contribute core features across entire stack (20k+ lines of code, 250+ pulls)",
+                        "Lead front-end development, creating and documenting app-wide design system"
+                    ]
+                }
+            ],
+            "dates": "June 2018 - August 2018",
+            "location": "Monterey, CA"
         }
     ],
     "skills": [
@@ -47,14 +65,56 @@
                     "logo": "sass.png"
                 }
             ]
+        },
+        {
+            "title": "LANGUAGES",
+            "items": [
+                {
+                    "text": "C#",
+                    "logo": "csharp.png"
+                },
+                {
+                    "text": "Python",
+                    "logo": "python.png"
+                },
+                {
+                    "text": "Java",
+                    "logo": "java.png"
+                }
+            ]
+        },
+        {
+            "title": "OTHER",
+            "items": [
+                {
+                    "text": "Photoshop",
+                    "logo": "photoshop.png"
+                },
+                {
+                    "text": "Lightroom",
+                    "logo": "lightroom.png"
+                }
+            ]
         }
     ],
     "awards": [
         {
-            "title": "Student Choice Award",
-            "location": "WeSpire",
-            "date": "April 2017",
-            "summary": "Awarded by students in the Full-Time Web Development track to one instructor as recognition for \"outstanding teaching, listening, mentoring.\""
+            "title": "Dean's Honors",
+            "location": "UC Santa Barbara",
+            "date": "Fall 2018",
+            "summary": "Awarded by UCSB College of Engineering for a grade point average aboce 3.5 while completing a minimum of 12 letter grade units."
+        },
+        {
+            "title": "Dean's Honors",
+            "location": "UC Santa Barbara",
+            "date": "Spring 2018",
+            "summary": "Awarded by UCSB College of Engineering for a grade point average aboce 3.5 while completing a minimum of 12 letter grade units."
+        },
+        {
+            "title": "Dean's Honors",
+            "location": "UC Santa Barbara",
+            "date": "Fall 2017",
+            "summary": "Awarded by UCSB College of Engineering for a grade point average aboce 3.5 while completing a minimum of 12 letter grade units."
         }
     ],
     "education": [

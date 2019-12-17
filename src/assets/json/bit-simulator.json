@@ -1,0 +1,98 @@
+{
+    "id": "bit-simulator",
+    "title": "Logic Circuit Simulator",
+    "authors": "Andrew Polk",
+    "type": "Personal Project",
+    "bgimg": "chairs.jpg",
+    "github": "https://github.com/polklabs/Project-Bit",
+    "demo": "",
+    "sections": [
+		{
+			"type": "header",
+			"text": "About Project Bit"
+		},
+        {
+            "type": "text",
+            "text": [
+                "The goal of this project is to create a logic simulator that is accurate enough to build a working 8 bit computer that runs in near realtime. The components available in the simulator should be similar to components you would be able to buy in real life."
+            ]
+        },
+        {
+            "type": "html",
+            "html": "<h3>Inspired By: </h3><a href=\"https://eater.net/8bit\"><p>Ben Eater 8Bit Computer</p></a>"
+        },
+        {
+            "type": "dict",
+            "keyValue": [
+                {
+                    "key": "Language",
+                    "value": "C#"
+                },
+                {
+                    "key": "Type",
+                    "value": "Unity3D"
+                }
+            ]
+        },
+        {
+            "type": "pic",
+            "src": "flowchart.png",
+            "alt": "Screenshot",
+			"text": "Example Screenshot"
+        },
+        {
+			"type": "header",
+			"text": "How It Works"
+        },
+        {
+            "type": "text",
+            "title": "The Basics",
+            "subtitle": "Components",
+            "text": [
+                "The basis of the simulator is built on components and breadboards. Components are of six main types:\n\t1. Wires: Connect pins of the breadboard together.\n\t2. Basic Gates: Sets of simple AND, OR, XOR and NOT gates.\n\t3. Special Chips: Includes clocks, adders and counters.\n\t4. Memory Chips: EEPROM and Ram chips are part of this group.\n\t5. Inputs: These are different types of switches that can be controlled manualy.\n\t6. Outputs: Includes LEDs and 7-Segment Displays"
+            ]
+        },
+        {
+            "type": "text",
+            "subtitle": "Breadboard",
+            "text": [
+                "These components can be placed on the breadboard the same way you would place them on a real breadboard. Such as Integrated Circuits being placed accross the center divider. These components are all based on integrated circuits and components that can be bought in real life.",
+                "The breadboards main purpose is to connect all these pieces together. When a component's output value has changed it sends an update to the breadboard, the breadbaord then updates the pin's value (High, Low, Unknown). It then propagates this update to all connected pins, in the same row and through wires. If a pin value is changed (High to Low, Low to High), the breadboard will then queue up all connected components to be updated. Each frame the breadboard goes through this queue calling the update function on each component which in turn may trigger this whole process again."
+            ]
+        },
+        {
+            "type": "text",
+            "title": "Into The Weeds",
+            "subtitle": "Components",
+            "text": [
+                "..."
+            ]
+        },
+        {
+            "type": "text",
+            "subtitle": "Chips",
+            "text": [
+                "..."
+            ]
+        },
+        {
+            "type": "text",
+            "subtitle": "Gates",
+            "text": [
+                "..."
+            ]
+        },
+        {
+            "type": "list",
+            "title": "Limitations",
+            "list_style": "disc",
+            "list": [
+                "Does not simulate - voltage, resistance, current",
+                "Ignores gate propagation delay - Race Conditions may result in unknown behavior",
+                "Application runs at 60fps, any logic updates faster than that may not function properly",
+                "Switches are one way gates. This can be changed to work in both directions but would most likely harm performance (Further testing needed)",
+                "Gates and Chips are ideal aproximations and will most likely behave differently in real life"
+            ]
+        }
+    ]
+}
