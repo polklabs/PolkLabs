@@ -9,6 +9,7 @@ import { HttpClient } from '@angular/common/http';
 export class ProjectsComponent implements OnInit {
 
   projectList: any;
+  loading = true;
 
   constructor(
     private httpService: HttpClient
@@ -18,7 +19,10 @@ export class ProjectsComponent implements OnInit {
 
     this.httpService.get(`./assets/json/projectList.json`).subscribe(
       (data: any[]) => {
-        this.projectList = data.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+        if (data !== undefined) {
+          this.projectList = data.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+          this.loading = false;
+        }
       }
     );
 

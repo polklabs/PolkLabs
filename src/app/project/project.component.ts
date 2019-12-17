@@ -29,6 +29,8 @@ export class ProjectComponent implements OnInit, AfterViewChecked {
   olderProject: any = null;
   newerProject: any = null;
 
+  loading = true;
+
   constructor(
     private httpService: HttpClient,
     private route: ActivatedRoute
@@ -39,10 +41,13 @@ export class ProjectComponent implements OnInit, AfterViewChecked {
     this.route.params.subscribe(params => {
       this.httpService.get(`./assets/json/${params['id']}.json`).pipe(take(1)).subscribe(
         (data: any) => {
-          this.data = data;
-          this.id = data.id;
-          this.sectionTitles = data.sections.filter(x => x.type === 'header').map(x => x.text);
-          this.loadProjectLinks();
+          if (data !== undefined) {
+            this.data = data;
+            this.id = data.id;
+            this.sectionTitles = data.sections.filter(x => x.type === 'header').map(x => x.text);
+            this.loadProjectLinks();
+            this.loading = false;
+          }
         }
       );
     })

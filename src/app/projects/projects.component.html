@@ -1,5 +1,7 @@
 <div class="display-container card-container">
-    <mat-card fxLayout="row wrap" fxLayoutAlign="center" style="margin: 16px;">
+    
+
+    <mat-card *ngIf="!loading else loadingGif" fxLayout="row wrap" fxLayoutAlign="center" style="margin: 16px;">
         
         <div></div>
         <app-tmpl-wrapper class="title-width" [section]="{ type: 'header', text: 'Projects'}"></app-tmpl-wrapper>
@@ -18,4 +20,10 @@
         <div></div>
 
     </mat-card>
+
+    <ng-template #loadingGif>
+        <mat-card fxLayoutAlign="center">
+            <img src="assets/images/loading-blue.gif" alt="loading">
+        </mat-card>
+    </ng-template>
 </div>
