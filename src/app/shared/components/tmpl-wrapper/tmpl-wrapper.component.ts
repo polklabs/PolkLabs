@@ -17,6 +17,8 @@ export class TmplWrapperComponent {
   @ViewChild('fieldTmpl', {static: true}) fieldTmpl: TemplateRef<any>;
   @ViewChild('codeTmpl', {static: true}) codeTmpl: TemplateRef<any>;
   @ViewChild('htmlTmpl', {static: true}) htmlTmpl: TemplateRef<any>;
+  @ViewChild('videoTmpl', {static: true}) videoTmpl: TemplateRef<any>;
+  @ViewChild('videoLinkTmpl', {static: true}) videoLinkTmpl: TemplateRef<any>;
 
   @Input() section: any;
   @Input() id: string;
@@ -43,6 +45,10 @@ export class TmplWrapperComponent {
         return this.codeTmpl;
       case 'html':
         return this.htmlTmpl;
+      case 'video':
+        return this.videoTmpl;
+      case 'videoLink':
+        return this.videoLinkTmpl;
     }
     return null;
   }
