@@ -39,6 +39,12 @@
             ]
         },
         {
+            "type": "pic",
+            "src": "Poster.png",
+            "alt": "Overview Poster",
+            "width": "1100px"
+        },
+        {
             "type": "header",
             "text": "Demo"
         },
@@ -135,6 +141,7 @@
             "type": "list",
             "title": "Contributors",
             "list_style": "none",
+            "align": "center",
             "list": [
                 "Danielle Robinson (Team Lead)",
                 "Victoria Sneddon",

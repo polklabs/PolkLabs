@@ -36,9 +36,24 @@
         },
         {
             "type": "pic",
-            "src": "flowchart.png",
+            "src": "screenshot_1.png",
             "alt": "Screenshot",
-			"text": "Example Screenshot"
+			"width": "900px"
+        },
+        {
+            "type": "grid",
+            "items": [
+                {
+                    "type": "pic",
+                    "src": "screenshot_2.png",
+                    "alt": "Screenshot 2"
+                },
+                {
+                    "type": "pic",
+                    "src": "screenshot_3.png",
+                    "alt": "Screenshot 3"
+                }
+            ]
         },
         {
 			"type": "header",
@@ -86,6 +101,7 @@
             "type": "list",
             "title": "Limitations",
             "list_style": "disc",
+            "align": "left",
             "list": [
                 "Does not simulate - voltage, resistance, current",
                 "Ignores gate propagation delay - Race Conditions may result in unknown behavior",

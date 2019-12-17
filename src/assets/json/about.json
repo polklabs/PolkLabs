@@ -33,10 +33,12 @@
             "items": [
                 {
                     "type": "list",
-                    "title": "Develop Product",
+                    "title": "Information Sciences Department",
                     "items": [
-                        "Contribute core features across entire stack (20k+ lines of code, 250+ pulls)",
-                        "Lead front-end development, creating and documenting app-wide design system"
+                        "Gained knowledge in data visualization and manipulation while working with enormous amounts of data",
+                        "Used neural networks and other programs for problem solving",
+                        "Corresponded with high ranking researchers on datasets ranging from education to networking attacks",
+                        "Authored multiple deep learning based scientific papers in collaboration with PhD researchers"
                     ]
                 }
             ],

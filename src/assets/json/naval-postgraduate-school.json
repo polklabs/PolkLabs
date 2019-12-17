@@ -29,6 +29,7 @@
             "type": "list",
             "title": "Contributors:",
             "list_style": "none",
+            "align": "center",
             "list": [
                 "Andrew Polk - Computer Engineering - University of California, Santa Barbara",
                 "Richard Wu - Mechanical Engineering - University of Massachusetts, Dartmouth",

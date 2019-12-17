@@ -132,6 +132,7 @@
             "type": "list",
             "title": "Contributors (Left to Right)",
             "list_style": "none",
+            "align": "center",
             "list": [
                 "Danielle Robinson (Data Query)",
                 "Victoria Sneddon (Project Manager)",

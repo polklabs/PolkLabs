@@ -3,7 +3,7 @@
         "id": "reel-ratings",
         "title": "Reel Ratings",
         "subtitle": "A webapp that can predict the rating of a movie",
-        "image": "ReelRatings.png",
+        "image": "card.png",
         "imageAlt": "Movies",
         "date": "10/16/17"
     },
@@ -35,7 +35,7 @@
         "id": "naval-postgraduate-school",
         "title": "A.I. Anomaly Detection",
         "subtitle": "Anomaly detection using machine learning and big data platforms",
-        "image": "image.png",
+        "image": "card.png",
         "imageAlt": "Map",
         "date": "08/02/18"
     },
