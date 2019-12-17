@@ -14,6 +14,8 @@ import { CodeTmplComponent } from '../components/code-tmpl/code-tmpl.component';
 import { HtmlTmplComponent } from '../components/html-tmpl/html-tmpl.component';
 import { CoreModule } from 'src/app/core/module/core.module';
 import { TmplWrapperComponent } from '../components/tmpl-wrapper/tmpl-wrapper.component';
+import { VideoTmplComponent } from '../components/video-tmpl/video-tmpl.component';
+import { VideoLinkTmplComponent } from '../components/video-link-tmpl/video-link-tmpl.component';
 
 @NgModule({
     declarations: [
@@ -27,7 +29,9 @@ import { TmplWrapperComponent } from '../components/tmpl-wrapper/tmpl-wrapper.co
         FieldsetTmplComponent,
         CodeTmplComponent,
         HtmlTmplComponent,
-        TmplWrapperComponent
+        TmplWrapperComponent,
+        VideoTmplComponent,
+        VideoLinkTmplComponent
     ],
     imports: [
         CommonModule,

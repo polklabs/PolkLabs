@@ -3,4 +3,5 @@ export interface PictureModel {
     src: string;
     alt: string;
     text: string;
+    width: string;
 }
