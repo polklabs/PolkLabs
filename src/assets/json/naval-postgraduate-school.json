@@ -1,6 +1,6 @@
 {
     "id": "naval-postgraduate-school",
-    "title": "Anomaly detection using\nmachine learning and\nbig data platforms",
+    "title": "A.I. Anomaly Detection",
     "authors": "Andrew Polk",
     "type": "Internship Monterey Naval Postgraduate School",
     "bgimg": "chairs.jpg",
@@ -21,9 +21,9 @@
                 "We demonstrated that the tools we used have the potential to help decision process and speeds. The impact for the Navy is faster and near real time assessments of potential problems and threats. What’s most important is the groundwork we laid for future work and research into the field and areas of anomaly detection. In the future this work will be able to allow humans to focus on points of interest in the data rather than the entire datasets."
             ]
         },
-		{
-			"type": "html",
-			"html": "<div style=\"margin: auto; width: fit-content;\"><iframe width=\"720\" height=\"480\" src=\"https://www.youtube.com/embed/ipo7zUEckGU?start=2\" frameborder=\"0\" allow=\"accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></iframe></div>"
+        {
+            "type": "videoLink",
+            "src": "https://www.youtube.com/embed/ipo7zUEckGU?start=2"
         },
         {
             "type": "list",

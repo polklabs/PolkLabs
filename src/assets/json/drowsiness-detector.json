@@ -1,0 +1,147 @@
+{
+    "id": "drowsiness-detector",
+    "title": "Drowsiness Detector",
+    "authors": "Andrew Polk",
+    "type": "UCSB Senior Capstone Project",
+    "bgimg": "chairs.jpg",
+    "github": "https://github.com/polklabs/DrowsinessDetector",
+    "demo": "",
+    "sections": [
+        {
+            "type": "header",
+            "text": "About"
+        },
+        {
+            "type": "text",
+            "text": [
+                "Aerospace provides technical guidance for all aspects of space systems. Current satellite launches require a team of trained professionals to be alert at all times of the day. However, full 24 hour attentiveness cannot be reasonably expected by human beings. Thus, in order to help Aerospace solve complex space-related science and engineering problems, we strive to solve the issue of drowsiness using facial recognition technology.",
+                "Aerospace's technical guidance has workers in situations where they need to be alert and respond quickly to changing circumstances. These can be high stakes situations where being drowsy or not paying enough attention could result in something going wrong. We want to provide an automated way for detecting if employees are drowsy or otherwise distracted. Our solution would innovate how detection of tiredness would create a safer work environment and lead to being more productive.",
+                "It is critical that the mission control personnel are alert during satellite launches. If they were to become drowsy, they could fail to notice problems that would've been caught had they been fully awake. By notifying the user when he/she is drowsy, potential accidents and mistakes can be avoided. Therefore, this product is important for the successful launch of satellites and safety of personnel in the aeronautical industry.",
+                "Many drowsiness detectors exist in automobile software. One open source solution uses the OpenCV framework, a real-time computer vision library. This program uses facial landmarks to determine if a car driver is dowsy. It calculates a threshold for which the driver's eyes are closed for a sufficiently long time, responding with an audible alarm to alert the driver. One automobile company has a drowsiness detection solution that utilizes an infrared camera above the steering wheel, detecting more complex signs of tiredness such as frequent blinking, deviations in steering, and distracted head movements. Most of these drowsiness detectors are used for the purpose of keeping drivers alert.",
+                "Our project is innovative in the way that we detect whether or not a face displays signs of drowsiness. We not only use facial recognition, we examine each part of the face to determine if it displays signs of sleepiness."
+            ]
+        },
+        {
+            "type": "dict",
+            "keyValue": [
+                {
+                    "key": "School",
+                    "value": "UC Santa Barbara"
+                },
+                {
+                    "key": "Class",
+                    "value": "Senior Capstone"
+                },
+                {
+                    "key": "Technologies",
+                    "value": "Firebase, Python, Github, Trello, Android Studio, OpenCV"
+                }
+            ]
+        },
+        {
+            "type": "header",
+            "text": "Demo"
+        },
+        {
+            "type": "video",
+            "src": "demo.mp4",
+            "srcType": "video/mp4"
+        },
+        {
+            "type": "header",
+            "text": "How It Works"
+        },
+        {
+            "type": "text",
+            "text": [
+                "The goal of this project is to predict the movie rating of a movie title entered by the user. Our prediction relies on IMDb and TMDb datasets, using our statistical model. We also implemented a rudimentary algorithm that allows the model to learn and improve from past predictions.",
+                "The main program takes in a name of a movie from the user. It then downloads the ID's of the actors and other parameters from TheMovieDB.org. Those ID's are then compared against the previous ratings of movies those actors have starred in. The final resulting list of ratings is then averaged and weighted together to form the final rating guess."
+            ]
+        },
+        {
+            "type": "pic",
+            "src": "FlowChart1.png",
+            "alt": "Flow Chart"
+        },
+
+        {
+            "type": "header",
+            "text": "The Results"
+        },
+        {
+            "type": "grid",
+            "items": [
+                {
+                    "type": "pic",
+                    "src": "Company.png",
+                    "alt": "Graph",
+                    "width": "500px",
+                    "text": "The correlation of producing company to actual ratings"
+                },
+                {
+                    "type": "pic",
+                    "src": "Actors.png",
+                    "alt": "Graph",
+                    "width": "500px",
+                    "text": "The correlation of actor's previous works to actual ratings"
+                },
+                {
+                    "type": "pic",
+                    "src": "Directors.png",
+                    "alt": "Graph",
+                    "width": "500px",
+                    "text": "The correlation of director's previous works to actual ratings"
+                },
+                {
+                    "type": "pic",
+                    "src": "Genre.png",
+                    "alt": "Graph",
+                    "width": "500px",
+                    "text": "The correlation of genre to actual ratings"
+                },
+                {
+                    "type": "pic",
+                    "src": "Producers.png",
+                    "alt": "Graph",
+                    "width": "500px",
+                    "text": "The correlation of producer's previous works to actual ratings"
+                },
+                {
+                    "type": "pic",
+                    "src": "Writers.png",
+                    "alt": "Graph",
+                    "width": "500px",
+                    "text": "The correlation of writer's previous works to actual ratings"
+                },
+                {
+                    "type": "pic",
+                    "src": "Year.png",
+                    "alt": "Graph",
+                    "width": "500px",
+                    "text": "The correlation of year to actual ratings"
+                }
+            ]
+        },
+        {
+            "type": "header",
+            "text": "The Team"
+        },
+        {
+            "type": "pic",
+            "src": "groupPhoto.jpg",
+            "alt": "Group Photo"
+        },
+        {
+            "type": "list",
+            "title": "Contributors",
+            "list_style": "none",
+            "list": [
+                "Danielle Robinson (Team Lead)",
+                "Victoria Sneddon",
+                "Brandon Tran",
+                "Andrew Polk",
+				"David Sun"
+            ]
+        }
+    ]
+}
