@@ -28,9 +28,9 @@
 
             <mat-card *ngFor="let exp of data.experience"
                 class="mat-elevation-z16">
-                <div fxLayout="row wrap" fxLayoutGap="16px" class="experience-header">
+                <div fxLayout="row wrap" fxLayoutGap="16px">
                     <div fxFlex="none">
-                        <img [src]="'assets/images/about/' + exp.logo" [alt]="exp.company + ' Logo'">
+                        <img [src]="'assets/images/about/' + exp.logo" [alt]="exp.company + ' Logo'" height="64px">
                     </div>
                     <div fxFlex>
                         <mat-card-title *ngIf="exp.company">
@@ -111,7 +111,7 @@
         </div>
 
         <!-- Education -->
-        <div fxLayout="column" fxLayoutGap="16px" fxLayoutAlign="none center" *ngIf="data.education.length> 0" class="mat-card-row">
+        <div fxLayout="column" fxLayoutGap="16px" fxLayoutAlign="center" *ngIf="data.education.length> 0" class="mat-card-row">
 
             <!-- <h1>Education</h1> -->
             <app-tmpl-wrapper [section]="{ type: 'header', text: 'Education'}"></app-tmpl-wrapper>
