@@ -9,7 +9,8 @@
     "sections": [
 		{
 			"type": "header",
-			"text": "Project Title"
+			"text": "Project Title",
+            "noPadding": true
 		},
         {
             "type": "text",

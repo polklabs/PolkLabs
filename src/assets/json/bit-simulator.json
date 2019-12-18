@@ -9,7 +9,8 @@
     "sections": [
 		{
 			"type": "header",
-			"text": "About Project Bit"
+            "text": "About Project Bit",
+            "noPadding": true
 		},
         {
             "type": "text",
@@ -38,7 +39,8 @@
             "type": "pic",
             "src": "screenshot_1.png",
             "alt": "Screenshot",
-			"width": "900px"
+            "width": "900px",
+            "text": "An 8-Bit counter with a clock"
         },
         {
             "type": "grid",

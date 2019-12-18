@@ -9,7 +9,8 @@
     "sections": [
         {
             "type": "header",
-            "text": "About"
+            "text": "About",
+            "noPadding": true
         },
         {
             "type": "text",
@@ -37,6 +38,15 @@
                     "value": "C"
                 }
             ]
+        },
+        {
+            "type": "header",
+            "text": "Demo"
+        },
+        {
+            "type": "pic",
+            "src": "running.gif",
+            "alt": "Demo"
         },
         {
             "type": "header",
@@ -105,15 +115,6 @@
             "text": [
                 "The game is lost when a dot is placed on the top row of the matrix."
             ]
-        },
-        {
-            "type": "header",
-            "text": "Demo"
-        },
-        {
-            "type": "pic",
-            "src": "running.gif",
-            "alt": "Demo"
         }
     ]
 }
