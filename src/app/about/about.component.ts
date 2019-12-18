@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { FileDownloadService } from '../core/service/file-download.service';
 
 @Component({
   selector: 'app-about',
@@ -12,7 +13,8 @@ export class AboutComponent implements OnInit {
   loading = true;
 
   constructor(
-    private httpService: HttpClient
+    private httpService: HttpClient,
+    private fileDownloadService: FileDownloadService
   ) { }
 
   ngOnInit() {
@@ -22,6 +24,10 @@ export class AboutComponent implements OnInit {
         this.loading = false;
       }
     );
+  }
+
+  downloadFile(url: string) {
+    this.fileDownloadService.downloadFile(url, 'application/pdf');
   }
 
 }
