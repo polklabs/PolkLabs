@@ -9,7 +9,7 @@ $color3: rgba(159, 134, 192, 1);
 $color4: rgba(190, 149, 196, 1);
 $color5: rgba(255, 255, 255, 1);
 
-body, html, h1,h2,h3,h4,h5,h6 {
+body, html, h1,h2,h3,h4,h5,h6,span {
     height: 100%;
     font-family: "Raleway", sans-serif;
     font-weight: normal;
@@ -42,7 +42,7 @@ body {
 
 .display-container {
     max-width: 1218px;
-    // width: 1218px;
+    width: 1218px;
     min-width: 350px;
 }
 

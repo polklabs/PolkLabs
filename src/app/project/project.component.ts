@@ -10,16 +10,6 @@ import { take } from 'rxjs/operators';
 })
 export class ProjectComponent implements OnInit, AfterViewChecked {
 
-  @ViewChild('headerTmpl', {static: true}) headerTmpl: TemplateRef<any>;
-  @ViewChild('textTmpl', {static: true}) textTmpl: TemplateRef<any>;
-  @ViewChild('listTmpl', {static: true}) listTmpl: TemplateRef<any>;
-  @ViewChild('picTmpl', {static: true}) picTmpl: TemplateRef<any>;
-  @ViewChild('picGridTmpl', {static: true}) picGridTmpl: TemplateRef<any>;
-  @ViewChild('dictTmpl', {static: true}) dictTmpl: TemplateRef<any>;
-  @ViewChild('fieldTmpl', {static: true}) fieldTmpl: TemplateRef<any>;
-  @ViewChild('codeTmpl', {static: true}) codeTmpl: TemplateRef<any>;
-  @ViewChild('htmlTmpl', {static: true}) htmlTmpl: TemplateRef<any>;
-
   id: string;
   data: any;
   sectionTitles: string[] = [];
@@ -39,7 +29,7 @@ export class ProjectComponent implements OnInit, AfterViewChecked {
   ngOnInit() {
 
     this.route.params.subscribe(params => {
-      this.httpService.get(`./assets/json/${params['id']}.json`).pipe(take(1)).subscribe(
+      this.httpService.get(`./assets/json/${params.id}.json`).pipe(take(1)).subscribe(
         (data: any) => {
           if (data !== undefined) {
             this.data = data;
@@ -50,7 +40,7 @@ export class ProjectComponent implements OnInit, AfterViewChecked {
           }
         }
       );
-    })
+    });
 
     this.route.fragment.subscribe(fragment => { this.fragment = fragment; });
 
@@ -58,10 +48,14 @@ export class ProjectComponent implements OnInit, AfterViewChecked {
 
   ngAfterViewChecked(): void {
     try {
-        if(this.fragment) {
-            document.querySelector('#' + this.fragment).scrollIntoView({behavior: "smooth"});
-            this.fragment = '';
+      if (this.fragment) {
+        if (this.sectionTitles.map(x => this.getId(x)).indexOf(this.fragment) === 0) {
+          document.querySelector('#home').scrollIntoView({ behavior: 'smooth' });
+        } else {
+          document.querySelector('#' + this.fragment).scrollIntoView({ behavior: 'smooth' });
         }
+        this.fragment = '';
+      }
     } catch (e) { }
   }
 
@@ -78,7 +72,7 @@ export class ProjectComponent implements OnInit, AfterViewChecked {
 
         if (currentIndex > 0) {
           this.newerProject = projectList[currentIndex - 1];
-        } else{
+        } else {
           this.newerProject = null;
         }
 
@@ -93,30 +87,6 @@ export class ProjectComponent implements OnInit, AfterViewChecked {
 
   openPage(url: string) {
     window.open(url, '_blank');
-  }
-
-  getTemplate(type: string) {
-    switch(type) {
-      case 'header':
-        return this.headerTmpl;
-      case 'text':
-        return this.textTmpl;
-      case 'list':
-        return this.listTmpl;
-      case 'pic':
-        return this.picTmpl;
-      case 'grid':
-        return this.picGridTmpl;
-      case 'dict':
-        return this.dictTmpl;
-      case 'fieldset':
-        return this.fieldTmpl;
-      case 'code':
-        return this.codeTmpl;
-      case 'html':
-        return this.htmlTmpl;
-    }
-    return null;
   }
 
   getId(text: string) {

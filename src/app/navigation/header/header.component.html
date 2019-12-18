@@ -1,5 +1,5 @@
 <mat-toolbar class="header-color">
-    <div fxLayout="row" fxLayoutGap="16px" style="max-width: 1218px; width: 1218px; margin: auto;" *ngIf="header">
+    <div fxLayout="row" fxLayoutGap="8px" style="max-width: 1218px; width: 1218px; margin: auto;" *ngIf="header">
         <!-- <img src="assets/images/128x128.png" alt="Polklabs" height="64px"> -->
         <span routerLink="/home"  matTooltip="Home">{{header.title}}</span>
 
@@ -9,7 +9,7 @@
         <!-- <button mat-button type="button" [routerLink]="'/featured'">Featured</button> -->
         <button mat-button type="button" [routerLink]="'/projects'" fragment="">Projects</button>
         
-        <a fxHide.sm fxHide.xs *ngIf="header.email !== ''" mat-button [href]="'mailto:'+header.email" matTooltip="Copy email to clipboard"><i class="fa fa-envelope"></i></a>
+        <a fxHide.sm fxHide.xs *ngIf="header.email !== ''" mat-button ngxClipboard [cbContent]="header.email" (click)="openSnackBar('Copied to clipboard!')" matTooltip="Copy email to clipboard"><i class="fa fa-envelope"></i></a>
         <a fxHide.sm fxHide.xs *ngIf="header.twitter !== ''" mat-button [href]="header.twitter" target="_blank" matTooltip="Twitter"><i class="fab fa-twitter"></i></a>
         <a fxHide.sm fxHide.xs *ngIf="header.linkedIn !== ''" mat-button [href]="header.linkedIn" target="_blank" matTooltip="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
         <a fxHide.sm fxHide.xs *ngIf="header.facebook !== ''" mat-button [href]="header.facebook" target="_blank" matTooltip="Facebook"><i class="fab fa-facebook-f"></i></a>

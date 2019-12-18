@@ -4,7 +4,7 @@
     <mat-card *ngIf="!loading else loadingGif" fxLayout="row wrap" fxLayoutAlign="center" style="margin: 16px;">
         
         <div></div>
-        <app-tmpl-wrapper class="title-width" [section]="{ type: 'header', text: 'Projects'}"></app-tmpl-wrapper>
+        <app-tmpl-wrapper class="title-width" [section]="{ type: 'header', text: 'Projects', noPadding: true}"></app-tmpl-wrapper>
         
         <mat-card *ngFor="let project of projectList" appMaterialElevation class="project-outer project-card"
             [routerLink]="'/project/'+project.id" fxLayout="column">

@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { MaterialModule } from './material.module';
 import { HttpClientModule } from '@angular/common/http';
+import { ClipboardModule } from 'ngx-clipboard';
 import { HighlightModule } from 'ngx-highlightjs';
 
 // export function getHighlightLanguages() {
@@ -17,12 +18,14 @@ import { HighlightModule } from 'ngx-highlightjs';
         FlexLayoutModule,
         MaterialModule,
         HttpClientModule,
+        ClipboardModule,
         HighlightModule,
     ],
     exports: [
         FlexLayoutModule,
         MaterialModule,
         HttpClientModule,
+        ClipboardModule,
         HighlightModule,
     ],
     providers: [

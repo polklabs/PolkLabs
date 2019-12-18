@@ -3,10 +3,55 @@
 }
 
 .padding-64 {
-    padding-top: 36px !important;
-    padding-bottom: 36px !important;
+    padding-top: 72px !important;
+    padding-bottom: 16px !important;
 }
 
 .border-bottom {
     border-bottom: 1px solid #ccc !important;
+}
+
+// Fancy Header
+
+.sectionHeader {
+	font-size: 14px;
+	text-align: center;
+	color: #4a6b93;
+	margin-top: 36px;
+}
+
+.sectionHeader .header {
+	font-size: 32px;
+}
+
+span.header {
+	font-size: 32px;
+	background-color: #FFF;
+	position: relative;
+	z-index: 50;
+	padding: 0 9px 0 9px;
+}
+
+.header img {
+	opacity: .45;
+}
+
+.header.ver2 {
+    font-size: 32px;
+  
+}
+
+.header.ver2::before {
+  content: " ";
+  display:block;
+  position:absolute;
+//   width:30em;
+  width: 85vw;
+  max-width: 900px;
+  left:50%;
+  top:50%;
+  -webkit-transform: translateX(-50%);
+  z-index: -1;
+  margin-top:0;
+  border-top: 1px solid black;
 }
