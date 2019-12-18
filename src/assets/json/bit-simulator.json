@@ -1,11 +1,18 @@
 {
     "id": "bit-simulator",
     "title": "Logic Circuit Simulator",
-    "authors": "Andrew Polk",
-    "type": "Personal Project",
-    "bgimg": "chairs.jpg",
+    "bgimg": "screenshot_2.png",
     "github": "https://github.com/polklabs/Project-Bit",
     "demo": "",
+    "languages": [
+        "C#"
+    ],
+    "reason": "Personal Project",
+    "hardware": [],
+    "technologies": [
+        "Unity3D"
+    ],
+    "lastUpdate": "10/13/19",
     "sections": [
 		{
 			"type": "header",
