@@ -3,7 +3,7 @@
 </div>
 
 <ng-template #content>
-    <mat-card class="display-container" style="margin: auto;">
+    <mat-card class="display-container about-container" style="margin: auto;">
         <div fxLayout="row wrap" fxLayoutGap="16px" fxLayoutAlign="center center">
 
             <div fxFlex.xs="350px" fxFlex.sm="450px" fxFlex.gt-sm="48" style="min-width: 350px;">
@@ -16,7 +16,7 @@
             </div>
 
             <div fxFlex.xs="400px" fxFlex.sm="400px" fxFlex.gt-sm="48" style="min-width: 350px;" fxLayoutAlign="center center">
-                <img style="width: 375px; height: inherit; margin: auto; border-radius: 16px;" [src]="'assets/images/about/' + data.photo">
+                <img style="width: 375px; height: inherit; margin: auto; border-radius: 16px;" [src]="'assets/content/about/' + data.photo">
             </div>
 
         </div>
@@ -31,7 +31,7 @@
                 class="mat-elevation-z16">
                 <div fxLayout="row wrap" fxLayoutGap="16px">
                     <div fxFlex="none">
-                        <img [src]="'assets/images/about/' + exp.logo" [alt]="exp.company + ' Logo'" height="64px">
+                        <img [src]="'assets/content/about/' + exp.logo" [alt]="exp.company + ' Logo'" height="64px">
                     </div>
                     <div fxFlex>
                         <mat-card-title *ngIf="exp.company">
@@ -85,7 +85,7 @@
 
                 <div fxLayout="row wrap" fxLayoutAlign="space-evenly center" class="skill-content">
                     <div *ngFor="let item of skill.items" fxLayout="column">
-                        <img [src]="'assets/images/about/' + item.logo" [alt]="item.text + 'Logo'" height="100px" style="margin-top: 8px;">
+                        <img [src]="'assets/content/about/' + item.logo" [alt]="item.text + 'Logo'" height="100px" style="margin-top: 8px;">
                         <p class="skill-text">{{item.text}}</p>
                     </div>
                 </div>
