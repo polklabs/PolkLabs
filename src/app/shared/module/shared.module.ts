@@ -16,6 +16,7 @@ import { CoreModule } from 'src/app/core/module/core.module';
 import { TmplWrapperComponent } from '../components/tmpl-wrapper/tmpl-wrapper.component';
 import { VideoTmplComponent } from '../components/video-tmpl/video-tmpl.component';
 import { VideoLinkTmplComponent } from '../components/video-link-tmpl/video-link-tmpl.component';
+import { PictureComponent } from '../modal/picture/picture.component';
 
 @NgModule({
     declarations: [
@@ -31,7 +32,8 @@ import { VideoLinkTmplComponent } from '../components/video-link-tmpl/video-link
         HtmlTmplComponent,
         TmplWrapperComponent,
         VideoTmplComponent,
-        VideoLinkTmplComponent
+        VideoLinkTmplComponent,
+        PictureComponent
     ],
     imports: [
         CommonModule,
@@ -53,6 +55,10 @@ import { VideoLinkTmplComponent } from '../components/video-link-tmpl/video-link
         HtmlTmplComponent,
         TmplWrapperComponent
     ],
-    providers: []
+    providers: [
+    ],
+    entryComponents: [
+        PictureComponent
+    ]
 })
 export class SharedModule { }
