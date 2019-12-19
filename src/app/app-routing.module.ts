@@ -24,7 +24,7 @@ const routes: Routes = [
     {
         path: 'project/:id',
         component: ProjectComponent,
-        data: {title: ':id | Polklabs'}
+        data: {title: 'Polklabs'}
     },
     {
         path: '',
