@@ -33,7 +33,7 @@
 
         <mat-card *ngFor="let project of projectList" appMaterialElevation class="project-outer project-card"
             [routerLink]="'/project/'+project.id" fxLayout="column">
-            <img fxFlex="200px" [src]="'assets/images/' + project.id + '/' + project.image" [alt]="project.imageAlt" width="100%"
+            <img fxFlex="200px" [src]="'assets/content/' + project.id + '/' + project.image" [alt]="project.imageAlt" width="100%"
                 class="image">
 
             <div fxFlex="16px"></div>

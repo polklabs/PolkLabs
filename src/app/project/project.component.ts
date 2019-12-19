@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild, TemplateRef, AfterViewChecked, HostListener } from '@angular/core';
+import { Component, OnInit, AfterViewChecked, HostListener } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { ActivatedRoute } from '@angular/router';
 import { take } from 'rxjs/operators';
@@ -21,6 +21,8 @@ export class ProjectComponent implements OnInit, AfterViewChecked {
 
   loading = true;
 
+  projectList: any;
+
   constructor(
     private httpService: HttpClient,
     private route: ActivatedRoute
@@ -29,11 +31,11 @@ export class ProjectComponent implements OnInit, AfterViewChecked {
   ngOnInit() {
 
     this.route.params.subscribe(params => {
+      this.id = params.id;
       this.httpService.get(`./assets/json/${params.id}.json`).pipe(take(1)).subscribe(
         (data: any) => {
           if (data !== undefined) {
             this.data = data;
-            this.id = data.id;
             this.sectionTitles = data.sections.filter(x => x.type === 'header').map(x => x.text);
             this.loadProjectLinks();
             this.loading = false;
@@ -65,7 +67,7 @@ export class ProjectComponent implements OnInit, AfterViewChecked {
   }
 
   loadProjectLinks() {
-    this.httpService.get(`./assets/json/projectList.json`).subscribe(
+    this.httpService.get(`./assets/json/projectList.json`).pipe(take(1)).subscribe(
       (data: any[]) => {
         const projectList = data.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
         const currentIndex = projectList.findIndex(x => x.id === this.id);
@@ -81,8 +83,17 @@ export class ProjectComponent implements OnInit, AfterViewChecked {
         } else {
           this.olderProject = null;
         }
+
+        this.loadProjectList(projectList);
       }
     );
+  }
+
+  loadProjectList(projectList: any[]) {
+    this.projectList = projectList
+      .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
+      .filter(x => x.id !== this.id)
+      .slice(0, 3);
   }
 
   openPage(url: string) {

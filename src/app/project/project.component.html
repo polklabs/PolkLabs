@@ -1,17 +1,13 @@
-<div *ngIf="data" style="margin: auto; margin-top: 16px; margin-bottom: 16px;" fxLayout="row" fxLayoutAlign="center start" id="home">
+<div *ngIf="data" style="margin: auto; margin-top: 16px; margin-bottom: 16px;" fxLayout="row"
+    fxLayoutAlign="center start" id="home">
 
     <div class="display-container">
         <!-- Header -->
-        <div class="bgimg grayscale-min" [style.background-image]="'url(' + 'assets/images/' + id + '/' + data.bgimg + ')'">
-            <!-- <div class="display-bottomleft center padding-large">
-                <span class="tag">{{data.type}}</span>
-            </div> -->
+        <div class="bgimg grayscale-min"
+            [style.background-image]="'url(' + 'assets/content/' + id + '/' + data.bgimg + ')'">
             <div class="display-middle center">
                 <span class="text-white jumbo tag" style="font-family:'Limelight', cursive">{{data.title}}</span>
             </div>
-            <!-- <div class="display-bottomright center padding-large">
-                <span class="tag">By {{data.authors}}</span>
-            </div> -->
         </div>
 
         <mat-card>
@@ -21,24 +17,64 @@
                 <div *ngFor="let section of sectionTitles">
                     <a routerLink="." fragment="{{getId(section)}}" class="page-link">{{section}}</a>
                 </div>
-
             </mat-toolbar>
 
-            <!-- Link Buttons -->
-            <!-- <div class="center" style="padding-top: 32px;" fxLayout="row" fxLayoutGap="16px" fxLayoutAlign="center center">
-                <button mat-raised-button appMaterialElevation (click)="openPage(data.demo)" type="button" *ngIf="data.demo !== ''" class="link-button">
-                    <i class="fa fa-spinner link-icon"></i>Try It Out
-                </button>
-                <button mat-raised-button appMaterialElevation (click)="openPage(data.github)" type="button" *ngIf="data.github !== ''" class="link-button">
-                    <i class="fab fa-github link-icon"></i>The Repo
-                </button>
-            </div> -->
-            
+            <div class="width">
+                <!-- Link Buttons -->
+                <div class="center" style="padding-top: 32px;" fxLayout="row" fxLayoutGap="16px"
+                    fxLayoutAlign="center center">
+                    <button mat-raised-button appMaterialElevation (click)="openPage(data.demo)" type="button"
+                        [disabled]="data.demo === ''" class="link-button">
+                        <i class="fa fa-spinner link-icon"></i>Try It Out
+                    </button>
+                    <button mat-raised-button appMaterialElevation (click)="openPage(data.github)" type="button"
+                        [disabled]="data.github === ''" class="link-button">
+                        <i class="fab fa-github link-icon"></i>The Repo
+                    </button>
+                </div>
+                <!-- <div fxLayout="row" *ngIf="data.languages.length > 0">
+                    <p>Languages: </p>
+                    <mat-chip-list style="margin: 12px;">
+                        <mat-chip *ngFor="let chip of data.languages">{{chip}}</mat-chip>
+                    </mat-chip-list>
+                </div>
+
+                <div fxLayout="row" *ngIf="data.technologies.length > 0">
+                    <p>Technologies: </p>
+                    <mat-chip-list style="margin: 12px;">
+                        <mat-chip *ngFor="let chip of data.technologies">{{chip}}</mat-chip>
+                    </mat-chip-list>
+                </div>
+
+                <div fxLayout="row" *ngIf="data.hardware.length > 0">
+                    <p>Hardware: </p>
+                    <mat-chip-list style="margin: 12px;">
+                        <mat-chip *ngFor="let chip of data.hardware">{{chip}}</mat-chip>
+                    </mat-chip-list>
+                </div> -->
+            </div>
+
             <!-- Sections -->
             <div *ngFor="let section of data.sections">
                 <app-tmpl-wrapper [section]="section" [id]="id"></app-tmpl-wrapper>
             </div>
+
+            <app-tmpl-wrapper class="title-width" [section]="{ type: 'header', text: 'Some of my latest work'}"></app-tmpl-wrapper>
+
+            <div fxLayout="row wrap" fxLayoutAlign="center">
+                <mat-card *ngFor="let project of projectList" appMaterialElevation class="project-outer project-card"
+                    [routerLink]="'/project/'+project.id" fxLayout="column">
+                    <img fxFlex="200px" [src]="'assets/content/' + project.id + '/' + project.image" [alt]="project.imageAlt" width="100%"
+                        class="image">
+
+                    <div fxFlex="16px"></div>
+
+                    <mat-card-title fxFlex="none">{{project.title}}</mat-card-title>
+                    <mat-card-subtitle fxFlex="none">{{project.subtitle}}</mat-card-subtitle>
+                </mat-card>
+            </div>
+
         </mat-card>
     </div>
-    
+
 </div>
