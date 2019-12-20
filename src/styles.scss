@@ -43,12 +43,12 @@ body {
 .display-container {
     max-width: 1218px;
     width: 1218px;
-    min-width: 350px;
+    min-width: 300px;
 }
 
 .width {
     max-width: 900px;
-    min-width: 350px;
+    min-width: 250px;
     margin: auto;
 }
 
@@ -65,4 +65,8 @@ mat-tooltip-component > .mat-tooltip {
     // word-break: break-all !important;
     white-space: pre-line !important;
     max-width: 800px !important;
+}
+
+mat-card {
+    margin: 8px !important;
 }

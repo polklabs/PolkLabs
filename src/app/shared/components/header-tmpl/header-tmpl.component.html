@@ -1,8 +1,18 @@
 <div class="width" id="{{getId(section.text)}}">
+    <!-- Version 1 -->
     <!-- <h2 *ngIf="section.text" class="border-light-gray padding-64 border-bottom" style="text-align: center; font-size: 30px;">{{section.text}}</h2> -->
-    <div class="sectionHeader" [ngClass]="!section.noPadding ? 'padding-64' : ''">
+    
+    <!-- Version 2 - Only works on chrome -->
+    <!-- <div class="sectionHeader" [ngClass]="!section.noPadding ? 'padding-64' : ''">
         <span class="header ver2">
             {{section.text}}
         </span>
+    </div> -->
+
+    <!-- Version 3 -->
+    <div fxLayout="row" fxLayoutAlign="center center">
+        <div fxFlex style="border-bottom: 2px gray solid; margin-top: 50px;"></div>
+        <h2 fxFlex="none" *ngIf="section.text" class="border-light-gray" [ngClass]="!section.noPadding ? 'padding-64' : ''" style="text-align: center; font-size: 30px;">{{section.text}}</h2>
+        <div fxFlex style="border-bottom: 2px gray solid; margin-top: 50px;"></div>
     </div>
 </div>

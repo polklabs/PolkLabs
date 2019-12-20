@@ -5,14 +5,26 @@
 
         <div fxFlex></div>
 
-        <button mat-button type="button" [routerLink]="'/about'">About</button>
+        <button fxHide.lt-md mat-button type="button" [routerLink]="'/about'">About</button>
         <!-- <button mat-button type="button" [routerLink]="'/featured'">Featured</button> -->
-        <button mat-button type="button" [routerLink]="'/projects'" fragment="">Projects</button>
+        <button fxHide.lt-md mat-button type="button" [routerLink]="'/projects'" fragment="">Projects</button>
         
-        <a fxHide.sm fxHide.xs *ngIf="header.email !== ''" mat-button ngxClipboard [cbContent]="header.email" (click)="openSnackBar('Copied to clipboard!')" matTooltip="Copy email to clipboard"><i class="fa fa-envelope"></i></a>
-        <a fxHide.sm fxHide.xs *ngIf="header.twitter !== ''" mat-button [href]="header.twitter" target="_blank" matTooltip="Twitter"><i class="fab fa-twitter"></i></a>
-        <a fxHide.sm fxHide.xs *ngIf="header.linkedIn !== ''" mat-button [href]="header.linkedIn" target="_blank" matTooltip="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-        <a fxHide.sm fxHide.xs *ngIf="header.facebook !== ''" mat-button [href]="header.facebook" target="_blank" matTooltip="Facebook"><i class="fab fa-facebook-f"></i></a>
-        <a fxHide.sm fxHide.xs *ngIf="header.flickr !== ''" mat-button [href]="header.flickr" target="_blank" matTooltip="Flickr"><i class="fab fa-flickr"></i></a>
+        <a fxHide.lt-md *ngIf="header.email !== ''" mat-button ngxClipboard [cbContent]="header.email" (click)="openSnackBar('Copied to clipboard!')" matTooltip="Copy email to clipboard"><i class="fa fa-envelope"></i></a>
+        <a fxHide.lt-md *ngIf="header.twitter !== ''" mat-button [href]="header.twitter" target="_blank" matTooltip="Twitter"><i class="fab fa-twitter"></i></a>
+        <a fxHide.lt-md *ngIf="header.linkedIn !== ''" mat-button [href]="header.linkedIn" target="_blank" matTooltip="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+        <a fxHide.lt-md *ngIf="header.facebook !== ''" mat-button [href]="header.facebook" target="_blank" matTooltip="Facebook"><i class="fab fa-facebook-f"></i></a>
+        <a fxHide.lt-md *ngIf="header.flickr !== ''" mat-button [href]="header.flickr" target="_blank" matTooltip="Flickr"><i class="fab fa-flickr"></i></a>
+
+        <button mat-button [matMenuTriggerFor]="menu" fxHide fxShow.lt-md><mat-icon>menu</mat-icon></button>
+        <mat-menu #menu="matMenu" style="text-align: center;">
+            <button mat-menu-item type="button" [routerLink]="'/about'">About</button>
+            <button mat-menu-item type="button" [routerLink]="'/projects'" fragment="">Projects</button>
+            
+            <a mat-menu-item *ngIf="header.email !== ''" ngxClipboard [cbContent]="header.email" (click)="openSnackBar('Copied to clipboard!')" matTooltip="Copy email to clipboard"><i class="fa fa-envelope"></i></a>
+            <a mat-menu-item *ngIf="header.twitter !== ''" [href]="header.twitter" target="_blank" matTooltip="Twitter"><i class="fab fa-twitter"></i></a>
+            <a mat-menu-item *ngIf="header.linkedIn !== ''" [href]="header.linkedIn" target="_blank" matTooltip="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            <a mat-menu-item *ngIf="header.facebook !== ''" [href]="header.facebook" target="_blank" matTooltip="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a mat-menu-item *ngIf="header.flickr !== ''" [href]="header.flickr" target="_blank" matTooltip="Flickr"><i class="fab fa-flickr"></i></a>
+        </mat-menu>
     </div>
 </mat-toolbar>
