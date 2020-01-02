@@ -33,6 +33,9 @@
 
         <mat-card *ngFor="let project of projectList" appMaterialElevation class="project-outer project-card"
             [routerLink]="'/project/'+project.id" fxLayout="column">
+
+            <img *ngIf="project.comingSoon" src="assets/images/coming-soon.png" alt="coming soon banner" class="coming-soon">
+
             <img fxFlex="200px" [src]="'assets/content/' + project.id + '/' + project.image" [alt]="project.imageAlt" width="100%"
                 class="image">
 
