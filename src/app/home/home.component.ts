@@ -8,6 +8,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class HomeComponent implements OnInit {
 
+  data: any;
   projectList: any;
 
   constructor(
@@ -16,9 +17,15 @@ export class HomeComponent implements OnInit {
 
   ngOnInit() {
 
-    this.httpService.get(`./assets/json/projectList.json`).subscribe(
+    // this.httpService.get(`./assets/json/projectList.json`).subscribe(
+    //   (data: any[]) => {
+    //     this.projectList = data.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()).slice(0, 3);
+    //   }
+    // );
+
+    this.httpService.get(`./assets/json/about.json`).subscribe(
       (data: any[]) => {
-        this.projectList = data.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()).slice(0, 3);
+        this.data = data;
       }
     );
 
