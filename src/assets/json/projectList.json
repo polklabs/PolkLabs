@@ -56,12 +56,13 @@
         "date": "10/07/19"
     },
     {
-        "id": "example",
-        "title": "Example Json",
-        "subtitle": "An example page for what can be shown",
+        "id": "portfolio-site",
+        "title": "Portfolio Website",
+        "subtitle": "A project, resume, portfolio site made in Angular",
         "image": "card.png",
-        "imageAlt": "IDK",
-        "date": "12/13/19"
+        "imageAlt": "website",
+        "date": "12/11/19",
+        "comingSoon": true
     },
     {
         "id": "galaxy-gen",
@@ -69,6 +70,7 @@
         "subtitle": "Pseudo random world generation",
         "image": "card.png",
         "imageAlt": "Galaxy",
-        "date": "01/01/20"
+        "date": "01/01/20",
+        "comingSoon": true
     }
 ]

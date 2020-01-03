@@ -2,7 +2,13 @@ img {
     display: block;
     max-width: 90vw;
     max-height: 90vh;
+    min-width: 85vw;
+    min-height: 85vh;
     &:hover {
         cursor: zoom-out;
     }
+}
+
+::ng-deep mat-dialog-container {
+    padding: 4px !important;
 }
