@@ -1,14 +1,14 @@
-import { Component, OnInit, AfterViewChecked, HostListener } from '@angular/core';
+import { Component, OnInit, HostListener } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { ActivatedRoute } from '@angular/router';
 import { take } from 'rxjs/operators';
 
 @Component({
-  selector: 'app-project',
-  templateUrl: './project.component.html',
-  styleUrls: ['./project.component.scss']
+  selector: 'app-blog',
+  templateUrl: './blog.component.html',
+  styleUrls: ['./blog.component.scss']
 })
-export class ProjectComponent implements OnInit, AfterViewChecked {
+export class BlogComponent implements OnInit {
 
   id: string;
   data: any;
@@ -32,7 +32,7 @@ export class ProjectComponent implements OnInit, AfterViewChecked {
 
     this.route.params.subscribe(params => {
       this.id = params.id;
-      this.httpService.get(`./assets/json/projects/${params.id}.json`).pipe(take(1)).subscribe(
+      this.httpService.get(`./assets/json/${params.id}.json`).pipe(take(1)).subscribe(
         (data: any) => {
           if (data !== undefined) {
             this.data = data;
@@ -103,5 +103,4 @@ export class ProjectComponent implements OnInit, AfterViewChecked {
   getId(text: string) {
     return text.replace(/\ /g, '');
   }
-
 }

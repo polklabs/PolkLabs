@@ -10,6 +10,8 @@ import { ProjectComponent } from './project/project.component';
 import { HeaderComponent } from './navigation/header/header.component';
 import { AboutComponent } from './about/about.component';
 import { ProjectsComponent } from './projects/projects.component';
+import { BlogComponent } from './blog/blog.component';
+import { BlogsComponent } from './blogs/blogs.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +20,9 @@ import { ProjectsComponent } from './projects/projects.component';
     ProjectComponent,
     HeaderComponent,
     AboutComponent,
-    ProjectsComponent
+    ProjectsComponent,
+    BlogComponent,
+    BlogsComponent
   ],
   imports: [
     BrowserAnimationsModule,

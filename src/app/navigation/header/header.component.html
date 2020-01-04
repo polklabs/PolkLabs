@@ -5,9 +5,9 @@
 
         <div fxFlex></div>
 
-        <button fxHide.lt-md mat-button type="button" [routerLink]="'/about'">About</button>
-        <!-- <button mat-button type="button" [routerLink]="'/featured'">Featured</button> -->
+        <button fxHide.lt-md mat-button type="button" [routerLink]="'/about'">About</button>        
         <button fxHide.lt-md mat-button type="button" [routerLink]="'/projects'" fragment="">Projects</button>
+        <button fxHide.lt-md mat-button type="button" [routerLink]="'/blog'" fragment="">Blog</button>
         
         <a fxHide.lt-md *ngIf="header.email !== ''" mat-button ngxClipboard [cbContent]="header.email" (click)="openSnackBar('Copied to clipboard!')" matTooltip="Copy email to clipboard"><i class="fa fa-envelope"></i></a>
         <a fxHide.lt-md *ngIf="header.twitter !== ''" mat-button [href]="header.twitter" target="_blank" rel="noopener"><i class="fab fa-twitter"> Twitter</i></a>
@@ -19,6 +19,7 @@
         <mat-menu #menu="matMenu" style="text-align: center;">
             <button mat-menu-item type="button" [routerLink]="'/about'">About</button>
             <button mat-menu-item type="button" [routerLink]="'/projects'" fragment="">Projects</button>
+            <button mat-menu-item type="button" [routerLink]="'/blog'" fragment="">Blog</button>
             
             <a mat-menu-item *ngIf="header.email !== ''" ngxClipboard [cbContent]="header.email" (click)="openSnackBar('Copied to clipboard!')" matTooltip="Copy email to clipboard"><i class="fa fa-envelope"></i></a>
             <a mat-menu-item *ngIf="header.twitter !== ''" [href]="header.twitter" target="_blank" rel="noopener"><i class="fab fa-twitter"> Twitter</i></a>

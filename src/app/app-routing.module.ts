@@ -4,6 +4,8 @@ import { ProjectComponent } from './project/project.component';
 import { ProjectsComponent } from './projects/projects.component';
 import { AboutComponent } from './about/about.component';
 import { HomeComponent } from './home/home.component';
+import { BlogComponent } from './blog/blog.component';
+import { BlogsComponent } from './blogs/blogs.component';
 
 const routes: Routes = [
     {
@@ -26,7 +28,7 @@ const routes: Routes = [
         path: 'projects',
         component: ProjectsComponent,
         data: {
-            title: 'Home | Polklabs',
+            title: 'Projects | Polklabs',
             description: 'List of projects Andrew Polk has worked on'
         }
     },
@@ -36,6 +38,22 @@ const routes: Routes = [
         data: {
             title: 'Polklabs',
             description: 'Some project'
+        }
+    },
+    {
+        path: 'blog',
+        component: BlogsComponent,
+        data: {
+            title: 'Blogs | Polklabs',
+            description: 'List of blog Andrew Polk has made'
+        }
+    },
+    {
+        path: 'blog/:id',
+        component: BlogComponent,
+        data: {
+            title: 'Polklabs',
+            description: 'Some blog'
         }
     },
     {
