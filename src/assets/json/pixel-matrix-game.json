@@ -22,12 +22,8 @@
             "type": "dict",
             "keyValue": [
                 {
-                    "key": "School",
-                    "value": "UC Santa Barbara"
-                },
-                {
                     "key": "Class",
-                    "value": "Sensor and peripheral design"
+                    "value": "Sensor and peripheral design - UC Santa Barbara"
                 },
                 {
                     "key": "Parts",
@@ -46,7 +42,8 @@
         {
             "type": "pic",
             "src": "running.gif",
-            "alt": "Demo"
+            "alt": "Demo",
+            "text": "TODO: Get better quality vid"
         },
         {
             "type": "header",

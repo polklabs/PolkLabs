@@ -1,46 +1,35 @@
-<div class="display-container card-container">
-    <mat-card fxLayout="row wrap" fxLayoutAlign="center" style="margin: 16px;">
+<div class="display-container card-container" style="max-width: 100%;">
+    <mat-card fxLayout="column" fxLayoutAlign="center" style="margin: 16px; height: 100%;" class="home-background">
         <div></div>
 
-        <app-tmpl-wrapper class="title-width" [section]="{ type: 'header', text: 'Welcome'}"></app-tmpl-wrapper>
+        <!-- <app-tmpl-wrapper class="title-width" [section]="{ type: 'header', text: 'Welcome'}"></app-tmpl-wrapper> -->
 
-        <!-- <div style="margin-bottom: 800px;"></div>
+        <div style="margin-top: 300px; margin-bottom: 300px;">
+            <h3 class="home-super-title"><em>{{data ? data.welcomeSubtitle : ''}}</em></h3>
+            <h1 class="home-title"><strong>{{data ? data.welcomeTitle : ''}}</strong></h1>
+            <div fxLayout="row" fxLayoutAlign="center" fxLayoutGap="32px" style="padding-top: 32px;">
+                <a mat-raised-button routerLink="/projects" appMaterialElevation raisedElevation="16">Projects&nbsp;</a>
+                <a mat-raised-button routerLink="/about" appMaterialElevation>&nbsp;&nbsp;About&nbsp;&nbsp;</a>
+            </div>
+        </div>
 
-        <div class="stage">
-            <div class="layer"></div>
-            <div class="layer"></div>
-            <div class="layer"></div>
-            <div class="layer"></div>
-            <div class="layer"></div>
-            <div class="layer"></div>
-            <div class="layer"></div>
-            <div class="layer"></div>
-            <div class="layer"></div>
-            <div class="layer"></div>
-            <div class="layer"></div>
-            <div class="layer"></div>
-            <div class="layer"></div>
-            <div class="layer"></div>
-            <div class="layer"></div>
-            <div class="layer"></div>
-            <div class="layer"></div>
-            <div class="layer"></div>
-            <div class="layer"></div>
-            <div class="layer"></div>
+        <!-- <app-tmpl-wrapper class="title-width" [section]="{ type: 'header', text: 'Some of my latest work'}"></app-tmpl-wrapper>
+
+        <div fxLayout="row wrap" fxLayoutAlign="center">
+            <mat-card *ngFor="let project of projectList" appMaterialElevation class="project-outer project-card"
+                [routerLink]="'/project/'+project.id" fxLayout="column">
+
+                <img *ngIf="project.comingSoon" src="assets/images/coming-soon.png" alt="coming soon banner" class="coming-soon">
+
+                <img fxFlex="200px" [src]="'assets/content/' + project.id + '/' + project.image" [alt]="project.imageAlt" width="100%"
+                    class="image">
+
+                <div fxFlex="16px"></div>
+
+                <mat-card-title fxFlex="none">{{project.title}}</mat-card-title>
+                <mat-card-subtitle fxFlex="none">{{project.subtitle}}</mat-card-subtitle>
+            </mat-card>
         </div> -->
-
-        <app-tmpl-wrapper class="title-width" [section]="{ type: 'header', text: 'Some of my latest work'}"></app-tmpl-wrapper>
-
-        <mat-card *ngFor="let project of projectList" appMaterialElevation class="project-outer project-card"
-            [routerLink]="'/project/'+project.id" fxLayout="column">
-            <img fxFlex="200px" [src]="'assets/content/' + project.id + '/' + project.image" [alt]="project.imageAlt" width="100%"
-                class="image">
-
-            <div fxFlex="16px"></div>
-
-            <mat-card-title fxFlex="none">{{project.title}}</mat-card-title>
-            <mat-card-subtitle fxFlex="none">{{project.subtitle}}</mat-card-subtitle>
-        </mat-card>
 
         <div></div>
     </mat-card>

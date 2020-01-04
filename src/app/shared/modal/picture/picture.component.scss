@@ -2,8 +2,9 @@ img {
     display: block;
     max-width: 90vw;
     max-height: 90vh;
-    min-width: 85vw;
+    width: auto;
     min-height: 85vh;
+    object-fit: contain;
     &:hover {
         cursor: zoom-out;
     }

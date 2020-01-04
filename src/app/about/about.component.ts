@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { FileDownloadService } from '../core/service/file-download.service';
+import { AboutModel } from '../shared/models/about.model';
 
 @Component({
   selector: 'app-about',
@@ -9,7 +10,7 @@ import { FileDownloadService } from '../core/service/file-download.service';
 })
 export class AboutComponent implements OnInit {
 
-  data: any;
+  data: AboutModel;
   loading = true;
 
   constructor(
@@ -19,7 +20,7 @@ export class AboutComponent implements OnInit {
 
   ngOnInit() {
     this.httpService.get(`./assets/json/about.json`).subscribe(
-      (data: any[]) => {
+      (data: AboutModel) => {
         this.data = data;
         this.loading = false;
       }
