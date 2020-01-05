@@ -1,23 +1,26 @@
 <div class="display-container card-container">
-    
 
-    <mat-card *ngIf="!loading else loadingGif" fxLayout="row wrap" fxLayoutAlign="center" style="margin: 16px;">
-        
+
+    <mat-card *ngIf="!loading else loadingGif" fxLayout="column" fxLayoutAlign="center center" style="margin: 16px;">
+
         <div></div>
-        <app-tmpl-wrapper class="title-width" [section]="{ type: 'header', text: 'Projects', noPadding: true}"></app-tmpl-wrapper>
-        
-        <mat-card *ngFor="let project of projectList" appMaterialElevation class="project-outer project-card"
-            [routerLink]="'/project/'+project.id" fxLayout="column">
+        <app-tmpl-wrapper class="title-width" [section]="{ type: 'header', text: 'Blog Posts', noPadding: true}">
+        </app-tmpl-wrapper>
 
-            <img *ngIf="project.comingSoon" src="assets/images/coming-soon.png" alt="coming soon banner" class="coming-soon">
+        <mat-card *ngFor="let blog of blogList" appMaterialElevation class="blog-outer blog-card"
+            [routerLink]="'/blog/'+blog.id" fxLayout="row">
 
-            <img fxFlex="200px" [src]="'assets/content/' + project.id + '/' + project.image" [alt]="project.imageAlt" width="100%"
-                class="image">
-
-            <div fxFlex="16px"></div>
-
-            <mat-card-title fxFlex="none">{{project.title}}</mat-card-title>
-            <mat-card-subtitle fxFlex="none">{{project.subtitle}}</mat-card-subtitle>
+            <div fxLayout="column" fxFlex>
+                <mat-card-title fxFlex="none">{{blog.title}}</mat-card-title>
+                <mat-card-subtitle fxFlex="none">{{blog.subtitle}}</mat-card-subtitle>
+                <p style="margin: 0;">Author: {{blog.author}}</p>
+            </div>
+            <div fxLayout="column">
+                <mat-card-title>{{blog.date}}</mat-card-title>
+                <mat-chip-list *ngFor="let tag of blog.tags">
+                    <mat-chip>{{tag}}</mat-chip>
+                </mat-chip-list>
+            </div>
         </mat-card>
 
         <div></div>

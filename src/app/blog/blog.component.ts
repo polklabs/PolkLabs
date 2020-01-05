@@ -32,7 +32,7 @@ export class BlogComponent implements OnInit {
 
     this.route.params.subscribe(params => {
       this.id = params.id;
-      this.httpService.get(`./assets/json/${params.id}.json`).pipe(take(1)).subscribe(
+      this.httpService.get(`./assets/json/blogs/${params.id}.json`).pipe(take(1)).subscribe(
         (data: any) => {
           if (data !== undefined) {
             this.data = data;
@@ -67,7 +67,7 @@ export class BlogComponent implements OnInit {
   }
 
   loadProjectLinks() {
-    this.httpService.get(`./assets/json/projectList.json`).pipe(take(1)).subscribe(
+    this.httpService.get(`./assets/json/blogList.json`).pipe(take(1)).subscribe(
       (data: any[]) => {
         const projectList = data.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
         const currentIndex = projectList.findIndex(x => x.id === this.id);

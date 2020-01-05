@@ -2,44 +2,17 @@
     fxLayoutAlign="center start" id="home">
 
     <div class="display-container">
-        <!-- Header -->
-        <div class="bgimg grayscale-min"
-            [style.background-image]="'url(' + 'assets/content/' + id + '/' + data.bgimg + ')'">
-            <div class="display-middle center">
-                <span class="text-white jumbo tag" style="font-family:'Limelight', cursive">{{data.title}}</span>
-            </div>
-        </div>
-
         <mat-card>
 
-            <!-- Page Links -->
-            <mat-toolbar fxLayout="row wrap" fxLayoutAlign="space-evenly" class="sticky-toolbar">
-                <div *ngFor="let section of sectionTitles">
-                    <a routerLink="." fragment="{{getId(section)}}" class="page-link">{{section}}</a>
-                </div>
-            </mat-toolbar>
-
-            <div class="width">
-                <!-- Link Buttons -->
-                <div class="center" style="padding-top: 32px;" fxLayout="row" fxLayoutGap="16px"
-                    fxLayoutAlign="center center">
-                    <button mat-raised-button appMaterialElevation (click)="openPage(data.demo)" type="button"
-                        [disabled]="data.demo === ''" class="link-button">
-                        <i class="fa fa-spinner link-icon"></i>Try It Out
-                    </button>
-                    <button mat-raised-button appMaterialElevation (click)="openPage(data.github)" type="button"
-                        [disabled]="data.github === ''" class="link-button">
-                        <i class="fab fa-github link-icon"></i>The Repo
-                    </button>
-                </div>
-            </div>
+            <mat-card-title style="font-size: 36px; text-align: center;">{{data.title}}</mat-card-title>
+            <mat-card-subtitle style="text-align: center;"><pre>{{data.author}}  •  {{data.date}}  •  {{data.category}}</pre></mat-card-subtitle>
 
             <!-- Sections -->
             <div *ngFor="let section of data.sections">
                 <app-tmpl-wrapper [section]="section" [id]="id"></app-tmpl-wrapper>
             </div>
 
-            <app-tmpl-wrapper class="title-width" [section]="{ type: 'header', text: 'Some of my other work'}"></app-tmpl-wrapper>
+            <!-- <app-tmpl-wrapper class="title-width" [section]="{ type: 'header', text: 'Some of my other work'}"></app-tmpl-wrapper>
 
             <div fxLayout="row wrap" fxLayoutAlign="center">
                 <mat-card *ngFor="let project of projectList" appMaterialElevation class="project-outer project-card"
@@ -55,7 +28,7 @@
                     <mat-card-title fxFlex="none">{{project.title}}</mat-card-title>
                     <mat-card-subtitle fxFlex="none">{{project.subtitle}}</mat-card-subtitle>
                 </mat-card>
-            </div>
+            </div> -->
 
         </mat-card>
     </div>

@@ -8,7 +8,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class BlogsComponent implements OnInit {
 
-  projectList: any;
+  blogList: any;
   loading = true;
 
   constructor(
@@ -17,10 +17,10 @@ export class BlogsComponent implements OnInit {
 
   ngOnInit() {
 
-    this.httpService.get(`./assets/json/projectList.json`).subscribe(
+    this.httpService.get(`./assets/json/blogList.json`).subscribe(
       (data: any[]) => {
         if (data !== undefined) {
-          this.projectList = data.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+          this.blogList = data.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
           this.loading = false;
         }
       }
