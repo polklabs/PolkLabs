@@ -1,6 +1,6 @@
 <div class="width" id="{{getId(section.text)}}">
     <!-- Version 1 -->
-    <h2 *ngIf="section.text" class="border-light-gray padding-64 border-bottom" style="text-align: center; font-size: 30px;">{{section.text}}</h2>
+    <h2 *ngIf="section.text" class="border-light-gray border-bottom" [ngClass]="!section.noPadding ? 'padding-64' : ''" style="text-align: center; font-size: 30px;">{{section.text}}</h2>
     
     <!-- Version 2 - Only works on chrome -->
     <!-- <div class="sectionHeader" [ngClass]="!section.noPadding ? 'padding-64' : ''">

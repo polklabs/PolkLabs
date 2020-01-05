@@ -10,5 +10,6 @@ export class FieldsetTmplComponent {
 
   @Input() section: FieldsetModel;
   @Input() id: string;
+  @Input() project: boolean = false;
 
 }

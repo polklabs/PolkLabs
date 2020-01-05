@@ -10,5 +10,6 @@ export class GridTmplComponent {
 
   @Input() section: GridModel;
   @Input() id: string;
+  @Input() project: boolean = false;
 
 }

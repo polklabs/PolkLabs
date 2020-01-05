@@ -10,5 +10,6 @@ export class VideoTmplComponent {
 
   @Input() section: VideoModel;
   @Input() id: string;
+  @Input() project: boolean = false;
 
 }

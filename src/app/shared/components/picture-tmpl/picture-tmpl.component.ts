@@ -12,6 +12,7 @@ export class PictureTmplComponent {
 
   @Input() section: PictureModel;
   @Input() id: string;
+  @Input() project: boolean = false;
 
   constructor(
     private dialog: MatDialog

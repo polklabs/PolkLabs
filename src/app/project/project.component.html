@@ -1,3 +1,4 @@
+<div id="top"></div>
 <div *ngIf="data" style="margin: auto; margin-top: 16px; margin-bottom: 16px;" fxLayout="row"
     fxLayoutAlign="center start" id="home">
 
@@ -36,9 +37,11 @@
 
             <!-- Sections -->
             <div *ngFor="let section of data.sections">
-                <app-tmpl-wrapper [section]="section" [id]="id"></app-tmpl-wrapper>
+                <app-tmpl-wrapper [section]="section" [id]="id" [project]="true"></app-tmpl-wrapper>
             </div>
 
+
+            <!-- Other Project Section -->
             <app-tmpl-wrapper class="title-width" [section]="{ type: 'header', text: 'Some of my other work'}"></app-tmpl-wrapper>
 
             <div fxLayout="row wrap" fxLayoutAlign="center">

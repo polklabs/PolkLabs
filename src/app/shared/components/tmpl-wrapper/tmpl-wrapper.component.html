@@ -2,7 +2,7 @@
 
 <!-- Section Template -->
 <ng-template #sectionTmpl let-item="item">
-    <app-tmpl-wrapper *ngFor="let t of item.items" [section]="t" [id]="id"></app-tmpl-wrapper>
+    <app-tmpl-wrapper *ngFor="let t of item.items" [section]="t" [id]="id" [project]="project"></app-tmpl-wrapper>
 </ng-template>
 
 <!-- Header Template -->
@@ -22,12 +22,12 @@
 
 <!-- Picture Template -->
 <ng-template #picTmpl let-item="item">
-    <app-picture-tmpl [section]="item" [id]="id"></app-picture-tmpl>
+    <app-picture-tmpl [section]="item" [id]="id" [project]="project"></app-picture-tmpl>
 </ng-template>
 
 <!-- Grid Template -->
 <ng-template #gridTmpl let-item="item">
-    <app-grid-tmpl [section]="item" [id]="id"></app-grid-tmpl>
+    <app-grid-tmpl [section]="item" [id]="id" [project]="project"></app-grid-tmpl>
 </ng-template>
 
 <!-- Dictionary Template -->
@@ -37,7 +37,7 @@
 
 <!-- Fieldset Template -->
 <ng-template #fieldTmpl let-item="item">
-    <app-fieldset-tmpl [section]="item" [id]="id"></app-fieldset-tmpl>
+    <app-fieldset-tmpl [section]="item" [id]="id" [project]="project"></app-fieldset-tmpl>
 </ng-template>
 
 <!-- Code Template -->
@@ -52,7 +52,7 @@
 
 <!-- Video Template -->
 <ng-template #videoTmpl let-item="item">
-    <app-video-tmpl [section]="item" [id]="id"></app-video-tmpl>
+    <app-video-tmpl [section]="item" [id]="id" [project]="project"></app-video-tmpl>
 </ng-template>
 
 <!-- Video Template -->

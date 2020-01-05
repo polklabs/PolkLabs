@@ -31,6 +31,13 @@ export class ProjectComponent implements OnInit, AfterViewChecked {
   ngOnInit() {
 
     this.route.params.subscribe(params => {
+
+      let top = document.getElementById('top');
+      if (top !== null) {
+        top.scrollIntoView();
+        top = null;
+      }
+
       this.id = params.id;
       this.httpService.get(`./assets/json/projects/${params.id}.json`).pipe(take(1)).subscribe(
         (data: any) => {
