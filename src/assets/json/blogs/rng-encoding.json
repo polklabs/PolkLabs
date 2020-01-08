@@ -5,32 +5,50 @@
     "date": "January 4, 2020",
     "category": "Python",
     "sections": [
-		{
-			"type": "header",
-			"text": "Project Title",
-            "noPadding": true
-		},
         {
             "type": "text",
-            "title": "Title",
-			"subtitle": "Subtitle",
+			"subtitle": "Disclaimer:",
             "text": [
-                "This is an example paragraph.",
-				"Another example paragraph."
+                "This is the one of the worst encoding/encryption schemes you could possibly use. Do not under any circumstances use this for more than just learning python."
             ]
         },
         {
-            "type": "dict",
-            "keyValue": [
-                {
-                    "key": "Bold",
-                    "value": "Regular"
-                },
-                {
-                    "key": "Type",
-                    "value": "Object"
-                }
+            "type": "header",
+            "text": "The Idea"
+        },
+        {
+            "type": "text",
+            "text": [
+                "Some text here"
             ]
+        },
+        {
+            "type": "header",
+            "text": "The Encoder"
+        },
+        {
+            "type": "code",
+            "code": "import random\nimport time\n\ndef toOrd(c):\n\treturn ord(c)\n\ndef getRandChar():\n\treturn random.randint(0, 127)\n\ndef findSequence(i, text):\n\trand = getRandChar()\n\ti += 1\n\twhile rand is not text[0]:\n\t\trand = getRandChar()\n\t\ti += 1\n\ti_ext = 0\n\tfor c in text[1:]:\n\t\ti_ext += 1\n\t\tif getRandChar() is not c:\n\t\t\treturn (i + i_ext, False)\n\treturn (i, True)\n\ndef encodeChunk(text):\n\ti = 0\n\tfound = False\n\twhile not found:\n\t\tresult = findSequence(i, text)\n\t\ti = result[0]\n\t\tfound = result[1]\n\treturn i-1\n\ndef encode(textRaw, seed=0):\n\trandom.seed(seed)\n\t\n\tprint('Encoding: \"' + textRaw + '\"\\n')\n\n\t#Padd text so it is a multiple of 3\n\twhile len(textRaw) % 3 != 0:\n\t\ttextRaw += chr(0)\n\n\t#Convert to list of number values\n\ttext = list(textRaw)\n\ttext = list(map(toOrd, text))\n\n\ttotalTime = 0\n\n\t#Loop through list 3 characters at a time\n\toutput = []\n\tfor i in range(0, len(text), 3):\n\t\tprint('Chunk: \"' + textRaw[i:i+3] + '\"', end=\"\")\n\n\t\tstart = time.time()\n\t\toutput.append(encodeChunk(text[i:i+3]))\n\t\tend = time.time()\n\t\tprint(\" => \" + str(output[-1]), end=\"\")\n\t\tprint(\" : Search Time: \" + str(end - start) + 's')\n\t\ttotalTime += end - start\n\n\tprint('\\nEncoding time: ' + str(totalTime) + 's')\n\n\t#Generate string to be sent into decoder\n\toffsetString = ''\n\tfor offset in output:\n\t\toffsetString += str(offset) + ','\n\tprint('Offset: ' + offsetString[:-1])\n\treturn offsetString[:-1]\n\nif __name__== \"__main__\":\n\ttextRaw = input('Enter text to encode: ')\n\tencode(textRaw)\n",
+            "language": [
+                "python"
+            ],
+            "filename": "RandEncoder.py"
+        },
+        {
+            "type": "header",
+            "text": "The Decoder"
+        },
+        {
+            "type": "code",
+            "code": "import random\nimport time\n\ndef getRandChar():\n\treturn random.randint(0, 127)\n\ndef decode(offsets, seed=0):\n\trandom.seed(seed)\n\n\toffsets = offsets.split(',')\n\tchars = 3\n\n\tresult = ''\n\n\tstart = time.time()\n\n\tfor offset in offsets:\n\t\tfor i in range(int(offset)):\n\t\t\tgetRandChar()\n\n\t\t\ttext = ''\n\t\t\tfor i in range(chars):\n\t\t\t\ttext += chr(getRandChar())\n\t\t\tprint(text, end=\"\")\n\t\t\tresult += text\n\tend = time.time()\n\tprint('\\nDecoding time: ' + str(end - start))\n\treturn result\n\nif __name__== \"__main__\":\n\toffsets = input('Enter offset: ')\n\tdecode(offsets)",
+            "language": [
+                "python"
+            ],
+            "filename": "RandDecoder.py"
+        },
+        {
+            "type": "header",
+            "text": "Putting it all together"
         }
     ]
 }
