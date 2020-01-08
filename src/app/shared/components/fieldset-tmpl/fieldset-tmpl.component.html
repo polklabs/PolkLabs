@@ -1,6 +1,6 @@
 <fieldset class="width-fieldset">
     <legend>{{section.legend}}</legend>
     <div *ngFor="let item of section.items">
-        <app-tmpl-wrapper [section]="item" [id]="id"></app-tmpl-wrapper>
+        <app-tmpl-wrapper [section]="item" [id]="id" [project]="project"></app-tmpl-wrapper>
     </div>
 </fieldset>

@@ -1,0 +1,36 @@
+{
+    "id": "rng-encoding",
+    "title": "Worst Encoding Scheme Ever",
+    "author": "Andrew Polk",
+    "date": "January 4, 2020",
+    "category": "Python",
+    "sections": [
+		{
+			"type": "header",
+			"text": "Project Title",
+            "noPadding": true
+		},
+        {
+            "type": "text",
+            "title": "Title",
+			"subtitle": "Subtitle",
+            "text": [
+                "This is an example paragraph.",
+				"Another example paragraph."
+            ]
+        },
+        {
+            "type": "dict",
+            "keyValue": [
+                {
+                    "key": "Bold",
+                    "value": "Regular"
+                },
+                {
+                    "key": "Type",
+                    "value": "Object"
+                }
+            ]
+        }
+    ]
+}

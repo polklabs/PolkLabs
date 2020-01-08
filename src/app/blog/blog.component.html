@@ -1,0 +1,36 @@
+<div *ngIf="data" style="margin: auto; margin-top: 16px; margin-bottom: 16px;" fxLayout="row"
+    fxLayoutAlign="center start" id="home">
+
+    <div class="display-container">
+        <mat-card>
+
+            <mat-card-title style="font-size: 36px; text-align: center;">{{data.title}}</mat-card-title>
+            <mat-card-subtitle style="text-align: center;"><pre>{{data.author}}  •  {{data.date}}  •  {{data.category}}</pre></mat-card-subtitle>
+
+            <!-- Sections -->
+            <div *ngFor="let section of data.sections">
+                <app-tmpl-wrapper [section]="section" [id]="id"></app-tmpl-wrapper>
+            </div>
+
+            <!-- <app-tmpl-wrapper class="title-width" [section]="{ type: 'header', text: 'Some of my other work'}"></app-tmpl-wrapper>
+
+            <div fxLayout="row wrap" fxLayoutAlign="center">
+                <mat-card *ngFor="let project of projectList" appMaterialElevation class="project-outer project-card"
+                    [routerLink]="'/project/'+project.id" fxLayout="column">
+
+                    <img *ngIf="project.comingSoon" src="assets/images/coming-soon.png" alt="coming soon banner" class="coming-soon">
+                    
+                    <img fxFlex="200px" [src]="'assets/content/' + project.id + '/' + project.image" [alt]="project.imageAlt" width="100%"
+                        class="image">
+
+                    <div fxFlex="16px"></div>
+
+                    <mat-card-title fxFlex="none">{{project.title}}</mat-card-title>
+                    <mat-card-subtitle fxFlex="none">{{project.subtitle}}</mat-card-subtitle>
+                </mat-card>
+            </div> -->
+
+        </mat-card>
+    </div>
+
+</div>

@@ -1,10 +1,11 @@
+<div id="top"></div>
 <div *ngIf="data" style="margin: auto; margin-top: 16px; margin-bottom: 16px;" fxLayout="row"
     fxLayoutAlign="center start" id="home">
 
     <div class="display-container">
         <!-- Header -->
         <div class="bgimg grayscale-min"
-            [style.background-image]="'url(' + 'assets/content/' + id + '/' + data.bgimg + ')'">
+            [style.background-image]="'url(' + 'assets/content/projects/' + id + '/' + data.bgimg + ')'">
             <div class="display-middle center">
                 <span class="text-white jumbo tag" style="font-family:'Limelight', cursive">{{data.title}}</span>
             </div>
@@ -32,39 +33,24 @@
                         <i class="fab fa-github link-icon"></i>The Repo
                     </button>
                 </div>
-                <!-- <div fxLayout="row" *ngIf="data.languages.length > 0">
-                    <p>Languages: </p>
-                    <mat-chip-list style="margin: 12px;">
-                        <mat-chip *ngFor="let chip of data.languages">{{chip}}</mat-chip>
-                    </mat-chip-list>
-                </div>
-
-                <div fxLayout="row" *ngIf="data.technologies.length > 0">
-                    <p>Technologies: </p>
-                    <mat-chip-list style="margin: 12px;">
-                        <mat-chip *ngFor="let chip of data.technologies">{{chip}}</mat-chip>
-                    </mat-chip-list>
-                </div>
-
-                <div fxLayout="row" *ngIf="data.hardware.length > 0">
-                    <p>Hardware: </p>
-                    <mat-chip-list style="margin: 12px;">
-                        <mat-chip *ngFor="let chip of data.hardware">{{chip}}</mat-chip>
-                    </mat-chip-list>
-                </div> -->
             </div>
 
             <!-- Sections -->
             <div *ngFor="let section of data.sections">
-                <app-tmpl-wrapper [section]="section" [id]="id"></app-tmpl-wrapper>
+                <app-tmpl-wrapper [section]="section" [id]="id" [project]="true"></app-tmpl-wrapper>
             </div>
 
+
+            <!-- Other Project Section -->
             <app-tmpl-wrapper class="title-width" [section]="{ type: 'header', text: 'Some of my other work'}"></app-tmpl-wrapper>
 
             <div fxLayout="row wrap" fxLayoutAlign="center">
                 <mat-card *ngFor="let project of projectList" appMaterialElevation class="project-outer project-card"
                     [routerLink]="'/project/'+project.id" fxLayout="column">
-                    <img fxFlex="200px" [src]="'assets/content/' + project.id + '/' + project.image" [alt]="project.imageAlt" width="100%"
+
+                    <img *ngIf="project.comingSoon" src="assets/images/coming-soon.png" alt="coming soon banner" class="coming-soon">
+                    
+                    <img fxFlex="200px" [src]="'assets/content/projects/' + project.id + '/' + project.image" [alt]="project.imageAlt" width="100%"
                         class="image">
 
                     <div fxFlex="16px"></div>

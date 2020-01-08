@@ -1,14 +1,14 @@
-import { Component, OnInit, AfterViewChecked, HostListener } from '@angular/core';
+import { Component, OnInit, HostListener } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { ActivatedRoute } from '@angular/router';
 import { take } from 'rxjs/operators';
 
 @Component({
-  selector: 'app-project',
-  templateUrl: './project.component.html',
-  styleUrls: ['./project.component.scss']
+  selector: 'app-blog',
+  templateUrl: './blog.component.html',
+  styleUrls: ['./blog.component.scss']
 })
-export class ProjectComponent implements OnInit, AfterViewChecked {
+export class BlogComponent implements OnInit {
 
   id: string;
   data: any;
@@ -31,15 +31,8 @@ export class ProjectComponent implements OnInit, AfterViewChecked {
   ngOnInit() {
 
     this.route.params.subscribe(params => {
-
-      let top = document.getElementById('top');
-      if (top !== null) {
-        top.scrollIntoView();
-        top = null;
-      }
-
       this.id = params.id;
-      this.httpService.get(`./assets/json/projects/${params.id}.json`).pipe(take(1)).subscribe(
+      this.httpService.get(`./assets/json/blogs/${params.id}.json`).pipe(take(1)).subscribe(
         (data: any) => {
           if (data !== undefined) {
             this.data = data;
@@ -74,7 +67,7 @@ export class ProjectComponent implements OnInit, AfterViewChecked {
   }
 
   loadProjectLinks() {
-    this.httpService.get(`./assets/json/projectList.json`).pipe(take(1)).subscribe(
+    this.httpService.get(`./assets/json/blogList.json`).pipe(take(1)).subscribe(
       (data: any[]) => {
         const projectList = data.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
         const currentIndex = projectList.findIndex(x => x.id === this.id);
@@ -110,5 +103,4 @@ export class ProjectComponent implements OnInit, AfterViewChecked {
   getId(text: string) {
     return text.replace(/\ /g, '');
   }
-
 }

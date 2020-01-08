@@ -40,6 +40,13 @@ body {
     min-width: 250px;
 }
 
+.blog-outer {
+    margin: 16px;
+    width: 900px;
+    min-width: 250px;
+    max-width: 100%;
+}
+
 .display-container {
     max-width: 1218px;
     width: 1218px;
@@ -69,4 +76,12 @@ mat-tooltip-component > .mat-tooltip {
 
 mat-card {
     margin: 8px !important;
+}
+
+.coming-soon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 100%;
 }

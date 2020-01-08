@@ -1,6 +1,6 @@
 <div  class="" style="padding: 32px; width: auto; margin: auto;">
     <video controls class="video-size">
-        <source [src]="'assets/content/' + id + '/' + section.src" [type]="section.srcType">
+        <source [src]="'assets/content/' + (project ? 'projects' : 'blogs') + '/' + id + '/' + section.src" [type]="section.srcType">
         Sorry, your browser doesn't support embedded videos.
     </video>
 </div>

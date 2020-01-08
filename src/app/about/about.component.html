@@ -4,19 +4,19 @@
 
 <ng-template #content>
     <mat-card class="display-container about-container" style="margin: auto !important;">
-        <div fxLayout="row wrap" fxLayoutGap="16px" fxLayoutAlign="center center">
+        <div fxLayout="row wrap" fxLayoutAlign="center center">
 
-            <div fxFlex.xs="350px" fxFlex.sm="450px" fxFlex.gt-sm="48" style="min-width: 350px;">
+            <div fxFlex.xs="350px" fxFlex.sm="450px" fxFlex.gt-sm="48" style="min-width: 250px; padding-bottom: 32px;">
                 <mat-card-title style="font-size: 48px;">{{data.name}}</mat-card-title>
                 <mat-card-subtitle>{{data.title}}</mat-card-subtitle>
                 <p><strong>{{data.bio}}</strong></p>
-                <p>{{data.summary}}</p>
+                <p class="summary">{{data.summary}}</p>
                 <p><strong>Current Focus: </strong>{{data.currentFocus}}</p>
                 <a mat-raised-button [download]="data.resume" [href]="'assets/content/about/' + data.resume" target="_blank">Download Resume</a>
             </div>
 
-            <div fxFlex.xs="400px" fxFlex.sm="400px" fxFlex.gt-sm="48" style="min-width: 350px;" fxLayoutAlign="center center">
-                <img style="width: 375px; height: inherit; margin: auto; border-radius: 16px;" [src]="'assets/content/about/' + data.photo" alt="profile photo">
+            <div fxFlex.xs="300px" fxFlex.sm="400px" fxFlex.gt-sm="48" style="min-width: 250px;" fxLayoutAlign="center center">
+                <img style="width: 500px; height: inherit; margin: auto; border-radius: 16px; filter: saturate(0.65);" [src]="'assets/content/about/' + data.photo" alt="profile photo">
             </div>
 
         </div>
@@ -93,24 +93,6 @@
 
         </div>
 
-        <!-- Awards -->
-        <div fxLayout="column" fxLayoutGap="16px" fxLayoutAlign="center" *ngIf="data.awards.length> 0" class="mat-card-row">
-
-            <!-- <h1>Awards</h1> -->
-            <app-tmpl-wrapper [section]="{ type: 'header', text: 'Awards'}"></app-tmpl-wrapper>
-
-            <div fxLayout="row wrap" fxLayoutAlign="center">
-                <mat-card *ngFor="let award of data.awards" class="mat-elevation-z16 mat-card-awards">
-                    <mat-card-title>{{award.title}}</mat-card-title>
-                    <mat-card-subtitle>{{award.location}} | {{award.date}}</mat-card-subtitle>
-                    <ul>
-                        <li>{{award.summary}}</li>
-                    </ul>
-                </mat-card>
-            </div>
-
-        </div>
-
         <!-- Education -->
         <div fxLayout="column" fxLayoutGap="16px" fxLayoutAlign="center" *ngIf="data.education.length> 0" class="mat-card-row">
 
@@ -123,6 +105,24 @@
                     <mat-card-subtitle>{{edu.location}}</mat-card-subtitle>
                     <ul>
                         <li>{{edu.bullets}}</li>
+                    </ul>
+                </mat-card>
+            </div>
+
+        </div>
+
+        <!-- Awards -->
+        <div fxLayout="column" fxLayoutGap="16px" fxLayoutAlign="center" *ngIf="data.awards.length> 0" class="mat-card-row">
+
+            <!-- <h1>Awards</h1> -->
+            <app-tmpl-wrapper [section]="{ type: 'header', text: 'Awards'}"></app-tmpl-wrapper>
+
+            <div fxLayout="row wrap" fxLayoutAlign="center">
+                <mat-card *ngFor="let award of data.awards" class="mat-elevation-z16 mat-card-awards">
+                    <mat-card-title>{{award.title}}</mat-card-title>
+                    <mat-card-subtitle>{{award.location}} | {{award.date}}</mat-card-subtitle>
+                    <ul>
+                        <li>{{award.summary}}</li>
                     </ul>
                 </mat-card>
             </div>
