@@ -15,7 +15,7 @@
         {
             "type": "text",
             "text": [
-                "Chip Chat is an app that will allow a user to join a chat room with other users by typing in the chat room name and password if needed. People can choose from chat rooms listed, or from local chat rooms, or create their own!"
+                "The overall concept of our Chit Chat application was to create a chat server targeting mobile clients through the use of an Android app. This app allows a user to create an account using his/her email/phone number. Then, the user can start a chat with another user with an account. This is because each user has a unique user ID that relate to private and public keys for each user. This ID identifies users and their chat history. In addition, we successfully implemented the ability to send pictures within a chat. We will go more into detail on the design and implementation in the next section. The hardware that we used to test our application included a Raspberry pie for our server, a Galaxy S9+ cellular device, and a Motorola cell phone. We also created the app using Android Studio and used Java for the server."
             ]
         },
         {
@@ -45,8 +45,73 @@
         },
         {
             "type": "text",
+            "title": "Login",
             "text": [
-                "Using TCP Sockets/Server\n Can join chat room by entering a chat room name which will automatically connect you to the correct server and port number\n A third node/server will be in place where the chat rooms will be hosted\n  The server will act as a bridge between users in a chat room\n Chat room will stay open on the server as long as at least a single user is connected.\n  Saving processing power by not keeping rooms open indefinitely."
+                "When the user first opens Chit Chat, if he/she has not logged in before, the app opens to the login/register page as can be seen below in Image A). If he/she has already been logged in on the phone, the login/registration page is skipped and the user goes directly to the page that lists his/her chat conversations. If the user does not have an account, he/she can register for a new account and fill out the information as seen in Image B)."
+            ]
+        },
+        {
+            "type": "pic",
+            "src": "login-v2.jpg",
+            "alt": "Login"
+        },
+        {
+            "type": "text",
+            "title": "New Conversation",
+            "text": [
+                "A new conversation is started by pressing the new message button at the bottom of the screen and entering the recipient’s email or phone number. If the recipient does not have an account, the app will alert the user of this and no new conversation will be started. The reason for this, as stated in the introduction, is due to each user account being associated with a user ID. We implemented this using Firebase, which stores the users’ private keys, public keys, emails, and phone numbers as well as the name of the user associated with the account. The program makes a call to Firebase whenever a user tries to start a conversation with another user account to download their information. When the user successfully begins a chat with another user, the conversation will be added to the list  of the user’s other conversations as shown in Image C). When the user clicks on one of the conversations, the conversation page shown in Image D) will show up where the two users can send each other messages."
+            ]
+        },
+        {
+            "type": "grid",
+            "items": [
+                {
+                    "type": "pic",
+                    "src": "conversations.jpg",
+                    "alt": "Conversations",
+                    "width": "300px"
+                },
+                {
+                    "type": "pic",
+                    "src": "messages.jpg",
+                    "alt": "Messages",
+                    "width": "300px"
+                }
+            ]
+        },
+        {
+            "type": "text",
+            "title": "Chat History",
+            "text": [
+                "In order to store chat history, we created a Java program that runs on the server that stores a lost of all chat history. This has been encrypted client-side with a Diffie-Hellman encryption scheme and the server is only used as a middle-man between clients so the messages are secure."
+            ]
+        },
+        {
+            "type": "text",
+            "title": "Server-side Implementation",
+            "text": [
+                "Each TCP connection from the client is started in a new thread so that all conversations can run concurrently. A dictionary is used to hold the conversations. These conversations each contain message objects, which are the messages being sent. When a message is sent to the server, it is stored in a specific conversation and when another client wants to retrieve this message, he/she sends his/her userID and server will send back all the new messages the server has not relayed to them yet. The server keeps track on which messages it has delivered to the receiver so when asking for new messages, the server will only send the messages that the phone hasn’t received yet. The server also has the ability to send all messages old and new to the receiver such as for the case when a user logs in on a new device. When a user asks for notifications, the server will only send the most recent message. Finally, all the messages on the server are encrypted so the all the server knows is where to send them and not what is contained in them."
+            ]
+        },
+        {
+            "type": "text",
+            "title": "Message handling",
+            "text": [
+                "Messages are stored on the phone in a similar way as on the server, as conversation objects that are stored in dictionaries. On the physical phone, messages are stored as plaintext. Only when the phone goes to send a message to a receiver is the message encrypted. The receiver phone then decrypts it and stores the message in plaintext on its device. There is no set maximum length that a message can be other than the maximum length the phone can handle. In addition, when sending images, the image is converted into a base-64 string and saved into a message object and then sent. When the message is received, the string is converted back into a byte array that can then display the image. In general, when a message is sent, it contains a sender, receiver, encryption information, AES parameters, the actual message, and whether or not the message is an image."
+            ]
+        },
+        {
+            "type": "text",
+            "title": "Encryption",
+            "text": [
+                "In order to encrypt the messages being sent, we used a Diffie-Hellman key exchange to create a shared key. We also use AES to encrypt and decrypt the messages themselves. When a user first registers they generate 100 different Diffie-Hellman keys and upload them to firebase. When encrypting a message, the encryption method chooses two random values between 0 and 100. These values are used to decide which Diffie-Hellman keys from firebase to use for encryption. When encrypting or decrypting, if the client does not have a locally stored cache of the keys it needs, either public or private used to encrypt or decrypt, the client will pause the decryption or encryption method until it can retrieve those keys from firebase and complete the encryption. Encrypting with the keys from Firebase allows encrypted messages that have been sent to be decrypted later by the sender rather than only the decrypted by the set receiver."
+            ]
+        },
+        {
+            "type": "text",
+            "title": "Notifications",
+            "text": [
+                "Notifications appear on a user’s device as seen in Image E). Notifications are received through an Android service running in the background. This service is constantly running at all times. In addition, there is a timer set so that when the app is closed, every 60 seconds it will make a call to the server requesting any notifications or message updates. The server will then send the most recent message that hasn’t been delivered or won’t send anything at all. This server also keeps track of a hashed version of the notification to check against what it’s going to send so that if you receive a notification and haven’t opened the application, the server will not resend the notification. The server will know that you haven’t opened it yet because the hash value will be the same. When the user is in the application, notifications are blocked because the application is in the foreground."
             ]
         },
         {
