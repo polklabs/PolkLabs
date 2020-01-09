@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 import { VideoLinkModel } from '../../models/video-link.model';
 
@@ -11,6 +11,7 @@ export class VideoLinkTmplComponent implements OnInit {
 
   @Input() section: VideoLinkModel;
   @Input() edit = false;
+  @Output() updateSection = new EventEmitter<VideoLinkModel>();
 
   url: SafeResourceUrl | string = '';
 

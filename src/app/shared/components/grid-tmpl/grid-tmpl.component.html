@@ -1,5 +1,5 @@
 <div fxLayout="row wrap" fxLayoutGap="16px" fxLayoutAlign="center center" class="display-container grid">
     <div fxFlex.xs="350px" fxFlex.sm="350px" fxFlex.md="48" fxFlex.lg="48" *ngFor="let item of section.items" style="min-width: 350px;">
-        <app-tmpl-wrapper [section]="item" [id]="id" [project]="project" [edit]="edit"></app-tmpl-wrapper>
+        <app-tmpl-wrapper [section]="item" [id]="id" [project]="project" [edit]="edit" (updateSection)="item = $event; updateSection.emit(section)"></app-tmpl-wrapper>
     </div>
 </div>

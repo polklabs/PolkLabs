@@ -39,7 +39,7 @@
 
             <!-- Sections -->
             <div *ngFor="let section of data.sections">
-                <app-tmpl-wrapper [section]="section" [id]="id" [project]="true" [edit]="editPage"></app-tmpl-wrapper>
+                <app-tmpl-wrapper [section]="section" [id]="id" [project]="true" [edit]="editPage" (updateSection)="section = $event; printUpdate(data)"></app-tmpl-wrapper>
             </div>
 
 

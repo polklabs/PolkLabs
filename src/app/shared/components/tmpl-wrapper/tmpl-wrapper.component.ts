@@ -1,4 +1,4 @@
-import { Component, ViewChild, TemplateRef, Input } from '@angular/core';
+import { Component, ViewChild, TemplateRef, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-tmpl-wrapper',
@@ -24,9 +24,10 @@ export class TmplWrapperComponent {
   @Input() id: string;
   @Input() project = false;
   @Input() edit = false;
+  @Output() updateSection = new EventEmitter<any>();
 
   getTemplate(type: string) {
-    switch(type) {
+    switch (type) {
       case 'section':
         return this.sectionTmpl;
       case 'header':

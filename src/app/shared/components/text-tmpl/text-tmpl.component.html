@@ -1,3 +1,4 @@
+<!-- Base -->
 <div class="width" *ngIf="!edit">
     <h2 *ngIf="section.title" style="text-align: center; text-decoration: underline; font-size: 27px;">{{section.title}}
     </h2>
@@ -5,7 +6,9 @@
     <p *ngFor="let item of section.text" style="white-space: pre-wrap;">{{item}}</p>
 </div>
 
+<!-- Show when editing -->
 <div class="width" *ngIf="edit" style="border: 1px lightgray solid; padding: 4px; margin-top: 4px; margin-bottom: 4px;">
+    <button mat-raised-button (click)="updateSection.emit(section)">Update</button>
     <div fxLayout="row" fxLayoutAlign="center">
         <mat-form-field style="width: 50%;">
             <input matInput placeholder="Title" [(ngModel)]="section.title">
@@ -26,6 +29,6 @@
             cdkAutosizeMaxRows="100"
             placeholder="Paragraph"
             [value]="item"
-            (ngModel)="section.text[i]"></textarea>
+            (change)="section.text[i] = $event.target.value"></textarea>
     </mat-form-field>
 </div>

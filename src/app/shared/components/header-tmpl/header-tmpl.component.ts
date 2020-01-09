@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { HeaderModel } from '../../models/header.model';
 
 @Component({
@@ -10,6 +10,7 @@ export class HeaderTmplComponent {
 
   @Input() section: HeaderModel;
   @Input() edit = false;
+  @Output() updateSection = new EventEmitter<HeaderModel>();
 
   getId(text: string) {
     return text.replace(/\ /g, '');

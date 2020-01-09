@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 import { HTMLModel } from '../../models/html.model';
 
@@ -11,6 +11,7 @@ export class HtmlTmplComponent {
 
   @Input() section: HTMLModel;
   @Input() edit = false;
+  @Output() updateSection = new EventEmitter<HTMLModel>();
 
   constructor(
     private sanitizer: DomSanitizer

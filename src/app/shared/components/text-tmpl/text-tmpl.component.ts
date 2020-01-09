@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { TextModel } from '../../models/text.model';
 
 @Component({
@@ -10,5 +10,6 @@ export class TextTmplComponent {
 
   @Input() section: TextModel;
   @Input() edit = false;
+  @Output() updateSection = new EventEmitter<TextModel>();
 
 }

@@ -2,7 +2,7 @@
     <mat-card class="mat-elevation-z6">
         <div fxLayout="row" class="code-title">
             <mat-card-title fxFlex style="padding-top: 6px">{{section.filename}}</mat-card-title>
-            <button mat-raised-button style="margin-bottom: 8px;" ngxClipboard [cbContent]="section.code" (click)="openSnackBar('Copied to clipboard!')">Copy</button>
+            <button mat-raised-button style="margin-bottom: 8px;" ngxClipboard [cbContent]="section.code" (click)="copied = true">{{copied ? 'Copied!' : 'Copy'}}</button>
         </div>
         <pre style="margin-top: 0;"><code [highlight]="section.code" [languages]="section.language" [lineNumbers]="true"></code></pre>
     </mat-card>

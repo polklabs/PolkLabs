@@ -115,4 +115,8 @@ export class ProjectComponent implements OnInit, AfterViewChecked {
     return text.replace(/\ /g, '');
   }
 
+  printUpdate(output: any) {
+    console.log(output);
+  }
+
 }

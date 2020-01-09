@@ -1,4 +1,4 @@
-import { Component, ViewChild, TemplateRef, Input } from '@angular/core';
+import { Component, ViewChild, TemplateRef, Input, Output, EventEmitter } from '@angular/core';
 import { FieldsetModel } from '../../models/fieldset.model';
 
 @Component({
@@ -12,5 +12,6 @@ export class FieldsetTmplComponent {
   @Input() id: string;
   @Input() project = false;
   @Input() edit = false;
+  @Output() updateSection = new EventEmitter<FieldsetModel>();
 
 }

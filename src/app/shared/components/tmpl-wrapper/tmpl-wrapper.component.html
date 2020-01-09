@@ -2,60 +2,60 @@
 
 <!-- Section Template -->
 <ng-template #sectionTmpl let-item="item">
-    <app-tmpl-wrapper *ngFor="let t of item.items" [section]="t" [id]="id" [project]="project" [edit]="edit"></app-tmpl-wrapper>
+    <app-tmpl-wrapper *ngFor="let t of item.items" [section]="t" [id]="id" [project]="project" [edit]="edit" (updateSection)="t = $event; updateSection.emit(section)"></app-tmpl-wrapper>
 </ng-template>
 
 <!-- Header Template -->
 <ng-template #headerTmpl let-item="item">
-    <app-header-tmpl [section]="item" [edit]="edit"></app-header-tmpl>
+    <app-header-tmpl [section]="item" [edit]="edit" (updateSection)="item = $event; updateSection.emit(section)"></app-header-tmpl>
 </ng-template>
 
 <!-- Text Template -->
 <ng-template #textTmpl let-item="item">
-    <app-text-tmpl [section]="item" [edit]="edit"></app-text-tmpl>
+    <app-text-tmpl [section]="item" [edit]="edit" (updateSection)="item = $event; updateSection.emit(section)"></app-text-tmpl>
 </ng-template>
 
 <!-- List Template -->
 <ng-template #listTmpl let-item="item">
-    <app-list-tmpl [section]="item" [edit]="edit"></app-list-tmpl>
+    <app-list-tmpl [section]="item" [edit]="edit" (updateSection)="item = $event; updateSection.emit(section)"></app-list-tmpl>
 </ng-template>
 
 <!-- Picture Template -->
 <ng-template #picTmpl let-item="item">
-    <app-picture-tmpl [section]="item" [id]="id" [project]="project" [edit]="edit"></app-picture-tmpl>
+    <app-picture-tmpl [section]="item" [id]="id" [project]="project" [edit]="edit" (updateSection)="item = $event; updateSection.emit(section)"></app-picture-tmpl>
 </ng-template>
 
 <!-- Grid Template -->
 <ng-template #gridTmpl let-item="item">
-    <app-grid-tmpl [section]="item" [id]="id" [project]="project" [edit]="edit"></app-grid-tmpl>
+    <app-grid-tmpl [section]="item" [id]="id" [project]="project" [edit]="edit" (updateSection)="item = $event; updateSection.emit(section)"></app-grid-tmpl>
 </ng-template>
 
 <!-- Dictionary Template -->
 <ng-template #dictTmpl let-item="item">
-    <app-dict-tmpl [section]="item" [edit]="edit"></app-dict-tmpl>
+    <app-dict-tmpl [section]="item" [edit]="edit" (updateSection)="item = $event; updateSection.emit(section)"></app-dict-tmpl>
 </ng-template>
 
 <!-- Fieldset Template -->
 <ng-template #fieldTmpl let-item="item">
-    <app-fieldset-tmpl [section]="item" [id]="id" [project]="project" [edit]="edit"></app-fieldset-tmpl>
+    <app-fieldset-tmpl [section]="item" [id]="id" [project]="project" [edit]="edit" (updateSection)="item = $event; updateSection.emit(section)"></app-fieldset-tmpl>
 </ng-template>
 
 <!-- Code Template -->
 <ng-template #codeTmpl let-item="item">
-    <app-code-tmpl [section]="item" [edit]="edit"></app-code-tmpl>
+    <app-code-tmpl [section]="item" [edit]="edit" (updateSection)="item = $event; updateSection.emit(section)"></app-code-tmpl>
 </ng-template>
 
 <!-- HTML Template -->
 <ng-template #htmlTmpl let-item="item">
-    <app-html-tmpl [section]="item" [edit]="edit"></app-html-tmpl>
+    <app-html-tmpl [section]="item" [edit]="edit" (updateSection)="item = $event; updateSection.emit(section)"></app-html-tmpl>
 </ng-template>
 
 <!-- Video Template -->
 <ng-template #videoTmpl let-item="item">
-    <app-video-tmpl [section]="item" [id]="id" [project]="project" [edit]="edit"></app-video-tmpl>
+    <app-video-tmpl [section]="item" [id]="id" [project]="project" [edit]="edit" (updateSection)="item = $event; updateSection.emit(section)"></app-video-tmpl>
 </ng-template>
 
 <!-- Video Template -->
 <ng-template #videoLinkTmpl let-item="item">
-    <app-video-link-tmpl [section]="item" [edit]="edit"></app-video-link-tmpl>
+    <app-video-link-tmpl [section]="item" [edit]="edit" (updateSection)="item = $event; updateSection.emit(section)"></app-video-link-tmpl>
 </ng-template>

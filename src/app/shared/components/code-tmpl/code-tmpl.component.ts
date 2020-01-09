@@ -1,6 +1,5 @@
-import { Component, Input, ViewEncapsulation } from '@angular/core';
+import { Component, Input, ViewEncapsulation, Output, EventEmitter } from '@angular/core';
 import { CodeModel } from '../../models/code.model';
-import { MatSnackBar } from '@angular/material';
 
 @Component({
   selector: 'app-code-tmpl',
@@ -12,13 +11,10 @@ export class CodeTmplComponent {
 
   @Input() section: CodeModel;
   @Input() edit = false;
+  @Output() updateSection = new EventEmitter<CodeModel>();
 
-  constructor(
-    private snackBar: MatSnackBar,
-  ) {}
+  copied = false;
 
-  openSnackBar(message: string) {
-    this.snackBar.open(message, 'OK', { duration: 2000, verticalPosition: 'bottom'});
-  }
+  constructor() {}
 
 }
