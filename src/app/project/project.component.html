@@ -20,6 +20,8 @@
                 </div>
             </mat-toolbar>
 
+            <mat-slide-toggle *ngIf="!production" [(ngModel)]="editPage">Edit</mat-slide-toggle>
+
             <div class="width">
                 <!-- Link Buttons -->
                 <div class="center" style="padding-top: 32px;" fxLayout="row" fxLayoutGap="16px"
@@ -37,7 +39,7 @@
 
             <!-- Sections -->
             <div *ngFor="let section of data.sections">
-                <app-tmpl-wrapper [section]="section" [id]="id" [project]="true"></app-tmpl-wrapper>
+                <app-tmpl-wrapper [section]="section" [id]="id" [project]="true" [edit]="editPage"></app-tmpl-wrapper>
             </div>
 
 

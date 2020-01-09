@@ -9,5 +9,6 @@ import { TextModel } from '../../models/text.model';
 export class TextTmplComponent {
 
   @Input() section: TextModel;
+  @Input() edit = false;
 
 }

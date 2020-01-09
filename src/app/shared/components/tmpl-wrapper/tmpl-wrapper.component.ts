@@ -22,7 +22,8 @@ export class TmplWrapperComponent {
 
   @Input() section: any;
   @Input() id: string;
-  @Input() project: boolean = false;
+  @Input() project = false;
+  @Input() edit = false;
 
   getTemplate(type: string) {
     switch(type) {

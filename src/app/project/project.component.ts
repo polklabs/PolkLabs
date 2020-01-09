@@ -2,6 +2,7 @@ import { Component, OnInit, AfterViewChecked, HostListener } from '@angular/core
 import { HttpClient } from '@angular/common/http';
 import { ActivatedRoute } from '@angular/router';
 import { take } from 'rxjs/operators';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-project',
@@ -9,6 +10,9 @@ import { take } from 'rxjs/operators';
   styleUrls: ['./project.component.scss']
 })
 export class ProjectComponent implements OnInit, AfterViewChecked {
+
+  editPage = false;
+  production = environment.production;
 
   id: string;
   data: any;

@@ -4,6 +4,7 @@ import { MaterialModule } from './material.module';
 import { HttpClientModule } from '@angular/common/http';
 import { ClipboardModule } from 'ngx-clipboard';
 import { HighlightModule } from 'ngx-highlightjs';
+import { FormsModule } from '@angular/forms';
 
 // export function getHighlightLanguages() {
 //     return {
@@ -20,6 +21,7 @@ import { HighlightModule } from 'ngx-highlightjs';
         HttpClientModule,
         ClipboardModule,
         HighlightModule,
+        FormsModule,
     ],
     exports: [
         FlexLayoutModule,
@@ -27,6 +29,7 @@ import { HighlightModule } from 'ngx-highlightjs';
         HttpClientModule,
         ClipboardModule,
         HighlightModule,
+        FormsModule,
     ],
     providers: [
     ]

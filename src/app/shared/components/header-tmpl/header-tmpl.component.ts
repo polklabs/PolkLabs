@@ -9,6 +9,7 @@ import { HeaderModel } from '../../models/header.model';
 export class HeaderTmplComponent {
 
   @Input() section: HeaderModel;
+  @Input() edit = false;
 
   getId(text: string) {
     return text.replace(/\ /g, '');

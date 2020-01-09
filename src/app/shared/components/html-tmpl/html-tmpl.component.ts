@@ -10,6 +10,7 @@ import { HTMLModel } from '../../models/html.model';
 export class HtmlTmplComponent {
 
   @Input() section: HTMLModel;
+  @Input() edit = false;
 
   constructor(
     private sanitizer: DomSanitizer

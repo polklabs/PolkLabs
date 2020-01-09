@@ -9,4 +9,6 @@ import { ListModel } from '../../models/list.model';
 export class ListTmplComponent {
 
   @Input() section: ListModel;
+  @Input() edit = false;
+  
 }

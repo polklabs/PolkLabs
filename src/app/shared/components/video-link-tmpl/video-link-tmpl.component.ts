@@ -10,6 +10,7 @@ import { VideoLinkModel } from '../../models/video-link.model';
 export class VideoLinkTmplComponent implements OnInit {
 
   @Input() section: VideoLinkModel;
+  @Input() edit = false;
 
   url: SafeResourceUrl | string = '';
 

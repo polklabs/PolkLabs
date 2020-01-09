@@ -9,5 +9,6 @@ import { DictModel } from '../../models/dict.model';
 export class DictTmplComponent {
 
   @Input() section: DictModel;
+  @Input() edit = false;
 
 }

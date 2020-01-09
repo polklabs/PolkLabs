@@ -11,6 +11,7 @@ import { MatSnackBar } from '@angular/material';
 export class CodeTmplComponent {
 
   @Input() section: CodeModel;
+  @Input() edit = false;
 
   constructor(
     private snackBar: MatSnackBar,
