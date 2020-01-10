@@ -48,7 +48,6 @@ export class ProjectComponent implements OnInit, AfterViewChecked {
           if (data !== undefined) {
             this.data = data;
             this.sectionTitles = data.sections.filter(x => x.type === 'header').map(x => x.text);
-            this.loadProjectLinks();
             this.loading = false;
           }
         }
@@ -75,36 +74,6 @@ export class ProjectComponent implements OnInit, AfterViewChecked {
   @HostListener('window:resize', ['$event'])
   onResize(event) {
     this.showCards = window.innerWidth > 1300;
-  }
-
-  loadProjectLinks() {
-    this.httpService.get(`./assets/json/projectList.json`).pipe(take(1)).subscribe(
-      (data: any[]) => {
-        const projectList = data.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
-        const currentIndex = projectList.findIndex(x => x.id === this.id);
-
-        if (currentIndex > 0) {
-          this.newerProject = projectList[currentIndex - 1];
-        } else {
-          this.newerProject = null;
-        }
-
-        if (currentIndex < projectList.length) {
-          this.olderProject = projectList[currentIndex + 1];
-        } else {
-          this.olderProject = null;
-        }
-
-        this.loadProjectList(projectList);
-      }
-    );
-  }
-
-  loadProjectList(projectList: any[]) {
-    this.projectList = projectList
-      .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
-      .filter(x => x.id !== this.id)
-      .slice(0, 3);
   }
 
   openPage(url: string) {

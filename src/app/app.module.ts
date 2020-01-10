@@ -12,6 +12,7 @@ import { AboutComponent } from './about/about.component';
 import { ProjectsComponent } from './projects/projects.component';
 import { BlogComponent } from './blog/blog.component';
 import { BlogsComponent } from './blogs/blogs.component';
+import { ProjectsSmallComponent } from './shared/projects-small/projects-small.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { BlogsComponent } from './blogs/blogs.component';
     AboutComponent,
     ProjectsComponent,
     BlogComponent,
-    BlogsComponent
+    BlogsComponent,
+    ProjectsSmallComponent
   ],
   imports: [
     BrowserAnimationsModule,

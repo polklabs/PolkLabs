@@ -25,12 +25,6 @@ export class HomeComponent implements OnInit {
       }
     );
 
-    this.httpService.get(`./assets/json/projectList.json`).subscribe(
-      (data: any) => {
-        this.projectList = data.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()).slice(0, 3);
-      }
-    );
-
     this.httpService.get(`./assets/json/blogList.json`).subscribe(
       (data: any) => {
         this.blogList = data.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()).slice(0, 3);

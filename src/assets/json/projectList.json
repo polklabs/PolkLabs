@@ -63,14 +63,5 @@
         "imageAlt": "website",
         "date": "12/11/19",
         "comingSoon": true
-    },
-    {
-        "id": "galaxy-gen",
-        "title": "Galaxy Generator",
-        "subtitle": "Pseudo random world generation",
-        "image": "card.png",
-        "imageAlt": "Galaxy",
-        "date": "01/01/20",
-        "comingSoon": true
     }
 ]
