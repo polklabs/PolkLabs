@@ -76,57 +76,14 @@
             "text": "The Results"
         },
         {
-            "type": "grid",
-            "items": [
-                {
-                    "type": "pic",
-                    "src": "Company.png",
-                    "alt": "Graph",
-                    "width": "500px",
-                    "text": "The correlation of producing company to actual ratings"
-                },
-                {
-                    "type": "pic",
-                    "src": "Actors.png",
-                    "alt": "Graph",
-                    "width": "500px",
-                    "text": "The correlation of actor's previous works to actual ratings"
-                },
-                {
-                    "type": "pic",
-                    "src": "Directors.png",
-                    "alt": "Graph",
-                    "width": "500px",
-                    "text": "The correlation of director's previous works to actual ratings"
-                },
-                {
-                    "type": "pic",
-                    "src": "Genre.png",
-                    "alt": "Graph",
-                    "width": "500px",
-                    "text": "The correlation of genre to actual ratings"
-                },
-                {
-                    "type": "pic",
-                    "src": "Producers.png",
-                    "alt": "Graph",
-                    "width": "500px",
-                    "text": "The correlation of producer's previous works to actual ratings"
-                },
-                {
-                    "type": "pic",
-                    "src": "Writers.png",
-                    "alt": "Graph",
-                    "width": "500px",
-                    "text": "The correlation of writer's previous works to actual ratings"
-                },
-                {
-                    "type": "pic",
-                    "src": "Year.png",
-                    "alt": "Graph",
-                    "width": "500px",
-                    "text": "The correlation of year to actual ratings"
-                }
+            "type": "text",
+            "text": [
+                "We split our project into multiple sprints. During the first sprint, we created a foundation for the design/planning of the project. We worked on the proof of concept for the tools we planned to use as well as determine how we would analyze whether someone is drowsy or not. Furthermore, we determined how we wanted to process images, install the framework and libraries for backend processing, and create an established workflow.",
+                "Next we beginan by working on the basic framework of the project as well as the image processing for data inputs. We also had continuous integration with GitHub and finally, we continued to test different ways of determining drowsiness.",
+                "Our third sprint consisted of us integrating individual components of the code as well as finalizing the best way to process images and determine drowsiness.", 
+                "We worked on a presentation that displayed what we had accomplished so far. We created a demo of our current project and create a plan for what we would be adding next quarter.",
+                "Our second quarter of the project started with finishing up the basic functionality of the drowsiness detector. The rest of the quarter was spent keying in the settings and preparing for our final presentation",
+                "Additional features we added were user accounts which save facial feature calibration also uploading drowsiness data where a supervisor would be able to view it."
             ]
         },
         {
