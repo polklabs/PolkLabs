@@ -1,4 +1,4 @@
-import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { PictureModel } from '../../models/picture.model';
 import { PictureComponent } from '../../modal/picture/picture.component';
 import { MatDialog } from '@angular/material';
@@ -13,8 +13,6 @@ export class PictureTmplComponent {
   @Input() section: PictureModel;
   @Input() id: string;
   @Input() project = false;
-  @Input() edit = false;
-  @Output() updateSection = new EventEmitter<PictureModel>();
 
   constructor(
     private dialog: MatDialog

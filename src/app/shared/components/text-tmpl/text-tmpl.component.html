@@ -1,34 +1,6 @@
-<!-- Base -->
-<div class="width" *ngIf="!edit">
+<div class="width">
     <h2 *ngIf="section.title" style="text-align: center; text-decoration: underline; font-size: 27px;">{{section.title}}
     </h2>
     <h2 *ngIf="section.subtitle"><em>{{section.subtitle}}</em></h2>
     <p *ngFor="let item of section.text" style="white-space: pre-wrap;">{{item}}</p>
-</div>
-
-<!-- Show when editing -->
-<div class="width" *ngIf="edit" style="border: 1px lightgray solid; padding: 4px; margin-top: 4px; margin-bottom: 4px;">
-    <button mat-raised-button (click)="updateSection.emit(section)">Update</button>
-    <div fxLayout="row" fxLayoutAlign="center">
-        <mat-form-field style="width: 50%;">
-            <input matInput placeholder="Title" [(ngModel)]="section.title">
-        </mat-form-field>
-    </div>
-
-    <div fxLayout="row">
-        <mat-form-field style="width: 50%;">
-            <input matInput placeholder="Subtitle" [(ngModel)]="section.subtitle">
-        </mat-form-field>
-    </div>
-    
-    <mat-form-field *ngFor="let item of section.text; let i = index" style="width: 100%;">
-        <textarea matInput
-            cdkTextareaAutosize
-            #autosize="cdkTextareaAutosize"
-            cdkAutosizeMinRows="1"
-            cdkAutosizeMaxRows="100"
-            placeholder="Paragraph"
-            [value]="item"
-            (change)="section.text[i] = $event.target.value"></textarea>
-    </mat-form-field>
 </div>

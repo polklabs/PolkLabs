@@ -1,4 +1,4 @@
-import { Component, Input, ViewEncapsulation, Output, EventEmitter } from '@angular/core';
+import { Component, Input, ViewEncapsulation } from '@angular/core';
 import { CodeModel } from '../../models/code.model';
 
 @Component({
@@ -10,8 +10,6 @@ import { CodeModel } from '../../models/code.model';
 export class CodeTmplComponent {
 
   @Input() section: CodeModel;
-  @Input() edit = false;
-  @Output() updateSection = new EventEmitter<CodeModel>();
 
   copied = false;
 

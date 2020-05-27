@@ -10,14 +10,5 @@
         "tags": [
             "Python"
         ]
-    },
-    {
-        "id": "pixel-matrix-game",
-        "title": "Pixel Matrix Game",
-        "subtitle": "A simple match four game on a 16x32 RGB matrix",
-        "image": "card.jpg",
-        "imageAlt": "RGB Matrix",
-        "date": "03/17/18",
-        "author": "Andrew Polk"
     }
 ]

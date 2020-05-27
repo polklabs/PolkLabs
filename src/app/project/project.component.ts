@@ -1,8 +1,8 @@
 import { Component, OnInit, AfterViewChecked, HostListener } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { ActivatedRoute } from '@angular/router';
-import { take } from 'rxjs/operators';
-import { environment } from 'src/environments/environment';
+import { take, catchError } from 'rxjs/operators';
+import { of } from 'rxjs';
 
 @Component({
   selector: 'app-project',
@@ -10,9 +10,6 @@ import { environment } from 'src/environments/environment';
   styleUrls: ['./project.component.scss']
 })
 export class ProjectComponent implements OnInit, AfterViewChecked {
-
-  editPage = false;
-  production = environment.production;
 
   id: string;
   data: any;
@@ -24,6 +21,7 @@ export class ProjectComponent implements OnInit, AfterViewChecked {
   newerProject: any = null;
 
   loading = true;
+  error = false;
 
   projectList: any;
 
@@ -43,7 +41,13 @@ export class ProjectComponent implements OnInit, AfterViewChecked {
       }
 
       this.id = params.id;
-      this.httpService.get(`./assets/json/projects/${params.id}.json`).pipe(take(1)).subscribe(
+      this.httpService.get(`./assets/json/projects/${params.id}.json`)
+        .pipe(take(1),
+          catchError(e => {
+            this.error = true;
+            return of(undefined);
+          }))
+        .subscribe(
         (data: any) => {
           if (data !== undefined) {
             this.data = data;
@@ -82,10 +86,6 @@ export class ProjectComponent implements OnInit, AfterViewChecked {
 
   getId(text: string) {
     return text.replace(/\ /g, '');
-  }
-
-  printUpdate(output: any) {
-    console.log(output);
   }
 
 }

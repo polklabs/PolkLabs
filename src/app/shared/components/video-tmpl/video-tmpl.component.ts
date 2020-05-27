@@ -1,4 +1,4 @@
-import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { VideoModel } from '../../models/video.model';
 
 @Component({
@@ -11,7 +11,5 @@ export class VideoTmplComponent {
   @Input() section: VideoModel;
   @Input() id: string;
   @Input() project = false;
-  @Input() edit = false;
-  @Output() updateSection = new EventEmitter<VideoModel>();
 
 }

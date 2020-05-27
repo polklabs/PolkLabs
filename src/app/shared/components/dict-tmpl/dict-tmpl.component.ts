@@ -1,4 +1,4 @@
-import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { DictModel } from '../../models/dict.model';
 
 @Component({
@@ -9,7 +9,5 @@ import { DictModel } from '../../models/dict.model';
 export class DictTmplComponent {
 
   @Input() section: DictModel;
-  @Input() edit = false;
-  @Output() updateSection = new EventEmitter<DictModel>();
 
 }

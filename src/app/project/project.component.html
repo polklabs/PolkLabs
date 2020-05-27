@@ -20,8 +20,6 @@
                 </div>
             </mat-toolbar>
 
-            <mat-slide-toggle *ngIf="!production" [(ngModel)]="editPage">Edit</mat-slide-toggle>
-
             <div class="width">
                 <!-- Link Buttons -->
                 <div class="center" style="padding-top: 32px;" fxLayout="row" fxLayoutGap="16px"
@@ -39,7 +37,7 @@
 
             <!-- Sections -->
             <div *ngFor="let section of data.sections">
-                <app-tmpl-wrapper [section]="section" [id]="id" [project]="true" [edit]="editPage" (updateSection)="section = $event; printUpdate(data)"></app-tmpl-wrapper>
+                <app-tmpl-wrapper [section]="section" [id]="id" [project]="true"></app-tmpl-wrapper>
             </div>
 
 
@@ -49,4 +47,12 @@
         </mat-card>
     </div>
 
+</div>
+
+<div *ngIf="error" class="display-container" style="margin: auto; margin-top: 16px; margin-bottom: 16px;">
+    <mat-card>
+        <div>
+            <h3>Could not find data for {{id}}</h3>
+        </div>
+    </mat-card>    
 </div>
