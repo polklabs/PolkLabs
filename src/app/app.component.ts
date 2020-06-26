@@ -16,14 +16,7 @@ export class AppComponent implements OnInit {
     private router: Router,
     private activatedRoute: ActivatedRoute,
     private seoService: SEOService,
-  ) {
-    // router.events.subscribe(event => {
-    //   if (event instanceof NavigationEnd) {
-    //     const title = this.getTitle(router.routerState, router.routerState.root).join(' | ');
-    //     this.titleService.setTitle(title);
-    //   }
-    // });
-  }
+  ) { }
 
   ngOnInit() {
     this.router.events.pipe(
@@ -39,10 +32,12 @@ export class AppComponent implements OnInit {
       mergeMap((route) => route.data)
     )
     .subscribe((event) => {
-      const id = this.getTitle(this.router.routerState, this.router.routerState.root);
+      if (event.title !== undefined) {
+        const id = this.getTitle(this.router.routerState, this.router.routerState.root);
 
-      this.seoService.updateTitle(event.title + (id.length > 0 ? (' | ' + id[0]) : ''));
-      this.seoService.updateDescription(event.title + ' ' + event.description);
+        this.seoService.updateTitle(event.title + (id.length > 0 ? (' | ' + id[0]) : ''));
+        this.seoService.updateDescription(event.title + ' ' + event.description);
+      }
     });
   }
 

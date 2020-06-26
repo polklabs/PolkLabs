@@ -1,6 +1,7 @@
 {
     "id": "reel-ratings",
     "title": "Reel Ratings",
+    "meta": "",
     "authors": "Andrew Polk",
     "type": "UCSB Data Science Project",
     "bgimg": "chairs.jpg",

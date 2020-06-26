@@ -1,6 +1,7 @@
 {
     "id": "drowsiness-detector",
     "title": "Drowsiness Detector",
+    "meta": "",
     "authors": "Andrew Polk",
     "type": "UCSB Senior Capstone Project",
     "bgimg": "chairs.jpg",

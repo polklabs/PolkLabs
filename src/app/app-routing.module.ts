@@ -12,7 +12,7 @@ const routes: Routes = [
         path: 'home',
         component: HomeComponent,
         data: {
-            title: 'Home | Polklabs',
+            title: 'Polklabs | Home',
             description: 'the homepage to Andrew Polk\'s portfolio website'
         }
     },
@@ -20,7 +20,7 @@ const routes: Routes = [
         path: 'about',
         component: AboutComponent,
         data: {
-            title: 'About | Polklabs',
+            title: 'Polklabs | About',
             description: 'About Andrew Polk, with resume, experience and skills'
         }
     },
@@ -28,33 +28,25 @@ const routes: Routes = [
         path: 'projects',
         component: ProjectsComponent,
         data: {
-            title: 'Projects | Polklabs',
+            title: 'Polklabs | Projects',
             description: 'List of projects Andrew Polk has worked on'
         }
     },
     {
         path: 'project/:id',
-        component: ProjectComponent,
-        data: {
-            title: 'Polklabs',
-            description: 'Some project'
-        }
+        component: ProjectComponent
     },
     {
         path: 'blog',
         component: BlogsComponent,
         data: {
-            title: 'Blogs | Polklabs',
+            title: 'Polklabs | Blogs',
             description: 'List of blog Andrew Polk has made'
         }
     },
     {
         path: 'blog/:id',
-        component: BlogComponent,
-        data: {
-            title: 'Polklabs',
-            description: 'Some blog'
-        }
+        component: BlogComponent
     },
     {
         path: '',

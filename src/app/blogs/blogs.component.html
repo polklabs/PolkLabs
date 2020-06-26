@@ -7,21 +7,22 @@
         <app-tmpl-wrapper class="title-width" [section]="{ type: 'header', text: 'Blog Posts', noPadding: true}">
         </app-tmpl-wrapper>
 
-        <mat-card *ngFor="let blog of blogList" appMaterialElevation class="blog-outer blog-card"
-            [routerLink]="'/blog/'+blog.id" fxLayout="row">
+        <a class="link-wrapper" *ngFor="let blog of blogList" [routerLink]="'/blog/'+blog.id">
+            <mat-card appMaterialElevation class="blog-outer blog-card" fxLayout="row">
 
-            <div fxLayout="column" fxFlex>
-                <mat-card-title fxFlex="none">{{blog.title}}</mat-card-title>
-                <mat-card-subtitle fxFlex="none">{{blog.subtitle}}</mat-card-subtitle>
-                <p style="margin: 0;">Author: {{blog.author}}</p>
-            </div>
-            <div fxLayout="column">
-                <mat-card-title>{{blog.date}}</mat-card-title>
-                <mat-chip-list *ngFor="let tag of blog.tags">
-                    <mat-chip>{{tag}}</mat-chip>
-                </mat-chip-list>
-            </div>
-        </mat-card>
+                <div fxLayout="column" fxFlex>
+                    <mat-card-title fxFlex="none">{{blog.title}}</mat-card-title>
+                    <mat-card-subtitle fxFlex="none">{{blog.subtitle}}</mat-card-subtitle>
+                    <p style="margin: 0;">Author: {{blog.author}}</p>
+                </div>
+                <div fxLayout="column">
+                    <mat-card-title>{{blog.date}}</mat-card-title>
+                    <mat-chip-list *ngFor="let tag of blog.tags">
+                        <mat-chip>{{tag}}</mat-chip>
+                    </mat-chip-list>
+                </div>
+            </mat-card>
+        </a>
 
         <div></div>
 

@@ -1,6 +1,7 @@
 {
     "id": "bit-simulator",
     "title": "Logic Circuit Simulator",
+    "meta": "Creating a digital logic simulator using c# and unity3d. A program that allows the user to create circuits using components similar to real life ICs.",
     "bgimg": "screenshot_2.png",
     "github": "https://github.com/polklabs/Project-Bit",
     "demo": "",

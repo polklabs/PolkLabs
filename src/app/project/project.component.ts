@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { ActivatedRoute } from '@angular/router';
 import { take, catchError } from 'rxjs/operators';
 import { of } from 'rxjs';
+import { SEOService } from '../core/service/seo.service';
 
 @Component({
   selector: 'app-project',
@@ -27,7 +28,8 @@ export class ProjectComponent implements OnInit, AfterViewChecked {
 
   constructor(
     private httpService: HttpClient,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private seoService: SEOService,
   ) { }
 
   ngOnInit() {
@@ -52,6 +54,10 @@ export class ProjectComponent implements OnInit, AfterViewChecked {
           if (data !== undefined) {
             this.data = data;
             this.sectionTitles = data.sections.filter(x => x.type === 'header').map(x => x.text);
+
+            this.seoService.updateTitle(`Polklabs | ${data.title}`);
+            this.seoService.updateDescription(data.meta);
+
             this.loading = false;
           }
         }

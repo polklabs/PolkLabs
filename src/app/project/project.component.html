@@ -24,14 +24,14 @@
                 <!-- Link Buttons -->
                 <div class="center" style="padding-top: 32px;" fxLayout="row" fxLayoutGap="16px"
                     fxLayoutAlign="center center">
-                    <button mat-raised-button appMaterialElevation (click)="openPage(data.demo)" type="button"
+                    <a mat-raised-button appMaterialElevation [href]="data.demo" target="_blank"
                         [disabled]="data.demo === ''" class="link-button">
                         <i class="fa fa-spinner link-icon"></i>Try It Out
-                    </button>
-                    <button mat-raised-button appMaterialElevation (click)="openPage(data.github)" type="button"
+                    </a>
+                    <a mat-raised-button appMaterialElevation [href]="data.github" target="_blank"
                         [disabled]="data.github === ''" class="link-button">
                         <i class="fab fa-github link-icon"></i>The Repo
-                    </button>
+                    </a>
                 </div>
             </div>
 

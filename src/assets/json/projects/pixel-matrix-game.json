@@ -1,6 +1,7 @@
 {
     "id": "pixel-matrix-game",
     "title": "Pixel Game",
+    "meta": "",
     "authors": "Andrew Polk",
     "type": "UCSB ECE153b project",
     "bgimg": "header.jpg",
