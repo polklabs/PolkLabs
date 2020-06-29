@@ -2,7 +2,7 @@
 
 <div fxLayout="row wrap" fxLayoutAlign="center">
     <a class="link-wrapper" *ngFor="let project of projectList" [routerLink]="'/project/'+project.id">
-        <mat-card appMaterialElevation class="project-outer project-card" fxLayout="column">
+        <mat-card appMaterialElevation class="project-outer project-card mat-card-link" fxLayout="column">
 
             <img *ngIf="project.comingSoon" src="assets/images/coming-soon.png" alt="coming soon banner"
                 class="coming-soon">

@@ -1,5 +1,5 @@
 <div class="display-container card-container" style="max-width: 1400px;">
-    <mat-card fxLayout="column" fxLayoutAlign="center" style="margin: 16px; height: 100%;">
+    <mat-card fxLayout="column" fxLayoutAlign="center" style="margin: 16px; height: 100%;" class="light-theme">
         <div></div>
 
         <div class="home-background">
@@ -22,7 +22,7 @@
 
         <div fxLayout="column" fxLayoutAlign="center center">
             <a class="link-wrapper" *ngFor="let blog of blogList" [routerLink]="'/blog/'+blog.id">
-                <mat-card appMaterialElevation class="blog-outer blog-card" fxLayout="row">
+                <mat-card appMaterialElevation class="blog-outer blog-card mat-card-link" fxLayout="row">
 
                     <div fxLayout="column" fxFlex>
                         <mat-card-title fxFlex="none">{{blog.title}}</mat-card-title>

@@ -1,14 +1,14 @@
 <div class="display-container card-container">
 
 
-    <mat-card *ngIf="!loading else loadingGif" fxLayout="column" fxLayoutAlign="center center" style="margin: 16px;">
+    <mat-card *ngIf="!loading else loadingGif" fxLayout="column" fxLayoutAlign="center center" style="margin: 16px;" class="dark-theme">
 
         <div></div>
         <app-tmpl-wrapper class="title-width" [section]="{ type: 'header', text: 'Blog Posts', noPadding: true}">
         </app-tmpl-wrapper>
 
         <a class="link-wrapper" *ngFor="let blog of blogList" [routerLink]="'/blog/'+blog.id">
-            <mat-card appMaterialElevation class="blog-outer blog-card" fxLayout="row">
+            <mat-card appMaterialElevation class="blog-outer blog-card mat-card-link" fxLayout="row">
 
                 <div fxLayout="column" fxFlex>
                     <mat-card-title fxFlex="none">{{blog.title}}</mat-card-title>
