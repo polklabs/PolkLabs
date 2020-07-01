@@ -28,7 +28,7 @@
         },
         {
             "type": "html",
-            "html": "<h3>Inspired By: </h3><a href=\"https://eater.net/8bit\"><p>Ben Eater 8Bit Computer</p></a>"
+            "html": "<h3>Inspired By: </h3><p><a href=\"https://eater.net/8bit\" class=\"pl-link\">Ben Eater 8Bit Computer</a></p>"
         },
         {
             "type": "dict",
