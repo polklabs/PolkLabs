@@ -16,27 +16,14 @@
         </div>
 
         <!-- Other Projects -->
-        <app-projects-small [id]="''"></app-projects-small>
+        <app-projects-small [id]="''" [headerText]="'Projects'"></app-projects-small>
 
         <app-tmpl-wrapper class="title-width" [section]="{ type: 'header', text: 'Blog Posts'}"></app-tmpl-wrapper>
 
         <div fxLayout="column" fxLayoutAlign="center center">
-            <a class="link-wrapper" *ngFor="let blog of blogList" [routerLink]="'/blog/'+blog.id">
-                <mat-card appMaterialElevation class="blog-outer blog-card mat-card-link" fxLayout="row">
-
-                    <div fxLayout="column" fxFlex>
-                        <mat-card-title fxFlex="none">{{blog.title}}</mat-card-title>
-                        <mat-card-subtitle fxFlex="none">{{blog.subtitle}}</mat-card-subtitle>
-                        <p style="margin: 0;">Author: {{blog.author}}</p>
-                    </div>
-                    <div fxLayout="column">
-                        <mat-card-title>{{blog.date}}</mat-card-title>
-                        <mat-chip-list *ngFor="let tag of blog.tags">
-                            <mat-chip>{{tag}}</mat-chip>
-                        </mat-chip-list>
-                    </div>
-                </mat-card>
-            </a>
+            <div *ngFor="let blog of blogList">
+                <app-blog-card [blog]="blog"></app-blog-card>
+            </div>
         </div>
 
         <div></div>

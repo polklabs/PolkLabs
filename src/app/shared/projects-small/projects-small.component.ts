@@ -9,6 +9,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class ProjectsSmallComponent implements OnInit {
 
+  @Input() headerText = 'Some of my other work';
   @Input() id: string;
 
   projectList: any;

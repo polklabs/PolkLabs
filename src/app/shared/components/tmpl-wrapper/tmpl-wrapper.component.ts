@@ -20,6 +20,9 @@ export class TmplWrapperComponent {
   @ViewChild('videoTmpl', {static: true}) videoTmpl: TemplateRef<any>;
   @ViewChild('videoLinkTmpl', {static: true}) videoLinkTmpl: TemplateRef<any>;
 
+  @ViewChild('projectCardTmpl', {static: true}) projectCardTmpl: TemplateRef<any>;
+  @ViewChild('blogCardTmpl', {static: true}) blogCardTmpl: TemplateRef<any>;
+
   @Input() section: any;
   @Input() id: string;
   @Input() project = false;
@@ -50,6 +53,10 @@ export class TmplWrapperComponent {
         return this.videoTmpl;
       case 'videoLink':
         return this.videoLinkTmpl;
+      case 'project':
+        return this.projectCardTmpl;
+      case 'blog':
+        return this.blogCardTmpl;
     }
     return null;
   }

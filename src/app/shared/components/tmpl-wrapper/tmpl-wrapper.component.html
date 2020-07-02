@@ -59,3 +59,17 @@
 <ng-template #videoLinkTmpl let-item="item">
     <app-video-link-tmpl [section]="item"></app-video-link-tmpl>
 </ng-template>
+
+<!-- Project card Template -->
+<ng-template #projectCardTmpl let-item="item">
+    <div style="margin: auto; width: min-content;">
+        <app-project-card [id]="item.id"></app-project-card>
+    </div>
+</ng-template>
+
+<!-- Blog card Template -->
+<ng-template #blogCardTmpl let-item="item">
+    <div style="margin: auto; width: min-content;">
+        <app-blog-card [id]="item.id"></app-blog-card>
+    </div>
+</ng-template>

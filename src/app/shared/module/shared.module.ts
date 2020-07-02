@@ -17,6 +17,9 @@ import { TmplWrapperComponent } from '../components/tmpl-wrapper/tmpl-wrapper.co
 import { VideoTmplComponent } from '../components/video-tmpl/video-tmpl.component';
 import { VideoLinkTmplComponent } from '../components/video-link-tmpl/video-link-tmpl.component';
 import { PictureComponent } from '../modal/picture/picture.component';
+import { ProjectCardComponent } from '../components/project-card/project-card.component';
+import { BlogCardComponent } from '../components/blog-card/blog-card.component';
+import { AppRoutingModule } from 'src/app/app-routing.module';
 
 @NgModule({
     declarations: [
@@ -33,12 +36,15 @@ import { PictureComponent } from '../modal/picture/picture.component';
         TmplWrapperComponent,
         VideoTmplComponent,
         VideoLinkTmplComponent,
-        PictureComponent
+        PictureComponent,
+        ProjectCardComponent,
+        BlogCardComponent
     ],
     imports: [
         CommonModule,
         BrowserModule,
-        CoreModule
+        CoreModule,
+        AppRoutingModule
     ],
     exports: [
         CommonModule,
@@ -53,7 +59,9 @@ import { PictureComponent } from '../modal/picture/picture.component';
         FieldsetTmplComponent,
         CodeTmplComponent,
         HtmlTmplComponent,
-        TmplWrapperComponent
+        TmplWrapperComponent,
+        ProjectCardComponent,
+        BlogCardComponent
     ],
     providers: [
     ],

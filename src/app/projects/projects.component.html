@@ -1,25 +1,14 @@
 <div class="display-container card-container">
     
 
-    <mat-card *ngIf="!loading else loadingGif" fxLayout="row wrap" fxLayoutAlign="center" style="margin: 16px;" class="dark-theme">
+    <mat-card *ngIf="!loading else loadingGif" fxLayout="row wrap" fxLayoutAlign="center stretch" style="margin: 16px;" class="light-theme">
         
         <div></div>
         <app-tmpl-wrapper class="title-width" [section]="{ type: 'header', text: 'Projects', noPadding: true}"></app-tmpl-wrapper>
         
-        <a class="link-wrapper" *ngFor="let project of projectList" [routerLink]="'/project/'+project.id">
-            <mat-card appMaterialElevation class="project-outer project-card mat-card-link" fxLayout="column">
-
-                <img *ngIf="project.comingSoon" src="assets/images/coming-soon.png" alt="coming soon banner" class="coming-soon">
-
-                <img fxFlex="200px" [src]="'assets/content/projects/' + project.id + '/' + project.image" [alt]="project.imageAlt" width="100%"
-                    class="image">
-
-                <div fxFlex="16px"></div>
-
-                <mat-card-title fxFlex="none">{{project.title}}</mat-card-title>
-                <mat-card-subtitle fxFlex="none">{{project.subtitle}}</mat-card-subtitle>
-            </mat-card>
-        </a>
+        <div *ngFor="let project of projectList">
+            <app-project-card [project]="project"></app-project-card>
+        </div>
 
         <div></div>
 

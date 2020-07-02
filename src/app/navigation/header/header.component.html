@@ -1,19 +1,19 @@
 <mat-toolbar class="header-color">
     <div fxLayout="row" fxLayoutGap="8px" style="max-width: 1218px; width: 1218px; margin: auto;" *ngIf="header">
         <!-- <img src="assets/images/128x128.png" alt="Polklabs" height="64px"> -->
-        <a mat-button routerLink="/home"  matTooltip="Home" class="cursor-on-hover">{{header.title}}</a>
+        <a mat-button routerLink="/home"  matTooltip="Home" class="cursor-on-hover" class="header-btn header-title-btn">{{header.title}}</a>
 
         <div fxFlex></div>
 
-        <a fxHide.lt-md mat-button [routerLink]="'/about'">About</a>        
-        <a fxHide.lt-md mat-button [routerLink]="'/projects'">Projects</a>
-        <a fxHide.lt-md mat-button [routerLink]="'/blog'">Blog</a>
+        <a fxHide.lt-md mat-button [routerLink]="'/about'" class="header-btn">About</a>        
+        <a fxHide.lt-md mat-button [routerLink]="'/projects'" class="header-btn">Projects</a>
+        <a fxHide.lt-md mat-button [routerLink]="'/blog'" class="header-btn">Blog</a>
         
-        <a fxHide.lt-md *ngIf="header.email !== ''" mat-button ngxClipboard [cbContent]="header.email" (click)="openSnackBar('Copied to clipboard!')" matTooltip="Copy email to clipboard"><i class="fa fa-envelope"></i></a>
-        <a fxHide.lt-md *ngIf="header.twitter !== ''" mat-button [href]="header.twitter" target="_blank" rel="noopener"><i class="fab fa-twitter"> Twitter</i></a>
-        <a fxHide.lt-md *ngIf="header.linkedIn !== ''" mat-button [href]="header.linkedIn" target="_blank" rel="noopener"><i class="fab fa-linkedin-in"> LinkedIn</i></a>
-        <a fxHide.lt-md *ngIf="header.facebook !== ''" mat-button [href]="header.facebook" target="_blank" rel="noopener"><i class="fab fa-facebook-f"> Facebook</i></a>
-        <a fxHide.lt-md *ngIf="header.flickr !== ''" mat-button [href]="header.flickr" target="_blank" rel="noopener"><i class="fab fa-flickr"> Flickr</i></a>
+        <a fxHide.lt-md *ngIf="header.email !== ''" mat-button ngxClipboard [cbContent]="header.email" (click)="openSnackBar('Copied to clipboard!')" matTooltip="Copy email to clipboard" class="header-btn"><i class="fa fa-envelope"></i></a>
+        <a fxHide.lt-md *ngIf="header.twitter !== ''" mat-button [href]="header.twitter" target="_blank" rel="noopener" class="header-btn"><i class="fab fa-twitter"> Twitter</i></a>
+        <a fxHide.lt-md *ngIf="header.linkedIn !== ''" mat-button [href]="header.linkedIn" target="_blank" rel="noopener" class="header-btn"><i class="fab fa-linkedin-in"> LinkedIn</i></a>
+        <a fxHide.lt-md *ngIf="header.facebook !== ''" mat-button [href]="header.facebook" target="_blank" rel="noopener" class="header-btn"><i class="fab fa-facebook-f"> Facebook</i></a>
+        <a fxHide.lt-md *ngIf="header.flickr !== ''" mat-button [href]="header.flickr" target="_blank" rel="noopener" class="header-btn"><i class="fab fa-flickr"> Flickr</i></a>
 
         <button mat-button [matMenuTriggerFor]="menu" fxHide fxShow.lt-md><mat-icon>menu</mat-icon></button>
         <mat-menu #menu="matMenu" style="text-align: center;">

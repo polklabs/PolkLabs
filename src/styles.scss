@@ -102,26 +102,26 @@ mat-card.light-theme {
 }
 
 a.pl-link:hover {
-    color: rgb(85, 85, 226) !important;
-}
-
-a.pl-link:visited {
-    color: plum;
-}
-
-a.pl-link:link {
-    color: lightblue;
-}
-
-a.pl-link:active {
-    color: lightpink;
+    color: rgb(130, 130, 221) !important;
 }
 
 .link-wrapper a:hover, a:visited, a:link, a:active {
     text-decoration: none !important;
 }
 
-.mat-card-link:hover mat-card-title {
-    color: $color3;
+.mat-card-link:hover mat-card-title.title-link {
+    color: blue;
     text-decoration: underline;
+}
+
+.mat-button.mat-button-base.header-btn:hover {
+    background-color: gray;
+}
+
+.mat-button.mat-button-base.header-title-btn .mat-button-wrapper {
+    font-size: x-large;
+}
+
+app-project-card {
+    height: 100%;
 }

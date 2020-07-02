@@ -1,0 +1,16 @@
+<a class="link-wrapper" [routerLink]="'/blog/'+blog.id" *ngIf="blog !== undefined">
+    <mat-card appMaterialElevation class="blog-outer blog-card mat-card-link" fxLayout="row">
+
+        <div fxLayout="column" fxFlex>
+            <mat-card-title fxFlex="none" class="title-link">{{blog.title}}</mat-card-title>
+            <mat-card-subtitle fxFlex="none">Author: {{blog.author}}</mat-card-subtitle>
+            <p style="margin: 0;">{{blog.subtitle}}</p>
+        </div>
+        <div fxLayout="column">
+            <mat-card-title>{{blog.date}}</mat-card-title>
+            <mat-chip-list *ngFor="let tag of blog.tags">
+                <mat-chip>{{tag}}</mat-chip>
+            </mat-chip-list>
+        </div>
+    </mat-card>
+</a>

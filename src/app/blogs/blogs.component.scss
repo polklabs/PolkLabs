@@ -2,18 +2,3 @@
     margin: auto;
     width: auto;
 }
-
-.image {
-    border-radius: 8px;
-    border: 4px solid black;
-}
-
-.blog-card {
-    &:hover{
-        cursor: pointer;
-    }
-}
-
-.title-width {
-    width: 100% !important;
-}
