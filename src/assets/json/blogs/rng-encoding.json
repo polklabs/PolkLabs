@@ -1,7 +1,7 @@
 {
     "id": "rng-encoding",
     "title": "Worst Encoding Scheme Ever",
-    "meta": "",
+    "meta": "Worst encoding scheme ever, using random number generation to encode strings in three characters at a time.",
     "author": "Andrew Polk",
     "date": "January 4, 2020",
     "category": "Python",

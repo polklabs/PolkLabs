@@ -1,7 +1,7 @@
 {
     "id": "chit-chat",
     "title": "Chit Chat\nChat Room\nApp",
-    "meta": "",
+    "meta": "A mobile app built on android studio and a java backend. Allows users to send encrypted chats and create chat rooms based on location or name.",
     "authors": "Andrew Polk",
     "type": "UCSB ECE150 project",
     "bgimg": "message_bottle.jpg",
@@ -48,7 +48,7 @@
             "type": "text",
             "title": "Login",
             "text": [
-                "When the user first opens Chit Chat, if he/she has not logged in before, the app opens to the login/register page as can be seen below in Image A). If he/she has already been logged in on the phone, the login/registration page is skipped and the user goes directly to the page that lists his/her chat conversations. If the user does not have an account, he/she can register for a new account and fill out the information as seen in Image B)."
+                "When the user first opens Chit Chat, if he/she has not logged in before, the app opens to the login/register page as can be seen in the image below. If he/she has already been logged in on the phone, the login/registration page is skipped and the user goes directly to the page that lists his/her chat conversations. If the user does not have an account, he/she can register for a new account and fill out the information."
             ]
         },
         {
@@ -60,7 +60,7 @@
             "type": "text",
             "title": "New Conversation",
             "text": [
-                "A new conversation is started by pressing the new message button at the bottom of the screen and entering the recipient’s email or phone number. If the recipient does not have an account, the app will alert the user of this and no new conversation will be started. The reason for this, as stated in the introduction, is due to each user account being associated with a user ID. We implemented this using Firebase, which stores the users’ private keys, public keys, emails, and phone numbers as well as the name of the user associated with the account. The program makes a call to Firebase whenever a user tries to start a conversation with another user account to download their information. When the user successfully begins a chat with another user, the conversation will be added to the list  of the user’s other conversations as shown in Image C). When the user clicks on one of the conversations, the conversation page shown in Image D) will show up where the two users can send each other messages."
+                "A new conversation is started by pressing the new message button at the bottom of the screen and entering the recipient’s email or phone number. If the recipient does not have an account, the app will alert the user of this and no new conversation will be started. The reason for this, as stated in the introduction, is due to each user account being associated with a user ID. We implemented this using Firebase, which stores the users’ private keys, public keys, emails, and phone numbers as well as the name of the user associated with the account. The program makes a call to Firebase whenever a user tries to start a conversation with another user account to download their information. When the user successfully begins a chat with another user, the conversation will be added to the list  of the user’s other conversations as shown in the image below. When the user clicks on one of the conversations, the conversation page shown in the next image will show up where the two users can send each other messages."
             ]
         },
         {
@@ -112,26 +112,42 @@
             "type": "text",
             "title": "Notifications",
             "text": [
-                "Notifications appear on a user’s device as seen in Image E). Notifications are received through an Android service running in the background. This service is constantly running at all times. In addition, there is a timer set so that when the app is closed, every 60 seconds it will make a call to the server requesting any notifications or message updates. The server will then send the most recent message that hasn’t been delivered or won’t send anything at all. This server also keeps track of a hashed version of the notification to check against what it’s going to send so that if you receive a notification and haven’t opened the application, the server will not resend the notification. The server will know that you haven’t opened it yet because the hash value will be the same. When the user is in the application, notifications are blocked because the application is in the foreground."
+                "Notifications appear on a user’s device as seen in the below image. Notifications are received through an Android service running in the background. This service is constantly running at all times. In addition, there is a timer set so that when the app is closed, every 60 seconds it will make a call to the server requesting any notifications or message updates. The server will then send the most recent message that hasn’t been delivered or won’t send anything at all. This server also keeps track of a hashed version of the notification to check against what it’s going to send so that if you receive a notification and haven’t opened the application, the server will not resend the notification. The server will know that you haven’t opened it yet because the hash value will be the same. When the user is in the application, notifications are blocked because the application is in the foreground."
             ]
         },
         {
+            "type": "pic",
+            "src": "notifications.jpg",
+            "alt": "Notifications",
+            "width": "400px"
+        },
+        {
             "type": "header",
-            "text": "The Result"
+            "text": "Rewrites and Updates"
+        },
+        {
+            "type": "text",
+            "text": [
+                "A while after the original chat application was created the code was refactored to be used as an anonymous chat room app. When opening the app the user is shown a list of available chat rooms based on popular rooms and based on location of the user. Alternativly the user can create a new chatroom with multiple options to make it public, password protected, based locally and more.",
+                "The user who creates the chatroom is made the Moderator and can choose to kick other users out of the chat room. This is passed to the next user in line if they leave the room. All other users have to option to report other to the moderator. Kicking a user removes them from the room, but since the rooms are anonymous they can just join right back in, this could be fixed with hardware ids or other identifiers.",
+                "The messages are all encrypted between the users in the chat room. Public keys are stored on the server when joining a room and all existing keys are downloaded to each client.",
+                "Private messages can also be sent inside of a chat room by opening the sidebar and selecting the user you'd like to send the \"secret\" message to.",
+                "Extra features of this rewritten app is the ability to join a chat room from scanning a NFC tag. Users can also send images and gifs but with the current encryption system they have to be encoded for each user in the room which can use a lot of bandwith with many users. Chat rooms are also short lived as they only exist as long as a user is in the room. When the server detects the last user has left the chat room is closed and the room name is free to be used on a new room."
+            ]
         },
         {
             "type": "grid",
             "items": [
                 {
                     "type": "pic",
-                    "src": "chatroom.jpg",
-                    "alt": "Chat Room",
+                    "src": "login.jpg",
+                    "alt": "Login",
                     "width": "400px"
                 },
                 {
                     "type": "pic",
-                    "src": "login.jpg",
-                    "alt": "Login",
+                    "src": "chatroom.jpg",
+                    "alt": "Chat Room",
                     "width": "400px"
                 }
             ]

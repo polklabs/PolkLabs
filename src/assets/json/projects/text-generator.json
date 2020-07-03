@@ -1,7 +1,7 @@
 {
     "id": "text-generator",
     "title": "Text Generator",
-    "meta": "",
+    "meta": "Using machine learning look at large text files to create auto generated text. Using character probability, long short term memory (LSTM) with Tensorflow.",
     "authors": "Andrew Polk",
     "type": "Personal Project",
     "bgimg": "header.png",

@@ -24,14 +24,23 @@
                 <!-- Link Buttons -->
                 <div class="center" style="padding-top: 32px;" fxLayout="row" fxLayoutGap="16px"
                     fxLayoutAlign="center center">
-                    <a mat-raised-button appMaterialElevation [href]="data.demo" target="_blank"
-                        [disabled]="data.demo === ''" class="link-button">
+                    <a *ngIf="data.demo !== ''" mat-raised-button appMaterialElevation 
+                        [href]="data.demo" target="_blank" class="link-button">
                         <i class="fa fa-spinner link-icon"></i>Try It Out
                     </a>
-                    <a mat-raised-button appMaterialElevation [href]="data.github" target="_blank"
-                        [disabled]="data.github === ''" class="link-button">
+                    <button *ngIf="data.demo === ''" mat-raised-button appMaterialElevation 
+                        type="button" [disabled]="true" class="link-button">
+                        <i class="fa fa-spinner link-icon"></i>Try It Out
+                    </button>
+
+                    <a *ngIf="data.github !== ''" mat-raised-button appMaterialElevation 
+                        [href]="data.github" target="_blank" class="link-button">
                         <i class="fab fa-github link-icon"></i>The Repo
                     </a>
+                    <button *ngIf="data.github === ''" mat-raised-button appMaterialElevation 
+                        type="button" [disabled]="true" class="link-button">
+                        <i class="fab fa-github link-icon"></i>The Repo
+                    </button>
                 </div>
             </div>
 

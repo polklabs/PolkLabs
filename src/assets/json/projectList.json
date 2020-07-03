@@ -54,14 +54,5 @@
         "image": "card.png",
         "imageAlt": "Circuit",
         "date": "10/07/19"
-    },
-    {
-        "id": "portfolio-site",
-        "title": "Portfolio Website",
-        "subtitle": "A project, resume, portfolio site made in Angular",
-        "image": "card.png",
-        "imageAlt": "website",
-        "date": "12/11/19",
-        "comingSoon": true
     }
 ]

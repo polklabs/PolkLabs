@@ -1,7 +1,7 @@
 {
     "id": "pixel-matrix-game",
     "title": "Pixel Game",
-    "meta": "",
+    "meta": "How to implement a RGB-Matrix with the LPC4088 chip to create a simple pixel game. Using the NXP LPCxpresso development board to interface the RGB display.",
     "authors": "Andrew Polk",
     "type": "UCSB ECE153b project",
     "bgimg": "header.jpg",
@@ -44,7 +44,7 @@
             "type": "pic",
             "src": "running.gif",
             "alt": "Demo",
-            "text": "TODO: Get better quality vid"
+            "text": "Coming soon: better quality video"
         },
         {
             "type": "header",

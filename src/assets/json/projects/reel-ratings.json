@@ -1,7 +1,7 @@
 {
     "id": "reel-ratings",
     "title": "Reel Ratings",
-    "meta": "",
+    "meta": "Predict the movie rating of a movie title. Using IMDb and TMDb datasets, and our statistical model. We also created a algorithm that allows the model to improve",
     "authors": "Andrew Polk",
     "type": "UCSB Data Science Project",
     "bgimg": "chairs.jpg",
@@ -16,7 +16,7 @@
         {
             "type": "text",
             "text": [
-                "The goal of this project is to predict the movie rating of a movie title entered by the user. Our prediction relies on IMDb and TMDb datasets, using our statistical model. We also implemented a rudimentary algorithm that allows the model to learn and improve from past predictions."
+                "The goal of this project is to predict the movie rating of a movie from the title entered by the user. Our prediction relies on IMDb and TMDb datasets, using our statistical model. We also implemented a rudimentary algorithm that allows the model to learn and improve from past predictions."
             ]
         },
         {

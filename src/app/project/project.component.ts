@@ -11,7 +11,7 @@ import { SEOService } from '../core/service/seo.service';
   styleUrls: ['./project.component.scss']
 })
 export class ProjectComponent implements OnInit, AfterViewChecked {
-
+  
   id: string;
   data: any;
   sectionTitles: string[] = [];
@@ -35,6 +35,8 @@ export class ProjectComponent implements OnInit, AfterViewChecked {
   ngOnInit() {
 
     this.route.params.subscribe(params => {
+      this.loading = true;
+      this.data = undefined;
 
       let top = document.getElementById('top');
       if (top !== null) {

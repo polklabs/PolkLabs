@@ -1,10 +1,10 @@
 {
     "id": "drowsiness-detector",
     "title": "Drowsiness Detector",
-    "meta": "",
+    "meta": "Detect whether a face displays signs of drowsiness. We use facial recognition and examine each part of the face to determine if it displays signs of sleepiness",
     "authors": "Andrew Polk",
     "type": "UCSB Senior Capstone Project",
-    "bgimg": "chairs.jpg",
+    "bgimg": "Mission_control_center.jpg",
     "github": "https://github.com/polklabs/DrowsinessDetector",
     "demo": "",
     "sections": [
@@ -106,7 +106,7 @@
                 "Victoria Sneddon",
                 "Brandon Tran",
                 "Andrew Polk",
-				"David Sun"
+                "David Sun"
             ]
         }
     ]
