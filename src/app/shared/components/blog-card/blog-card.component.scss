@@ -7,3 +7,10 @@
 .title-width {
     width: 100% !important;
 }
+
+a {
+    display: block;
+    width: 100%;
+    max-width: min-content;
+    margin: auto;
+}

@@ -21,7 +21,7 @@
         <app-tmpl-wrapper class="title-width" [section]="{ type: 'header', text: 'Blog Posts'}"></app-tmpl-wrapper>
 
         <div fxLayout="column" fxLayoutAlign="center center">
-            <div *ngFor="let blog of blogList">
+            <div *ngFor="let blog of blogList" style="width: 100%;">
                 <app-blog-card [blog]="blog"></app-blog-card>
             </div>
         </div>

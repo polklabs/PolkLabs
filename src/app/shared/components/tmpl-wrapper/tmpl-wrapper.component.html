@@ -62,14 +62,14 @@
 
 <!-- Project card Template -->
 <ng-template #projectCardTmpl let-item="item">
-    <div style="margin: auto; width: min-content;">
+    <div style="margin: auto; width: min-content; max-width: 100%;">
         <app-project-card [id]="item.id"></app-project-card>
     </div>
 </ng-template>
 
 <!-- Blog card Template -->
 <ng-template #blogCardTmpl let-item="item">
-    <div style="margin: auto; width: min-content;">
+    <div style="margin: auto; width: min-content; max-width: 100%;">
         <app-blog-card [id]="item.id"></app-blog-card>
     </div>
 </ng-template>
