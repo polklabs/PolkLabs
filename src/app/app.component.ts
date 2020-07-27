@@ -21,14 +21,12 @@ export class AppComponent implements OnInit {
     private activatedRoute: ActivatedRoute,
     private seoService: SEOService,
   ) {
-    if (environment.production === true) {
-      const navEndEvent$ = router.events.pipe(
-        filter(e => e instanceof NavigationEnd)
-      );
-      navEndEvent$.subscribe((e: NavigationEnd) => {
-        gtag('config', 'UA-173704342-1', { 'page_path' : e.urlAfterRedirects});
-      });
-    }
+    const navEndEvent$ = router.events.pipe(
+      filter(e => e instanceof NavigationEnd)
+    );
+    navEndEvent$.subscribe((e: NavigationEnd) => {
+      gtag('config', 'UA-173704342-1', { 'page_path' : e.urlAfterRedirects});
+    });
   }
 
   ngOnInit() {

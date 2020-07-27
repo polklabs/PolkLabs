@@ -19,7 +19,7 @@
         <mat-menu #menu="matMenu" style="text-align: center;">
             <a mat-menu-item [routerLink]="'/about'">About</a>
             <a mat-menu-item [routerLink]="'/projects'">Projects</a>
-            <a mat-menu-item [routerLink]="'/blog'">Blog</a>
+            <a mat-menu-item [routerLink]="'/blogs'">Blogs</a>
             
             <a mat-menu-item *ngIf="header.email !== ''" ngxClipboard [cbContent]="header.email" (click)="openSnackBar('Copied to clipboard!')" matTooltip="Copy email to clipboard"><i class="fa fa-envelope"></i></a>
             <a mat-menu-item *ngIf="header.twitter !== ''" [href]="header.twitter" target="_blank" rel="noopener"><i class="fab fa-twitter"> Twitter</i></a>
