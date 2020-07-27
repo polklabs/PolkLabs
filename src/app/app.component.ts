@@ -3,6 +3,10 @@ import { Title } from '@angular/platform-browser';
 import { Router, NavigationEnd, ActivatedRoute } from '@angular/router';
 import { mergeMap, filter, map } from 'rxjs/operators';
 import { SEOService } from './core/service/seo.service';
+import { getHtmlTagDefinition } from '@angular/compiler';
+import { environment } from 'src/environments/environment';
+
+declare var gtag;
 
 @Component({
   selector: 'app-root',
@@ -16,7 +20,16 @@ export class AppComponent implements OnInit {
     private router: Router,
     private activatedRoute: ActivatedRoute,
     private seoService: SEOService,
-  ) { }
+  ) {
+    if (environment.production === true) {
+      const navEndEvent$ = router.events.pipe(
+        filter(e => e instanceof NavigationEnd)
+      );
+      navEndEvent$.subscribe((e: NavigationEnd) => {
+        gtag('config', 'UA-173704342-1', { 'page_path' : e.urlAfterRedirects});
+      });
+    }
+  }
 
   ngOnInit() {
     this.router.events.pipe(
