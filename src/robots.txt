@@ -1,5 +1,5 @@
 # Group 1
 User-agent: *
-Allow: /
+Disallow: /assets/
 
 Siteamp: https://www.polklabs.com/sitemap.xml

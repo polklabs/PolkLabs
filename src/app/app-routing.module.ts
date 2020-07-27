@@ -37,7 +37,7 @@ const routes: Routes = [
         component: ProjectComponent
     },
     {
-        path: 'blog',
+        path: 'blogs',
         component: BlogsComponent,
         data: {
             title: 'Polklabs | Blogs',
