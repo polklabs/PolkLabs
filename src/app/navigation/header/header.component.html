@@ -7,7 +7,7 @@
 
         <a fxHide.lt-md mat-button [routerLink]="'/about'" class="header-btn">About</a>        
         <a fxHide.lt-md mat-button [routerLink]="'/projects'" class="header-btn">Projects</a>
-        <a fxHide.lt-md mat-button [routerLink]="'/blog'" class="header-btn">Blog</a>
+        <a fxHide.lt-md mat-button [routerLink]="'/blogs'" class="header-btn">Blogs</a>
         
         <a fxHide.lt-md *ngIf="header.email !== ''" mat-button ngxClipboard [cbContent]="header.email" (click)="openSnackBar('Copied to clipboard!')" matTooltip="Copy email to clipboard" class="header-btn"><i class="fa fa-envelope"></i></a>
         <a fxHide.lt-md *ngIf="header.twitter !== ''" mat-button [href]="header.twitter" target="_blank" rel="noopener" class="header-btn"><i class="fab fa-twitter"> Twitter</i></a>
