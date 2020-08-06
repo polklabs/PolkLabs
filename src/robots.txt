@@ -2,4 +2,4 @@
 User-agent: *
 Disallow: /assets/
 
-Siteamp: https://www.polklabs.com/sitemap.xml
+Sitemap: https://www.polklabs.com/sitemap.xml
