@@ -18,5 +18,15 @@
         "tags": [
             "C#", "Unity3D"
         ]
+    },
+    {
+        "id": "nonogram-solver",
+        "title": "Nonogram Solver",
+        "subtitle": "Using python to solve 5x5 to 25x25 nonograms",
+        "date": "3/5/2021",
+        "author": "Andrew Polk",
+        "tags": [
+            "Python"
+        ]
     }
 ]
