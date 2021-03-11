@@ -3,4 +3,5 @@ export interface CodeModel {
     code: string;
     language: string[];
     filename: string;
+    fileLocation: string;
 }
