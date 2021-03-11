@@ -3,7 +3,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { MaterialModule } from './material.module';
 import { HttpClientModule } from '@angular/common/http';
 import { ClipboardModule } from 'ngx-clipboard';
-import { HighlightModule } from 'ngx-highlightjs';
+import { HighlightModule, HIGHLIGHT_OPTIONS } from 'ngx-highlightjs';
 import { FormsModule } from '@angular/forms';
 
 // export function getHighlightLanguages() {
@@ -32,6 +32,12 @@ import { FormsModule } from '@angular/forms';
         FormsModule,
     ],
     providers: [
+        {
+            provide: HIGHLIGHT_OPTIONS,
+            useValue: {
+                fullLibraryLoader:() => import('highlight.js'),
+            }
+        }
     ]
 })
 export class CoreModule {}

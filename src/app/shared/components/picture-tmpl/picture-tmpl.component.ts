@@ -1,7 +1,7 @@
 import { Component, Input } from '@angular/core';
 import { PictureModel } from '../../models/picture.model';
 import { PictureComponent } from '../../modal/picture/picture.component';
-import { MatDialog } from '@angular/material';
+import { MatDialog } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-picture-tmpl',
