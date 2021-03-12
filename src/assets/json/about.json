@@ -95,12 +95,16 @@
             "title": "OTHER",
             "items": [
                 {
+                    "text": "Lightroom",
+                    "logo": "lightroom.png"
+                },
+                {
                     "text": "Photoshop",
                     "logo": "photoshop.png"
                 },
                 {
-                    "text": "Lightroom",
-                    "logo": "lightroom.png"
+                    "text": "Unity3D",
+                    "logo": "unity3d.png"
                 }
             ]
         }
