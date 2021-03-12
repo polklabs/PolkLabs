@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+
+import projectListJson from 'src/assets/json/projectList.json';
 
 @Component({
   selector: 'app-projects',
@@ -11,21 +12,13 @@ export class ProjectsComponent implements OnInit {
   projectList: any;
   loading = true;
 
-  constructor(
-    private httpService: HttpClient
-  ) { }
+  constructor() { }
 
   ngOnInit() {
-
-    this.httpService.get(`./assets/json/projectList.json`).subscribe(
-      (data: any[]) => {
-        if (data !== undefined) {
-          this.projectList = data.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
-          this.loading = false;
-        }
-      }
-    );
-
+    if (projectListJson !== undefined) {
+      this.projectList = projectListJson.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+      this.loading = false;
+    }
   }
 
 }

@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
 import { AboutModel } from '../shared/models/about.model';
+
+import blogListJson from 'src/assets/json/blogList.json';
+import aboutJson from 'src/assets/json/about.json';
 
 @Component({
   selector: 'app-home',
@@ -13,23 +15,17 @@ export class HomeComponent implements OnInit {
   projectList: any;
   blogList: any;
 
-  constructor(
-    private httpService: HttpClient
-  ) { }
+  constructor() { }
 
   ngOnInit() {
 
-    this.httpService.get(`./assets/json/about.json`).subscribe(
-      (data: AboutModel) => {
-        this.data = data;
-      }
-    );
+    if (aboutJson !== undefined) {
+      this.data = aboutJson;
+    }
 
-    this.httpService.get(`./assets/json/blogList.json`).subscribe(
-      (data: any) => {
-        this.blogList = data.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()).slice(0, 3);
-      }
-    );
+    if (blogListJson !== undefined) {
+      this.blogList = blogListJson.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()).slice(0, 3);
+    }
 
   }
 

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
 import { MatSnackBar } from '@angular/material/snack-bar';
+
+import headerJson from 'src/assets/json/header.json';
 
 @Component({
   selector: 'app-header',
@@ -12,16 +13,14 @@ export class HeaderComponent implements OnInit {
   header: any;
 
   constructor(
-    private httpService: HttpClient,
     private snackBar: MatSnackBar,
   ) { }
 
   ngOnInit() {
-    this.httpService.get(`./assets/json/header.json`).subscribe(
-      (data: any[]) => {
-        this.header = data;
-      }
-    );
+
+    if (headerJson !== undefined) {
+      this.header = headerJson;
+    }
   }
 
   openSnackBar(message: string) {

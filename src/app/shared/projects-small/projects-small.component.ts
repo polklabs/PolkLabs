@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { take } from 'rxjs/operators';
-import { HttpClient } from '@angular/common/http';
+
+import projectListJson from 'src/assets/json/projectList.json';
 
 @Component({
   selector: 'app-projects-small',
@@ -14,20 +14,16 @@ export class ProjectsSmallComponent implements OnInit {
 
   projectList: any;
 
-  constructor(
-    private httpService: HttpClient,
-  ) { }
+  constructor() { }
 
   ngOnInit() {
-    this.httpService.get(`./assets/json/projectList.json`).pipe(take(1)).subscribe(
-      (data: any[]) => {
-        const projectList = data.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
-        this.projectList = projectList
-        .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
-        .filter(x => x.id !== this.id)
-        .slice(0, 3);
-      }
-    );
+    if (projectListJson !== undefined) {
+      const projectList = projectListJson.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+      this.projectList = projectList
+      .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
+      .filter(x => x.id !== this.id)
+      .slice(0, 3);
+    }
   }
 
 }

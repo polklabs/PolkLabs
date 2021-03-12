@@ -1,6 +1,8 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
+import projectListJson from 'src/assets/json/projectList.json';
+
 @Component({
   selector: 'app-project-card',
   templateUrl: './project-card.component.html',
@@ -17,14 +19,9 @@ export class ProjectCardComponent implements OnInit {
 
   ngOnInit() {
     if (this.id !== undefined) {
-      this.httpService.get(`./assets/json/projectList.json`).subscribe(
-        (data: any[]) => {
-          console.log(data);
-          if (data !== undefined) {
-            this.project = data.find(x => x.id === this.id);
-          }
-        }
-      );
+      if (projectListJson !== undefined) {
+        this.project = projectListJson.find(x => x.id === this.id);
+      }
     }
   }
 
