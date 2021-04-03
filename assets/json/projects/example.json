@@ -1,0 +1,93 @@
+{
+    "id": "reel-ratings",
+    "title": "Reel Ratings",
+    "meta": "",
+    "authors": "Andrew Polk",
+    "type": "UCSB Data Science Project",
+    "bgimg": "chairs.jpg",
+    "github": "https://github.com/UCSB-dataScience-ProjectGroup/movie_rating_prediction",
+    "demo": "",
+    "sections": [
+		{
+			"type": "header",
+			"text": "Project Title",
+            "noPadding": true
+		},
+        {
+            "type": "text",
+            "title": "Title",
+			"subtitle": "Subtitle",
+            "text": [
+                "This is an example paragraph.",
+				"Another example paragraph."
+            ]
+        },
+        {
+            "type": "dict",
+            "keyValue": [
+                {
+                    "key": "Bold",
+                    "value": "Regular"
+                },
+                {
+                    "key": "Type",
+                    "value": "Object"
+                }
+            ]
+        },
+        {
+            "type": "pic",
+            "src": "flowchart.png",
+            "alt": "Flow Chart",
+			"text": "This is an optional footer"
+        },
+        {
+            "type": "list",
+            "title": "Basic List",
+            "list_style": "none",
+            "list": [
+                "Item 1",
+                "Item 2"
+            ]
+        },
+		{
+            "type": "grid",
+			"items": [
+				{
+					"type": "pic",
+					"src": "Actors.png",
+					"alt": "Actors",
+					"text": "This is an optional footer"
+                },
+                {
+					"type": "pic",
+					"src": "Company.png",
+					"alt": "Company"			
+				}
+			]
+		},
+		{
+			"type": "fieldset",
+			"legend": "Legend",
+			"items": [
+				{
+					"type": "text",
+					"title": "Title",
+					"subtitle": "Subtitle",
+					"text": [
+						"This is an example paragraph.",
+						"Another example paragraph."
+					]
+				}
+			]
+		},
+		{
+			"type": "code",
+			"code": "num = float(input(\"Enter a number: \"))\nif num > 0:\n\tprint(\"Positive number\")\nelif num == 0:\n\tprint(\"Zero\")\nelse:\n\tprint(\"Negative number\")"
+		},
+		{
+			"type": "html",
+			"html": "<h2><em>Test HTML</em></h2><a href=\"https://google.com\">Link</a>"
+		}
+    ]
+}

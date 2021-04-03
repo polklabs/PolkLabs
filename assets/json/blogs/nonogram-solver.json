@@ -1,0 +1,175 @@
+{
+    "id": "nonogram-solver",
+    "title": "Nonogram Solver",
+    "meta": "Using python to solve nonograms of size 5x5 to 25x25",
+    "author": "Andrew Polk",
+    "date": "March 5, 2021",
+    "category": "Python",
+    "sections": [
+        {
+            "type": "text",
+			"subtitle": "What is a Nonogram?",
+            "text": [
+                "A Nonogram is puzzle consiting of a grid with each cell in the grid being filled or unfilled. Each row and column has an associated number or set of numbers. These numbers tell how many filled cells there are in a row.",
+                "In the below example one of the rows has the values '2 9'. This means that the row will have 2 filled cells, one or more unfilled cell, then 9 more filled cells."
+            ]
+        },
+        {
+            "type": "grid",
+            "items": [
+                {
+                    "type": "pic",
+                    "src": "unsolved.png",
+                    "alt": "Unsolved Puzzle",
+                    "width": "400px",
+                    "text": "15x15 Nonogram Puzzle"
+                }
+            ]
+        },
+        {
+            "type": "header",
+            "text": "The Science"
+        },
+        {
+            "type": "text",
+            "text": [
+                "The first step to solving is to look at it one row and one column at a time and determining the permutations of the values. We can start by considering a row with the key '13'",
+                "13 in a 15x15 puzzle has the following permutations.\n🔳🔳🔳🔳🔳🔳🔳🔳🔳🔳🔳🔳🔳🔲🔲\n🔲🔳🔳🔳🔳🔳🔳🔳🔳🔳🔳🔳🔳🔳🔲\n🔲🔲🔳🔳🔳🔳🔳🔳🔳🔳🔳🔳🔳🔳🔳",
+                "Then taking the sum of each filled cell gives us.\n[1, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 2, 1]",
+                "From this we can determine two things. One, each cell that equals the total number of permutations is required in the final answer. Two, each cell that sums to 0 cannot be in the final answer.\n🔲🔲🔳🔳🔳🔳🔳🔳🔳🔳🔳🔳🔳🔲🔲",
+                "We can then iterate over all the permutations for every column, deleting any permutation that do not satisfy the requirements for the chosen row",
+                "The same algorithm can be repeated switching columns and rows. If there is a unique solution then you will be able to cancel out row/column possibilities untill there is only one left for each row/column. Removing a possible solution changes the permutation sum the next time that row/column is checked."
+            ]
+        },
+        {
+            "type": "header",
+            "text": "The Code"
+        },
+        {
+            "type": "text",
+            "text": [
+                "The first step of coding an algorithm is converting the example puzzle into a format that can by used as an input into the code.\nRows: 8, 6, 9, 2 9, 1 1 6, 10, 7, 9, 5 1, 2 2 1 1, 3 2 1, 5, 3 2, 6 1, 1 6 3\nColumns: 2 1 1, 1 2, 3, 2 3, 2 1 4, 2 2 3, 8 3, 4 4 2, 9 3, 1 9 3, 1 9, 7, 4 1 1 1, 4 1 1, 2 4 2",
+                "The following code takes in a file name and parses it into a 3 dimensional array for processing."
+            ]
+        },
+        {
+            "type": "code",
+            "code": "grouping = re.compile('([0-9 ]+)[ ]*?[,]?')\ndigits = re.compile('[0-9]+')\n\nkeys = [] # [row[], column[]]\nwith open(filename, 'r') as f:\n\tfor line in f:\n\t\trowColumn = []\n\t\tfor group in grouping.findall(line):\n\t\t\trowColumn.append([int(i) for i in digits.findall(group)])\n\t\tkeys.append(rowColumn)\n",
+            "language": [
+                "python"
+            ],
+            "filename": "Parse Puzzle"
+        },
+        {
+            "type": "text",
+            "text": [
+                "Next there needs to be a way to calculate all possible permutations for each row/column. The possible permutations are bound by the rules of the puzzle so an array representation can be created that limits the permutation calculation to only those that are possible.",
+                "The column key [4, 4, 2] can be thought of as ['4', '4', '2', '0', '0', '0', '0', '0']. Another requirement is at least one space between each filled cell grouping, so the array can be reduced to ['40', '40', '2', '0', '0', '0']",
+                "One final reduction can be done, we only need distince permutations where the non-zero values are in order. This can be achieved by replacing those values with place holders, resulting in ['x', 'x', 'x', '0', '0', '0']",
+                "After the permutations are calculated we can iterate through them and convert them to the un-compressed format, replacing the place holders with the actual values.\n['0', 'x', 'x', '0', 'x', '0'] -> [0, 1, 1, 1, 1, 0, 1, 1, 1, 1, 0, 0, 1, 1, 0]"
+            ]
+        },
+        {
+            "type": "code",
+            "code": "def getArrayPermutations(keys, possibleSolutions):\n\tglobal size\n\tfor solutionSet in range(0, 2):\n\t\tkeySet = keys[solutionSet]\n\t\tpossibleSolutionsArray = possibleSolutions[solutionSet]\n\t\t\n\t\tfor index in range(0, size):\n\t\t\tkey = keySet[index]\n\t\t\tkeyLength = len(key)\n\t\t\tarrays = (['0']*(size - sum(key) - (keyLength - 1))) + (['-1']*keyLength)\n\n\t\t\tfor array in mit.distinct_permutations(arrays):\t\t\t\n\t\t\t\tarrayStr = ''.join(array)\n\t\t\t\tfor i in range(0, keyLength):\n\t\t\t\t\tarrayStr = arrayStr.replace('-1', ('1'*key[i]) + ('0'*(i != keyLength-1)), 1)\n\t\t\t\tarray = [int(i) for i in arrayStr]\n\t\t\t\tpossibleSolutionsArray[index].append(array)",
+            "language": [
+                "python"
+            ],
+            "filename": "Get Distinct Permutations"
+        },
+        {
+            "type": "text",
+            "text": [
+                "Running the puzzle through the previous code gets us all the possible array permutations for each row and column. The sum of those posibilities for all 15 rows/columns is printed below. Calculating the product of the Row array we get the total number of possible row combinations that could result in the solution. Fortunatly we do not have to iterate through all of them to solve the puzzle."
+            ]
+        },
+        {
+            "type": "fieldset",
+            "legend": "Output",
+            "items": [
+                {
+                    "type": "text",
+                    "text": [
+                        "Row Posibilities\n[8, 10, 7, 10, 56, 6, 9, 7, 45, 210, 120, 11, 55, 36, 20]\n\nColumn Posibilities\n[220, 78, 13, 55, 84, 84, 10, 20, 6, 1, 15, 9, 126, 120, 56]\n\nPossible Solutions: 58,555,646,392,320,000,000"
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "text",
+            "text": [
+                "We continuously loop over the rows and columns, iterating both on each loop. As stated before, for each row/column we sum up the items per possibility array. If we're summing up rows then we iterate over column cells and vice versa. If we find a cell that was summed to 0 then we remove all possibilities that have that cell filled. If we find a cell that was summed to the max sum value then we remove all possibilities that don't have that cell filled. This runs until there no arrays removed during a loop."
+            ]
+        },
+        {
+            "type": "code",
+            "code": "deletedPossibleItem = True\nwhile deletedPossibleItem:\n\tdeletedPossibleItem = False\n\tfor solutionSet in range(0, 2):\n\t\tfor s in range(0, size):\n\t\t\tcount = len(possibleSolutions[solutionSet-1][s])\n\t\t\tcomboSum = np.sum(possibleSolutions[solutionSet-1][s], axis=0)\n\n\t\t\tfor i in range(0, size):\n\t\t\t\tif comboSum[i] == count or comboSum[i] == 0:\n\t\t\t\t\ttoDelete = []\n\t\t\t\t\tfor psIndex in range(0, len(possibleSolutions[solutionSet][i])):\n\t\t\t\t\t\tif comboSum[i] == count and possibleSolutions[solutionSet][i][psIndex][s] == 0:\n\t\t\t\t\t\t\ttoDelete.append(psIndex)\n\t\t\t\t\t\t\tdeletedPossibleItem = True\n\t\t\t\t\t\telif comboSum[i] == 0 and possibleSolutions[solutionSet][i][psIndex][s] == 1:\n\t\t\t\t\t\t\ttoDelete.append(psIndex)\n\t\t\t\t\t\t\tdeletedPossibleItem = True\n\t\t\t\t\tpossibleSolutions[solutionSet][i] = np.delete(possibleSolutions[solutionSet][i], toDelete, axis=0)\n",
+            "language": [
+                "python"
+            ],
+            "filename": "Removing Posibilties"
+        },
+        {
+            "type": "text",
+            "text": [
+                "Finally we take the remaining rows, merge them into one column and print out the result. Assuming the previous step succeeded then there should be only one posibility for each row/column."
+            ]
+        },
+        {
+            "type": "grid",
+            "items": [
+                {
+                    "type": "fieldset",
+                    "legend": "Output",
+                    "items": [
+                        {
+                            "type": "text",
+                            "text": [
+                                "🔲🔲🔲🔳🔳 🔳🔳🔳🔳🔳 🔳🔲🔲🔲🔲\n🔲🔲🔲🔳🔳 🔳🔳🔳🔳🔲 🔲🔲🔲🔲🔲\n🔲🔲🔲🔲🔲 🔲🔳🔳🔳🔳 🔳🔳🔳🔳🔳\n🔳🔳🔲🔲🔲 🔲🔳🔳🔳🔳 🔳🔳🔳🔳🔳\n🔳🔲🔲🔲🔲 🔲🔳🔲🔳🔳 🔳🔳🔳🔳🔲\n\n🔲🔲🔲🔲🔳 🔳🔳🔳🔳🔳 🔳🔳🔳🔳🔲\n🔲🔲🔲🔲🔲 🔳🔳🔳🔳🔳 🔳🔳🔲🔲🔲\n🔲🔲🔲🔲🔲 🔲🔳🔳🔳🔳 🔳🔳🔳🔳🔳\n🔲🔲🔲🔲🔲 🔲🔲🔳🔳🔳 🔳🔳🔲🔲🔳\n🔲🔲🔳🔳🔲 🔲🔲🔲🔲🔳 🔳🔲🔳🔲🔳\n\n🔲🔳🔳🔳🔲 🔲🔲🔲🔲🔳 🔳🔲🔲🔲🔳\n🔳🔳🔳🔳🔳 🔲🔲🔲🔲🔲 🔲🔲🔲🔲🔲\n🔲🔲🔲🔲🔳 🔳🔳🔲🔳🔳 🔲🔲🔲🔲🔲\n🔲🔲🔲🔲🔳 🔳🔳🔳🔳🔳 🔲🔲🔲🔲🔳\n🔳🔲🔲🔲🔳 🔳🔳🔳🔳🔳 🔲🔲🔳🔳🔳"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "pic",
+                    "src": "solved.png",
+                    "alt": "Solved Puzzle",
+                    "width": "400px",
+                    "text": "15x15 Nonogram Puzzle - Solved"
+                }
+            ]
+        },
+        {
+            "type": "header",
+            "text": "Python Files"
+        },
+        {
+            "type": "text",
+            "text": [
+                "All the files needed to run this code yourself."
+            ]
+        },
+        {
+            "type": "code",
+            "code": "",
+            "language": ["python"],
+            "filename": "NonogramAlgorithm.py",
+            "fileLocation": "blogs/nonogram-solver/NonogramAlgorithm.py"
+        },
+        {
+            "type": "code",
+            "code": "",
+            "language": ["python"],
+            "filename": "NonogramMain.py",
+            "fileLocation": "blogs/nonogram-solver/NonogramMain.py"
+        },
+        {
+            "type": "code",
+            "code": "",
+            "language": [""],
+            "filename": "puzzle25.txt",
+            "fileLocation": "blogs/nonogram-solver/puzzle25.txt"
+        }
+        
+    ]
+}

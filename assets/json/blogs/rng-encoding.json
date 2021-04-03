@@ -1,0 +1,76 @@
+{
+    "id": "rng-encoding",
+    "title": "Worst Encoding Scheme Ever",
+    "meta": "Worst encoding scheme ever, using random number generation to encode strings in three characters at a time.",
+    "author": "Andrew Polk",
+    "date": "January 4, 2020",
+    "category": "Python",
+    "sections": [
+        {
+            "type": "text",
+			"subtitle": "Disclaimer:",
+            "text": [
+                "This is the one of the worst encoding/encryption schemes you could possibly use. Do not under any circumstances use this for more than just learning python."
+            ]
+        },
+        {
+            "type": "header",
+            "text": "The Idea"
+        },
+        {
+            "type": "text",
+            "text": [
+                "This idea came to me while thinking about huffman encoding and wondering what other options there were. So I decided to create the most useless an inefficient encoding scheme i could think to create."
+            ]
+        },
+        {
+            "type": "header",
+            "text": "The Encoder"
+        },
+        {
+            "type": "text",
+            "text": [
+                "The encoder starts by taking some input text to encode, it then padds the input so that the length is a multiple of three. That string is then converted into a list of numbers (0-127), ASCII encoding.",
+                "Once the input has been prepared it is then sent to the encoder 3 numbers at a time. Three was chosen because any longer and the output takes too long to process. Encoding is simple (but not efficient), a random number generator returns values until one is found that matches the first number to be encoded. If the 2nd and 3rd numbers also match the next two values a match has been found. The encoding function then returns the number of times it asked for a random number as an output. If the match was not found the first time, this process is repeated until one is found."
+            ]
+        },
+        {
+            "type": "code",
+            "code": "import random\nimport time\n\ndef toOrd(c):\n\treturn ord(c)\n\ndef getRandChar():\n\treturn random.randint(0, 127)\n\ndef findSequence(i, text):\n\trand = getRandChar()\n\ti += 1\n\twhile rand is not text[0]:\n\t\trand = getRandChar()\n\t\ti += 1\n\ti_ext = 0\n\tfor c in text[1:]:\n\t\ti_ext += 1\n\t\tif getRandChar() is not c:\n\t\t\treturn (i + i_ext, False)\n\treturn (i, True)\n\ndef encodeChunk(text):\n\ti = 0\n\tfound = False\n\twhile not found:\n\t\tresult = findSequence(i, text)\n\t\ti = result[0]\n\t\tfound = result[1]\n\treturn i-1\n\ndef encode(textRaw, seed=0):\n\trandom.seed(seed)\n\t\n\tprint('Encoding: \"' + textRaw + '\"\\n')\n\n\t#Padd text so it is a multiple of 3\n\twhile len(textRaw) % 3 != 0:\n\t\ttextRaw += chr(0)\n\n\t#Convert to list of number values\n\ttext = list(textRaw)\n\ttext = list(map(toOrd, text))\n\n\ttotalTime = 0\n\n\t#Loop through list 3 characters at a time\n\toutput = []\n\tfor i in range(0, len(text), 3):\n\t\tprint('Chunk: \"' + textRaw[i:i+3] + '\"', end=\"\")\n\n\t\tstart = time.time()\n\t\toutput.append(encodeChunk(text[i:i+3]))\n\t\tend = time.time()\n\t\tprint(\" => \" + str(output[-1]), end=\"\")\n\t\tprint(\" : Search Time: \" + str(end - start) + 's')\n\t\ttotalTime += end - start\n\n\tprint('\\nEncoding time: ' + str(totalTime) + 's')\n\n\t#Generate string to be sent into decoder\n\toffsetString = ''\n\tfor offset in output:\n\t\toffsetString += str(offset) + ','\n\tprint('Offset: ' + offsetString[:-1])\n\treturn offsetString[:-1]\n\nif __name__== \"__main__\":\n\ttextRaw = input('Enter text to encode: ')\n\tencode(textRaw)\n",
+            "language": [
+                "python"
+            ],
+            "filename": "RandEncoder.py"
+        },
+        {
+            "type": "header",
+            "text": "The Decoder"
+        },
+        {
+            "type": "text",
+            "text": [
+                "The encoder starts by taking a comma delimited string of numbers. These numbers represent the number of times a random number must be generated in order to find the correct sequence of letters (in ASCII)."
+            ]
+        },
+        {
+            "type": "code",
+            "code": "import random\nimport time\n\ndef getRandChar():\n\treturn random.randint(0, 127)\n\ndef decode(offsets, seed=0):\n\trandom.seed(seed)\n\n\toffsets = offsets.split(',')\n\tchars = 3\n\n\tresult = ''\n\n\tstart = time.time()\n\n\tfor offset in offsets:\n\t\tfor i in range(int(offset)):\n\t\t\tgetRandChar()\n\n\t\ttext = ''\n\t\tfor i in range(chars):\n\t\t\ttext += chr(getRandChar())\n\t\tprint(text, end=\"\")\n\t\tresult += text\n\tend = time.time()\n\tprint('\\nDecoding time: ' + str(end - start))\n\treturn result\n\nif __name__== \"__main__\":\n\toffsets = input('Enter offset: ')\n\tdecode(offsets)",
+            "language": [
+                "python"
+            ],
+            "filename": "RandDecoder.py"
+        },
+        {
+            "type": "header",
+            "text": "Conclusion"
+        },
+        {
+            "type": "text",
+            "text": [
+                "This encoding scheme can take over a minute to encode a simple sentence. The sentence, \"The Quick Brown Fox Jumps Over The Lazy Dog\" takes 58 seconds to encode.",
+                "Extra 'improvements' could further increase the runtime such as changing the block size from 3 to 4. Changing the block size to be the length of the input text could result in the program never finishing unless you happen to get extremely lucky",
+                "The current code sets the random seed to '0', this can be changed to any number or changed to an input."
+            ]
+        }
+    ]
+}

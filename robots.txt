@@ -1,0 +1,5 @@
+# Group 1
+User-agent: *
+Disallow: /assets/
+
+Sitemap: https://www.polklabs.com/sitemap.xml

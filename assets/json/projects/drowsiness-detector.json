@@ -1,0 +1,113 @@
+{
+    "id": "drowsiness-detector",
+    "title": "Drowsiness Detector",
+    "meta": "Detect whether a face displays signs of drowsiness. We use facial recognition and examine each part of the face to determine if it displays signs of sleepiness",
+    "authors": "Andrew Polk",
+    "type": "UCSB Senior Capstone Project",
+    "bgimg": "Mission_control_center.jpg",
+    "github": "https://github.com/polklabs/DrowsinessDetector",
+    "demo": "",
+    "sections": [
+        {
+            "type": "header",
+            "text": "About",
+            "noPadding": true
+        },
+        {
+            "type": "text",
+            "text": [
+                "Aerospace provides technical guidance for all aspects of space systems. Current satellite launches require a team of trained professionals to be alert at all times of the day. However, full 24 hour attentiveness cannot be reasonably expected by human beings. Thus, in order to help Aerospace solve complex space-related science and engineering problems, we strive to solve the issue of drowsiness using facial recognition technology.",
+                "Aerospace's technical guidance has workers in situations where they need to be alert and respond quickly to changing circumstances. These can be high stakes situations where being drowsy or not paying enough attention could result in something going wrong. We want to provide an automated way for detecting if employees are drowsy or otherwise distracted. Our solution would innovate how detection of tiredness would create a safer work environment and lead to being more productive.",
+                "It is critical that the mission control personnel are alert during satellite launches. If they were to become drowsy, they could fail to notice problems that would've been caught had they been fully awake. By notifying the user when he/she is drowsy, potential accidents and mistakes can be avoided. Therefore, this product is important for the successful launch of satellites and safety of personnel in the aeronautical industry.",
+                "Many drowsiness detectors exist in automobile software. One open source solution uses the OpenCV framework, a real-time computer vision library. This program uses facial landmarks to determine if a car driver is dowsy. It calculates a threshold for which the driver's eyes are closed for a sufficiently long time, responding with an audible alarm to alert the driver. One automobile company has a drowsiness detection solution that utilizes an infrared camera above the steering wheel, detecting more complex signs of tiredness such as frequent blinking, deviations in steering, and distracted head movements. Most of these drowsiness detectors are used for the purpose of keeping drivers alert.",
+                "Our project is innovative in the way that we detect whether or not a face displays signs of drowsiness. We not only use facial recognition, we examine each part of the face to determine if it displays signs of sleepiness."
+            ]
+        },
+        {
+            "type": "dict",
+            "keyValue": [
+                {
+                    "key": "School",
+                    "value": "UC Santa Barbara"
+                },
+                {
+                    "key": "Class",
+                    "value": "Senior Capstone"
+                },
+                {
+                    "key": "Technologies",
+                    "value": "Firebase, Python, Github, Trello, Android Studio, OpenCV"
+                }
+            ]
+        },
+        {
+            "type": "pic",
+            "src": "Poster.png",
+            "alt": "Overview Poster",
+            "width": "1100px"
+        },
+        {
+            "type": "header",
+            "text": "Demo"
+        },
+        {
+            "type": "video",
+            "src": "demo.mp4",
+            "srcType": "video/mp4"
+        },
+        {
+            "type": "header",
+            "text": "How It Works"
+        },
+        {
+            "type": "text",
+            "text": [
+                "The goal of this project is to predict the movie rating of a movie title entered by the user. Our prediction relies on IMDb and TMDb datasets, using our statistical model. We also implemented a rudimentary algorithm that allows the model to learn and improve from past predictions.",
+                "The main program takes in a name of a movie from the user. It then downloads the ID's of the actors and other parameters from TheMovieDB.org. Those ID's are then compared against the previous ratings of movies those actors have starred in. The final resulting list of ratings is then averaged and weighted together to form the final rating guess."
+            ]
+        },
+        {
+            "type": "pic",
+            "src": "FlowChart1.png",
+            "alt": "Flow Chart"
+        },
+
+        {
+            "type": "header",
+            "text": "The Results"
+        },
+        {
+            "type": "text",
+            "text": [
+                "We split our project into multiple sprints. During the first sprint, we created a foundation for the design/planning of the project. We worked on the proof of concept for the tools we planned to use as well as determine how we would analyze whether someone is drowsy or not. Furthermore, we determined how we wanted to process images, install the framework and libraries for backend processing, and create an established workflow.",
+                "Next we beginan by working on the basic framework of the project as well as the image processing for data inputs. We also had continuous integration with GitHub and finally, we continued to test different ways of determining drowsiness.",
+                "Our third sprint consisted of us integrating individual components of the code as well as finalizing the best way to process images and determine drowsiness.", 
+                "We worked on a presentation that displayed what we had accomplished so far. We created a demo of our current project and create a plan for what we would be adding next quarter.",
+                "Our second quarter of the project started with finishing up the basic functionality of the drowsiness detector. The rest of the quarter was spent keying in the settings and preparing for our final presentation",
+                "Additional features we added were user accounts which save facial feature calibration also uploading drowsiness data where a supervisor would be able to view it."
+            ]
+        },
+        {
+            "type": "header",
+            "text": "The Team"
+        },
+        {
+            "type": "pic",
+            "src": "groupPhoto.jpg",
+            "alt": "Group Photo"
+        },
+        {
+            "type": "list",
+            "title": "Contributors",
+            "list_style": "none",
+            "align": "center",
+            "list": [
+                "Danielle Robinson (Team Lead)",
+                "Victoria Sneddon",
+                "Brandon Tran",
+                "Andrew Polk",
+                "David Sun"
+            ]
+        }
+    ]
+}

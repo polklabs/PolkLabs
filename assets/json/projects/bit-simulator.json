@@ -1,0 +1,171 @@
+{
+    "id": "bit-simulator",
+    "title": "Logic Circuit Simulator",
+    "meta": "Creating a digital logic simulator using c# and unity3d. A program that allows the user to create circuits using components similar to real life ICs.",
+    "bgimg": "screenshot_2.png",
+    "github": "https://github.com/polklabs/Project-Bit",
+    "demo": "",
+    "languages": [
+        "C#"
+    ],
+    "reason": "Personal Project",
+    "hardware": [],
+    "technologies": [
+        "Unity3D"
+    ],
+    "lastUpdate": "10/13/19",
+    "sections": [
+		{
+			"type": "header",
+            "text": "About Project Bit",
+            "noPadding": true
+		},
+        {
+            "type": "text",
+            "text": [
+                "The goal of this project is to create a logic simulator that is accurate enough to build a working 8 bit computer that runs in near realtime. The components available in the simulator should be similar to components you would be able to buy in real life."
+            ]
+        },
+        {
+            "type": "html",
+            "html": "<h3>Inspired By: </h3><p><a href=\"https://eater.net/8bit\" class=\"pl-link\">Ben Eater 8Bit Computer</a></p>"
+        },
+        {
+            "type": "dict",
+            "keyValue": [
+                {
+                    "key": "Language",
+                    "value": "C#"
+                },
+                {
+                    "key": "Type",
+                    "value": "Unity3D"
+                }
+            ]
+        },
+        {
+            "type": "pic",
+            "src": "screenshot_1.png",
+            "alt": "Screenshot",
+            "width": "900px",
+            "text": "An 8-Bit counter with a clock"
+        },
+        {
+            "type": "grid",
+            "items": [
+                {
+                    "type": "pic",
+                    "src": "screenshot_2.png",
+                    "alt": "Screenshot 2"
+                },
+                {
+                    "type": "pic",
+                    "src": "screenshot_3.png",
+                    "alt": "Screenshot 3"
+                }
+            ]
+        },
+        {
+			"type": "header",
+			"text": "How It Works"
+        },
+        {
+            "type": "text",
+            "title": "The Basics",
+            "subtitle": "Components",
+            "text": [
+                "The basis of the simulator is built on components and breadboards. Components are of six main types:\n\t1. Wires: Connect pins of the breadboard together.\n\t2. Basic Gates: Sets of simple AND, OR, XOR and NOT gates.\n\t3. Special Chips: Includes clocks, adders and counters.\n\t4. Memory Chips: EEPROM and Ram chips are part of this group.\n\t5. Inputs: These are different types of switches that can be controlled manualy.\n\t6. Outputs: Includes LEDs and 7-Segment Displays"
+            ]
+        },
+        {
+            "type": "text",
+            "subtitle": "Breadboard",
+            "text": [
+                "These components can be placed on the breadboard the same way you would place them on a real breadboard. Such as Integrated Circuits being placed accross the center divider. These components are all based on integrated circuits and components that can be bought in real life.",
+                "The breadboards main purpose is to connect all these pieces together. When a component's output value has changed it sends an update to the breadboard, the breadbaord then updates the pin's value (High, Low, Unknown). It then propagates this update to all connected pins, in the same row and through wires. If a pin value is changed (High to Low, Low to High), the breadboard will then queue up all connected components to be updated. Each frame the breadboard goes through this queue calling the update function on each component which in turn may trigger this whole process again."
+            ]
+        },
+        {
+            "type": "text",
+            "title": "Into The Weeds",
+            "subtitle": "Integrated Circuits (IC)",
+            "text": [
+                "The main wrapper object for all of the circuit components is the IntegratedCircuit object. This object connects the chip/gate/other logic to the breadboard component. The IC has arrays for the input and output values. It also contains references to the nodes/wires that it is connected to. This allows the IC to update it's inputs on on demand and propagate the output values to other ICs and nodes. This object can be created with any number of pins allowing for more customization.",
+                "The IC object does not care about how it's outputs are changed based on its inputs. The IC is only aware the output values that change after it calls it's InternalUpdate method. This InternalUpdate value can be tied to anything from a Chip object, Gate object or even a Unity GameObject reference.",
+                "This object also has a few other features such as dedicated Positive and Ground booleans to allow for resetting all internal/child states. These components are versatile and can be used fro everything from Chips to LEDs, and even wires.",
+                "The following code is an example of the mapping for a Quad Xor Gates Integrated Circuit."
+            ]
+        },
+        {
+            "type": "code",
+            "code": "using System.Runtime.Serialization;\n\nnamespace IntegratedCircuits\n{\n\t[DataContract]\n\tpublic class PQ030G_XorGate : IntegratedCircuit\n\t{\n\t\t[DataMember]\n\t\tprivate readonly Chips.Quad_Xor_Gates Chip;\n\n\t\tpublic PQ030G_XorGate() : base(14)\n\t\t{\n\t\t\tIcType = ICType.ic4;\n\t\t\tModelName = \"IC14\";\n\n\t\t\tChip = new Chips.Quad_Xor_Gates();\n\n\t\t\tPinModes[2] = PinMode.Ouput;\n\t\t\tPinModes[5] = PinMode.Ouput;\n\t\t\tPinModes[7] = PinMode.Ouput;\n\t\t\tPinModes[10] = PinMode.Ouput;\n\t\t}\n\n\t\tprotected override void InternalUpdate()\n\t\t{\n\t\t\tChip.Input[0] = PinState[0] == State.HIGH ? true : false;\n\t\t\tChip.Input[1] = PinState[1] == State.HIGH ? true : false;\n\t\t\tChip.Input[2] = PinState[3] == State.HIGH ? true : false;\n\t\t\tChip.Input[3] = PinState[4] == State.HIGH ? true : false;\n\t\t\tChip.Input[4] = PinState[8] == State.HIGH ? true : false;\n\t\t\tChip.Input[5] = PinState[9] == State.HIGH ? true : false;\n\t\t\tChip.Input[6] = PinState[11] == State.HIGH ? true : false;\n\t\t\tChip.Input[7] = PinState[12] == State.HIGH ? true : false;\n\n\t\t\tChip.Update();\n\n\t\t\tPinState[2] = Chip.Output[0] ? State.HIGH : State.LOW;\n\t\t\tPinState[5] = Chip.Output[1] ? State.HIGH : State.LOW;\n\t\t\tPinState[7] = Chip.Output[2] ? State.HIGH : State.LOW;\n\t\t\tPinState[10] = Chip.Output[3] ? State.HIGH : State.LOW;\n\t\t}\n\n\t\tprotected override void InternalReset(bool disable)\n\t\t{\n\t\t\tInternalUpdate();\n\t\t\tbase.InternalReset(disable);\n\t\t}\n\n\t}\n}",
+            "language": [
+                "c#"
+            ],
+            "filename": "PQ030G_XorGate.cs"
+        },
+        {
+            "type": "text",
+            "subtitle": "Chips",
+            "text": [
+                "The next layer down from IntegratedCircuits are Chips. Chips are wrappers for collections of other chips or gates and wires to connect them all. The update method passes the input values to the input of the internal chips/gates. It then takes the output from those and propagates them to the next gates/chips in line based on how the wires are connected between them.",
+                "This method of chip structure allows the creation of new chips from real world circuit diagrams. In addition to gate based simulation, the chips update can be used for logical updating where the output is set based on a logical function rather than building everything out of gates. This allows for easy creation of more complex chips such as EEPROM memory or registers.",
+                "The following code and image are equivilant once the input/outputs have been mapped with a IntegratedCircuit object."
+            ]
+        },
+        {
+            "type": "grid",
+            "items": [
+                {
+                    "type": "code",
+                    "code": "using Gates;\n\n/**\n * Quad And Gates based on the 74LS86\n * Used in the PQ010G_XorGate\n */\n\nnamespace Chips\n{\n\tpublic class Quad_Xor_Gates : Chip\n\t{\n\t\tpublic Quad_Xor_Gates() : base(8, 4)\n\t\t{\n\t\t\tGate gateA = new XORGate();\n\t\t\tint indexA = AddGate(gateA);\n\n\t\t\tGate gateB = new XORGate();\n\t\t\tint indexB = AddGate(gateB);\n\n\t\t\tGate gateC = new XORGate();\n\t\t\tint indexC = AddGate(gateC);\n\n\t\t\tGate gateD = new XORGate();\n\t\t\tint indexD = AddGate(gateD);\n\n\t\t\t// Gate A\n\t\t\tAddWire(ID, new Wire(0, 0, indexA, false));\n\t\t\tAddWire(ID, new Wire(1, 1, indexA, false));\n\t\t\tAddWire(gateA.ID, new Wire(0, 0, -1, true));\n\n\t\t\t// Gate B\n\t\t\tAddWire(ID, new Wire(2, 0, indexB, false));\n\t\t\tAddWire(ID, new Wire(3, 1, indexB, false));\n\t\t\tAddWire(gateB.ID, new Wire(0, 1, -1, true));\n\n\t\t\t// Gate C\n\t\t\tAddWire(ID, new Wire(4, 0, indexC, false));\n\t\t\tAddWire(ID, new Wire(5, 1, indexC, false));\n\t\t\tAddWire(gateC.ID, new Wire(0, 2, -1, true));\n\n\t\t\t// Gate D\n\t\t\tAddWire(ID, new Wire(6, 0, indexD, false));\n\t\t\tAddWire(ID, new Wire(7, 1, indexD, false));\n\t\t\tAddWire(gateD.ID, new Wire(0, 3, -1, true));\n\t\t}\n\t}\n}",
+                    "language": [
+                        "c#"
+                    ],
+                    "filename": "Quad_Xor_Gates.cs"
+                },
+                {
+                    "type": "pic",
+                    "src": "OIP.jpg",
+                    "alt": "Quad XOR Chip"
+                }
+            ]
+        },
+        {
+            "type": "text",
+            "subtitle": "Gates",
+            "text": [
+                "Gates are the most basic object that chips and integrated circuits are made out of. These include AND, NAND, OR, NOR, XOR, XNOR, NOT, and buffer gates. Most gates can are defaulted to two or one input and one output, but the number of inputs can be specified for gates such as the NAND gate."
+            ]
+        },
+        {
+            "type": "code",
+            "code": "public class ANDGate : Gate\n{\n\tpublic ANDGate(int inputs) : base(inputs) { }\n\tpublic ANDGate() : base(2) { }\n\n\tprotected override bool GetOutput()\n\t{\n\t\tbool output = Input[0];\n\t\tforeach (bool bit in Input)\n\t\t{\n\t\t\toutput &= bit;\n\t\t}\n\t\treturn output;\n\t}\n}",
+            "language": [
+                "c#"
+            ],
+            "filename": "ANDGate.cs"
+        },
+        {
+            "type": "list",
+            "title": "Limitations",
+            "list_style": "disc",
+            "align": "left",
+            "list": [
+                "Does not simulate - voltage, resistance, current",
+                "Ignores gate propagation delay - Race Conditions may result in unknown behavior",
+                "Application runs at 60fps, any logic updates faster than that may not function properly",
+                "Switches are one way gates. This can be changed to work in both directions but would most likely harm performance (Further testing needed)",
+                "Gates and Chips are ideal aproximations and will most likely behave differently in real life"
+            ]
+        },
+        {
+            "type": "header",
+            "text": "Related Blog Posts"
+        },
+        {
+            "type": "blog",
+            "id": "bit-simulator-serialization"
+        }
+    ]
+}

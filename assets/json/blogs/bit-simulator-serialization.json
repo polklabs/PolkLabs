@@ -1,0 +1,87 @@
+{
+    "id": "bit-simulator-serialization",
+    "title": "Bit Simulator - Data Serialization",
+    "meta": "How to create a custom JsonConverter class for BitArrays, and how to implment that class with the JsonSerializer using c# and Unity3D.",
+    "author": "Andrew Polk",
+    "date": "July 1, 2020",
+    "category": "C#, Unity3D",
+    "sections": [
+        {
+            "type": "header",
+            "text": "The Problem",
+            "noPadding": true
+        },
+        {
+            "type": "text",
+            "text": [
+                "When creating something as complex as a logic simulator you're going to want to eventually save the design of your circuit and hopefully the state too. When creating the individual gates and chips I opted to use BitArrays which act similar to arrays of booleans but have the added advantage of being able to perform bitwise operations directly on the objects them selves.",
+                "The two core components/objects gates and chips both use BitArrays to store the input values. In addition chips have a second BitArray to store the output since a chip can have multiple outputs vs a gate which only has one. When saving the state of the simulation it is enough to save the BitArray state, the connections between chips/gates and the component update queue (What component should have it's output updated next).",
+                "Now comes the problem with this approach, there is no direct converter from a BitArray to JSON. Which is why we'll we creating our own."
+            ]
+        },
+        {
+            "type": "header",
+            "text": "The Converter"
+        },
+        {
+            "type": "text",
+            "text": [
+                "To create a JSON converter we'll start off with a new class that extends JsonConverter, extending this class requires us to override three methods."
+            ]
+        },
+        {
+            "type": "list",
+            "list_style": "circle",
+            "align": "start",
+            "list": [
+                "CanConvert",
+                "WriteJson",
+                "ReadJson"
+                
+            ]
+        },
+        {
+            "type": "text",
+            "text": [
+                "This first method is simple, we just need to return true if the object type passed in is the type we want to convert with this class, BitArray in this case.",
+                "Next we'll want to override the WriteJson method. Now this is where we have a little more freedom to decide how we want to implement it. We need to either transform the object into a string or some other object that can be serialized. I have opted to transform it into a bit string of the form \"0011011101\" so that if I need to modify the json files while testing it's in a format that I can understand. There are other options that work also such as converting it into bytes which takes up the smallest amount of space but is not as readable and may require extra information such as how many bits are in the array. Hex representations are another option.",
+                "To aid in creating this helper method I added a BitArray extension method which can be called on the object itself and loops through the array building a string of 1s and 0s",
+                "Finally we need to override the ReadJson method, this will pass in the JSON string/object and expects a BitArray object to be returned. For this method I create a new boolean array of the correct lenght and then iterate over the json string updating the boolean at each position. Once the boolean array is correct I created a new BitArray object with the boolean array passed into the constructor."
+            ]
+        },
+        {
+            "type": "code",
+            "code": "using System;\nusing System.Collections;\nusing System.Linq;\nusing System.Text;\n\nusing Newtonsoft.Json;\n\npublic class BitArrayConverter : JsonConverter\n{\n\tpublic override bool CanConvert(Type objectType)\n\t{\n\t\treturn objectType == typeof(BitArray);\n\t}\n\n\tpublic override object ReadJson(JsonReader reader, Type objectType, object existingValue, JsonSerializer serializer)\n\t{\n\t\tstring bytes = serializer.Deserialize<string>(reader);\n\t\tbool[] values = Enumerable.Repeat(false, bytes.Length).ToArray();\n\t\tfor(int i = 0; i < bytes.Length; i++)\n\t\t{\n\t\t\tif (bytes[i].Equals('1'))\n\t\t\t{\n\t\t\t\tvalues[i] = true;\n\t\t\t}\n\t\t}\n\t\treturn new BitArray(values);\n\t}\n\n\tpublic override void WriteJson(JsonWriter writer, object value, JsonSerializer serializer)\n\t{\n\t\tserializer.Serialize(writer, ((BitArray)value).ToDigitString());\n\t}\n\n}\n\npublic static class BitArrayExtensions\n{\n\tpublic static string ToDigitString(this BitArray array)\n\t{\n\t\tvar builder = new StringBuilder();\n\t\tforeach(bool bit in array.Cast<bool>())\n\t\t{\n\t\t\tbuilder.Append(bit ? \"1\" : \"0\");\n\t\t}\n\t\treturn builder.ToString();\n\t}\n\n}",
+            "language": [
+                "c#"
+            ],
+            "filename": "BitArrayConverter.cs"
+        },
+        {
+            "type": "header",
+            "text": "Using the Converter"
+        },
+        {
+            "type": "text",
+            "text": [
+                "Implementing the encoder is as simple as adding the new BitArrayConverter class to the JsonSerializer options used when saving and loading."
+            ]
+        },
+        {
+            "type": "code",
+            "code": "JsonSerializer serializer = new JsonSerializer\n{\n\tTypeNameHandling = TypeNameHandling.Auto,\n\tFormatting = Formatting.Indented,\n\tConverters = { new BitArrayConverter(), new Vector3Converter() }\n};",
+            "language": [
+                "c#"
+            ],
+            "filename": "JsonSerializer"
+        },
+        {
+            "type": "header",
+            "text": "Related Project"
+        },
+        {
+            "type": "project",
+            "id": "bit-simulator"
+        }
+    ]
+}

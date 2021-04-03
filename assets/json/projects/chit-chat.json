@@ -1,0 +1,156 @@
+{
+    "id": "chit-chat",
+    "title": "Chit Chat\nChat Room\nApp",
+    "meta": "A mobile app built on android studio and a java backend. Allows users to send encrypted chats and create chat rooms based on location or name.",
+    "authors": "Andrew Polk",
+    "type": "UCSB ECE150 project",
+    "bgimg": "message_bottle.jpg",
+    "github": "https://github.com/polklabs/ChipChatV2",
+    "demo": "",
+    "sections": [
+        {
+            "type": "header",
+            "text": "About",
+            "noPadding": true
+        },
+        {
+            "type": "text",
+            "text": [
+                "The overall concept of our Chit Chat application was to create a chat server targeting mobile clients through the use of an Android app. This app allows a user to create an account using his/her email/phone number. Then, the user can start a chat with another user with an account. This is because each user has a unique user ID that relate to private and public keys for each user. This ID identifies users and their chat history. In addition, we successfully implemented the ability to send pictures within a chat. We will go more into detail on the design and implementation in the next section. The hardware that we used to test our application included a Raspberry pie for our server, a Galaxy S9+ cellular device, and a Motorola cell phone. We also created the app using Android Studio and used Java for the server."
+            ]
+        },
+        {
+            "type": "dict",
+            "keyValue": [
+                {
+                    "key": "School",
+                    "value": "UC Santa Barbara"
+                },
+                {
+                    "key": "Class",
+                    "value": "Mobile Embedded Systems"
+                },
+                {
+                    "key": "Hardware",
+                    "value": "2 Android Phones as Clients, Raspberry Pi as Server"
+                },
+                {
+                    "key": "Languages",
+                    "value": "Java"
+                }
+            ]
+        },
+        {
+            "type": "header",
+            "text": "How It Works"
+        },
+        {
+            "type": "text",
+            "title": "Login",
+            "text": [
+                "When the user first opens Chit Chat, if he/she has not logged in before, the app opens to the login/register page as can be seen in the image below. If he/she has already been logged in on the phone, the login/registration page is skipped and the user goes directly to the page that lists his/her chat conversations. If the user does not have an account, he/she can register for a new account and fill out the information."
+            ]
+        },
+        {
+            "type": "pic",
+            "src": "login-v2.jpg",
+            "alt": "Login"
+        },
+        {
+            "type": "text",
+            "title": "New Conversation",
+            "text": [
+                "A new conversation is started by pressing the new message button at the bottom of the screen and entering the recipient’s email or phone number. If the recipient does not have an account, the app will alert the user of this and no new conversation will be started. The reason for this, as stated in the introduction, is due to each user account being associated with a user ID. We implemented this using Firebase, which stores the users’ private keys, public keys, emails, and phone numbers as well as the name of the user associated with the account. The program makes a call to Firebase whenever a user tries to start a conversation with another user account to download their information. When the user successfully begins a chat with another user, the conversation will be added to the list  of the user’s other conversations as shown in the image below. When the user clicks on one of the conversations, the conversation page shown in the next image will show up where the two users can send each other messages."
+            ]
+        },
+        {
+            "type": "grid",
+            "items": [
+                {
+                    "type": "pic",
+                    "src": "conversations.jpg",
+                    "alt": "Conversations",
+                    "width": "300px"
+                },
+                {
+                    "type": "pic",
+                    "src": "messages.jpg",
+                    "alt": "Messages",
+                    "width": "300px"
+                }
+            ]
+        },
+        {
+            "type": "text",
+            "title": "Chat History",
+            "text": [
+                "In order to store chat history, we created a Java program that runs on the server that stores a lost of all chat history. This has been encrypted client-side with a Diffie-Hellman encryption scheme and the server is only used as a middle-man between clients so the messages are secure."
+            ]
+        },
+        {
+            "type": "text",
+            "title": "Server-side Implementation",
+            "text": [
+                "Each TCP connection from the client is started in a new thread so that all conversations can run concurrently. A dictionary is used to hold the conversations. These conversations each contain message objects, which are the messages being sent. When a message is sent to the server, it is stored in a specific conversation and when another client wants to retrieve this message, he/she sends his/her userID and server will send back all the new messages the server has not relayed to them yet. The server keeps track on which messages it has delivered to the receiver so when asking for new messages, the server will only send the messages that the phone hasn’t received yet. The server also has the ability to send all messages old and new to the receiver such as for the case when a user logs in on a new device. When a user asks for notifications, the server will only send the most recent message. Finally, all the messages on the server are encrypted so the all the server knows is where to send them and not what is contained in them."
+            ]
+        },
+        {
+            "type": "text",
+            "title": "Message handling",
+            "text": [
+                "Messages are stored on the phone in a similar way as on the server, as conversation objects that are stored in dictionaries. On the physical phone, messages are stored as plaintext. Only when the phone goes to send a message to a receiver is the message encrypted. The receiver phone then decrypts it and stores the message in plaintext on its device. There is no set maximum length that a message can be other than the maximum length the phone can handle. In addition, when sending images, the image is converted into a base-64 string and saved into a message object and then sent. When the message is received, the string is converted back into a byte array that can then display the image. In general, when a message is sent, it contains a sender, receiver, encryption information, AES parameters, the actual message, and whether or not the message is an image."
+            ]
+        },
+        {
+            "type": "text",
+            "title": "Encryption",
+            "text": [
+                "In order to encrypt the messages being sent, we used a Diffie-Hellman key exchange to create a shared key. We also use AES to encrypt and decrypt the messages themselves. When a user first registers they generate 100 different Diffie-Hellman keys and upload them to firebase. When encrypting a message, the encryption method chooses two random values between 0 and 100. These values are used to decide which Diffie-Hellman keys from firebase to use for encryption. When encrypting or decrypting, if the client does not have a locally stored cache of the keys it needs, either public or private used to encrypt or decrypt, the client will pause the decryption or encryption method until it can retrieve those keys from firebase and complete the encryption. Encrypting with the keys from Firebase allows encrypted messages that have been sent to be decrypted later by the sender rather than only the decrypted by the set receiver."
+            ]
+        },
+        {
+            "type": "text",
+            "title": "Notifications",
+            "text": [
+                "Notifications appear on a user’s device as seen in the below image. Notifications are received through an Android service running in the background. This service is constantly running at all times. In addition, there is a timer set so that when the app is closed, every 60 seconds it will make a call to the server requesting any notifications or message updates. The server will then send the most recent message that hasn’t been delivered or won’t send anything at all. This server also keeps track of a hashed version of the notification to check against what it’s going to send so that if you receive a notification and haven’t opened the application, the server will not resend the notification. The server will know that you haven’t opened it yet because the hash value will be the same. When the user is in the application, notifications are blocked because the application is in the foreground."
+            ]
+        },
+        {
+            "type": "pic",
+            "src": "notifications.jpg",
+            "alt": "Notifications",
+            "width": "400px"
+        },
+        {
+            "type": "header",
+            "text": "Rewrites and Updates"
+        },
+        {
+            "type": "text",
+            "text": [
+                "A while after the original chat application was created the code was refactored to be used as an anonymous chat room app. When opening the app the user is shown a list of available chat rooms based on popular rooms and based on location of the user. Alternativly the user can create a new chatroom with multiple options to make it public, password protected, based locally and more.",
+                "The user who creates the chatroom is made the Moderator and can choose to kick other users out of the chat room. This is passed to the next user in line if they leave the room. All other users have to option to report other to the moderator. Kicking a user removes them from the room, but since the rooms are anonymous they can just join right back in, this could be fixed with hardware ids or other identifiers.",
+                "The messages are all encrypted between the users in the chat room. Public keys are stored on the server when joining a room and all existing keys are downloaded to each client.",
+                "Private messages can also be sent inside of a chat room by opening the sidebar and selecting the user you'd like to send the \"secret\" message to.",
+                "Extra features of this rewritten app is the ability to join a chat room from scanning a NFC tag. Users can also send images and gifs but with the current encryption system they have to be encoded for each user in the room which can use a lot of bandwith with many users. Chat rooms are also short lived as they only exist as long as a user is in the room. When the server detects the last user has left the chat room is closed and the room name is free to be used on a new room."
+            ]
+        },
+        {
+            "type": "grid",
+            "items": [
+                {
+                    "type": "pic",
+                    "src": "login.jpg",
+                    "alt": "Login",
+                    "width": "400px"
+                },
+                {
+                    "type": "pic",
+                    "src": "chatroom.jpg",
+                    "alt": "Chat Room",
+                    "width": "400px"
+                }
+            ]
+        }
+    ]
+}

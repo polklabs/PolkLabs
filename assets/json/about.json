@@ -1,0 +1,148 @@
+{
+    "welcomeTitle": "Let's build something\namazing together",
+    "welcomeSubtitle": "Logically minded // Creative at heart",
+    "name": "Andrew Polk",
+    "photo": "me_2.png",
+    "title": "Computer Engineer",
+    "bio": "Mission-driven full stack developer with a passion for thoughtful UI design, learning, and collaboration.",
+    "summary": "Growing up I was always looking for new things to take apart and put back together. Building, Creating and learning have been passions of mine since long before I knew I wanted to be a computer engineer. I’ve always sought out opportunities and challenges that are meaningful to me. Although my educational goals have taken many twists and turns — from wanting to be an electrical engineer to robotics, machine learning and even working with image processing — I've never stopped engaging my passion to help others and solve problems.\n\nAs a full stack web developer, I enjoy using my obsessive attention to detail, my unequivocal love for making things, and my mission-driven work ethic to literally change the world. That's why I’m excited to make a big impact wherever I am and on everything I work on.",
+    "currentFocus": "Angular // ASP.NET // UI",
+    "resume": "Resume - Andrew Polk.pdf",
+    "experience": [
+        {
+            "logo": "tecolote.png",
+            "company": "Tecolote Research",
+            "title": "Full-Stack Software Developer",
+            "summary": "Company intranet that interfaces with an internal database.",
+            "items": [
+                {
+                    "type": "list",
+                    "title": "Develop Product",
+                    "items": [
+                        "Developed products that are used by the entire company",
+                        "Front and back-end development, creating and documenting company intranet site"
+                    ]
+                }
+            ],
+            "dates": "May 2019 - Present",
+            "location": "Goleta, CA"
+        },
+        {
+            "logo": "nps.jpg",
+            "company": "Monterey Naval Postgraduate School",
+            "title": "Research Intern",
+            "summary": "Company intranet that interfaces with an internal database.",
+            "items": [
+                {
+                    "type": "list",
+                    "title": "Information Sciences Department",
+                    "items": [
+                        "Gained knowledge in data visualization and manipulation while working with enormous amounts of data",
+                        "Used neural networks and other programs for problem solving",
+                        "Corresponded with high ranking researchers on datasets ranging from education to networking attacks",
+                        "Authored multiple deep learning based scientific papers in collaboration with PhD researchers"
+                    ]
+                }
+            ],
+            "dates": "June 2018 - August 2018",
+            "location": "Monterey, CA"
+        }
+    ],
+    "skills": [
+        {
+            "title": "LANGUAGES",
+            "items": [
+                {
+                    "text": "C#",
+                    "logo": "csharp.png"
+                },
+                {
+                    "text": "Python",
+                    "logo": "python.png"
+                },
+                {
+                    "text": "Java",
+                    "logo": "java.png"
+                },
+                {
+                    "text": "Typescript",
+                    "logo": "typescript.png"
+                }
+            ]
+        },
+        {
+            "title": "WEB DESIGN",
+            "items": [
+                {
+                    "text": "Angular",
+                    "logo": "angular.png"
+                },
+                {
+                    "text": "HTML5",
+                    "logo": "html5.png"
+                },
+                {
+                    "text": "Java Script",
+                    "logo": "javascript.png"
+                },
+                {
+                    "text": "Sass",
+                    "logo": "sass.png"
+                }
+            ]
+        },
+        {
+            "title": "OTHER",
+            "items": [
+                {
+                    "text": "Lightroom",
+                    "logo": "lightroom.png"
+                },
+                {
+                    "text": "Photoshop",
+                    "logo": "photoshop.png"
+                },
+                {
+                    "text": "Unity3D",
+                    "logo": "unity3d.png"
+                }
+            ]
+        }
+    ],
+    "awards": [
+        {
+            "title": "Dean's Honors",
+            "location": "UC Santa Barbara",
+            "date": "Fall 2018",
+            "summary": "Awarded by UCSB College of Engineering for a grade point average aboce 3.5 while completing a minimum of 12 letter grade units."
+        },
+        {
+            "title": "Dean's Honors",
+            "location": "UC Santa Barbara",
+            "date": "Spring 2018",
+            "summary": "Awarded by UCSB College of Engineering for a grade point average aboce 3.5 while completing a minimum of 12 letter grade units."
+        },
+        {
+            "title": "Dean's Honors",
+            "location": "UC Santa Barbara",
+            "date": "Fall 2017",
+            "summary": "Awarded by UCSB College of Engineering for a grade point average aboce 3.5 while completing a minimum of 12 letter grade units."
+        }
+    ],
+    "education": [
+        {
+            "school": "University Of California, Santa Barbara",
+            "location": "Santa Barbara, CA",
+            "bullets": [
+                "B.S. Computer Engineering"
+            ]
+        },
+        {
+            "school": "Freedom High School",
+            "location": "Oakley, CA",
+            "bullets": [
+                "GE"
+            ]
+        }
+    ]
+}
