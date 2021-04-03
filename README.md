@@ -12,9 +12,15 @@
 4. Run `python routesGen.py` to generate _routesFile.txt_, needed for prerendering
 5. Edit `/src/apps/prerendered/prerender-project.ts`, add import for json, add __PROJECT_ID__ to switch case
 
-### Finally
+### Publishing
 6. Remove `/dist/` folder
 7. Run `npm run prerender`, output will be in `/dist/PolkLabs/browser`
+8. cd into output folder
+9. `git init`
+10. `git add .`
+11. `git commit -m "Initial commit"`
+12. `git remote add origin git@github.com:polklabs/PolkLabs.git`
+13. `git push --force origin master:gh-pages`
 
 To add a blog post, perform the above steps replacing _project(s)_ with _blog(s)_
 
