@@ -13,6 +13,9 @@ import { ProjectsComponent } from './projects/projects.component';
 import { BlogComponent } from './blog/blog.component';
 import { BlogsComponent } from './blogs/blogs.component';
 import { ProjectsSmallComponent } from './shared/projects-small/projects-small.component';
+import { BrowserModule } from '@angular/platform-browser';
+import { PrerenderBlogComponent } from './prerendered/prerender-blog';
+import { PrerenderProjectComponent } from './prerendered/prerender-project';
 
 @NgModule({
   declarations: [
@@ -24,9 +27,13 @@ import { ProjectsSmallComponent } from './shared/projects-small/projects-small.c
     ProjectsComponent,
     BlogComponent,
     BlogsComponent,
-    ProjectsSmallComponent
+    ProjectsSmallComponent,
+
+    PrerenderBlogComponent,
+    PrerenderProjectComponent
   ],
   imports: [
+    BrowserModule.withServerTransition({ appId: 'serverApp' }),
     BrowserAnimationsModule,
     CoreModule,
     SharedModule,

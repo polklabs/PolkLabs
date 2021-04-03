@@ -1,0 +1,15 @@
+/
+/about
+/home
+/projects
+/blogs
+/blog/rng-encoding
+/blog/bit-simulator-serialization
+/blog/nonogram-solver
+/project/reel-ratings
+/project/pixel-matrix-game
+/project/text-generator
+/project/chit-chat
+/project/naval-postgraduate-school
+/project/drowsiness-detector
+/project/bit-simulator

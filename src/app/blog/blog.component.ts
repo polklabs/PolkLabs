@@ -1,7 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { ActivatedRoute } from '@angular/router';
-import { take } from 'rxjs/operators';
+import { skip, take } from 'rxjs/operators';
 import { SEOService } from '../core/service/seo.service';
 
 @Component({
@@ -11,8 +11,8 @@ import { SEOService } from '../core/service/seo.service';
 })
 export class BlogComponent implements OnInit {
 
-  id: string;
-  data: any;
+  @Input() id: string;
+  @Input() data: any = undefined;
   sectionTitles: string[] = [];
   fragment: string;
 
@@ -27,26 +27,36 @@ export class BlogComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    let skipParam = 0;
 
-    this.route.params.subscribe(params => {
+    if (this.data !== undefined) {
+      this.afterJsonLoaded();
+      skipParam = 1;
+    }
+
+    this.route.params.pipe(skip(skipParam)).subscribe(params => {
       this.id = params.id;
       this.httpService.get(`./assets/json/blogs/${params.id}.json`).pipe(take(1)).subscribe(
         (data: any) => {
           if (data !== undefined) {
             this.data = data;
-            this.sectionTitles = data.sections.filter(x => x.type === 'header').map(x => x.text);
-
-            this.seoService.updateTitle(`Polklabs | ${data.title}`);
-            this.seoService.updateDescription(data.meta);
-
-            this.loading = false;
+            this.afterJsonLoaded();
           }
         }
       );
-    });
-
+    });    
+    
     this.route.fragment.subscribe(fragment => { this.fragment = fragment; });
 
+  }
+
+  afterJsonLoaded(): void {
+    this.sectionTitles = this.data.sections.filter(x => x.type === 'header').map(x => x.text);
+
+    this.seoService.updateTitle(`Polklabs | ${this.data.title}`);
+    this.seoService.updateDescription(this.data.meta);
+
+    this.loading = false;
   }
 
   ngAfterViewChecked(): void {

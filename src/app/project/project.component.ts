@@ -1,7 +1,7 @@
-import { Component, OnInit, AfterViewChecked, HostListener } from '@angular/core';
+import { Component, OnInit, AfterViewChecked, HostListener, Input } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { ActivatedRoute } from '@angular/router';
-import { take, catchError } from 'rxjs/operators';
+import { take, catchError, skip } from 'rxjs/operators';
 import { of } from 'rxjs';
 import { SEOService } from '../core/service/seo.service';
 
@@ -12,8 +12,8 @@ import { SEOService } from '../core/service/seo.service';
 })
 export class ProjectComponent implements OnInit, AfterViewChecked {
   
-  id: string;
-  data: any;
+  @Input() id: string;
+  @Input() data: any = undefined;
   sectionTitles: string[] = [];
   fragment: string;
 
@@ -33,8 +33,14 @@ export class ProjectComponent implements OnInit, AfterViewChecked {
   ) { }
 
   ngOnInit() {
+    let skipParam = 0;
 
-    this.route.params.subscribe(params => {
+    if (this.data !== undefined) {
+      this.afterJsonLoaded();
+      skipParam = 1;
+    }
+
+    this.route.params.pipe(skip(skipParam)).subscribe(params => {
       this.loading = true;
       this.data = undefined;
 
@@ -45,6 +51,7 @@ export class ProjectComponent implements OnInit, AfterViewChecked {
       }
 
       this.id = params.id;
+      console.log("Params: " + this.id);
       this.httpService.get(`./assets/json/projects/${params.id}.json`)
         .pipe(take(1),
           catchError(e => {
@@ -55,12 +62,7 @@ export class ProjectComponent implements OnInit, AfterViewChecked {
         (data: any) => {
           if (data !== undefined) {
             this.data = data;
-            this.sectionTitles = data.sections.filter(x => x.type === 'header').map(x => x.text);
-
-            this.seoService.updateTitle(`Polklabs | ${data.title}`);
-            this.seoService.updateDescription(data.meta);
-
-            this.loading = false;
+            this.afterJsonLoaded();
           }
         }
       );
@@ -68,6 +70,15 @@ export class ProjectComponent implements OnInit, AfterViewChecked {
 
     this.route.fragment.subscribe(fragment => { this.fragment = fragment; });
 
+  }
+
+  afterJsonLoaded(): void {
+    this.sectionTitles = this.data.sections.filter(x => x.type === 'header').map(x => x.text);
+
+    this.seoService.updateTitle(`Polklabs | ${this.data.title}`);
+    this.seoService.updateDescription(this.data.meta);
+
+    this.loading = false;
   }
 
   ngAfterViewChecked(): void {

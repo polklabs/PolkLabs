@@ -6,6 +6,8 @@ import { AboutComponent } from './about/about.component';
 import { HomeComponent } from './home/home.component';
 import { BlogComponent } from './blog/blog.component';
 import { BlogsComponent } from './blogs/blogs.component';
+import { PrerenderBlogComponent } from './prerendered/prerender-blog';
+import { PrerenderProjectComponent } from './prerendered/prerender-project';
 
 const routes: Routes = [
     {
@@ -34,7 +36,7 @@ const routes: Routes = [
     },
     {
         path: 'project/:id',
-        component: ProjectComponent
+        component: PrerenderProjectComponent
     },
     {
         path: 'blogs',
@@ -46,7 +48,7 @@ const routes: Routes = [
     },
     {
         path: 'blog/:id',
-        component: BlogComponent
+        component: PrerenderBlogComponent
     },
     {
         path: '',
@@ -56,7 +58,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-    imports: [RouterModule.forRoot(routes, { useHash: false, scrollPositionRestoration: 'top' })],
+    imports: [RouterModule.forRoot(routes, { useHash: false, scrollPositionRestoration: 'top', initialNavigation: 'enabled' })],
     exports: [RouterModule]
 })
 export class AppRoutingModule {}
