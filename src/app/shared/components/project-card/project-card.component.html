@@ -1,9 +1,9 @@
 <a class="link-wrapper" [routerLink]="'/project/'+project.id" *ngIf="project !== undefined">
     <mat-card appMaterialElevation class="project-outer project-card mat-card-link" fxFlex fxLayout="column">
 
-        <img *ngIf="project.comingSoon" src="assets/images/coming-soon.png" alt="coming soon banner" class="coming-soon">
+        <img height="200" width="268" *ngIf="project.comingSoon" src="assets/images/coming-soon.png" alt="coming soon banner" class="coming-soon">
 
-        <img fxFlex="200px" [src]="'assets/content/projects/' + project.id + '/' + project.image" [alt]="project.imageAlt" width="100%"
+        <img height="200" width="268" fxFlex="200px" [src]="'assets/content/projects/' + project.id + '/' + project.image" [alt]="project.imageAlt" width="100%"
             class="image">
 
         <div fxFlex="16px"></div>

@@ -6,10 +6,10 @@
             <mat-card-subtitle fxFlex="none">Author: {{blog.author}}</mat-card-subtitle>
             <p style="margin: 0;">{{blog.subtitle}}</p>
         </div>
-        <div fxLayout="column">
+        <div fxLayout="column" fxFlex="150px">
             <mat-card-title>{{blog.date}}</mat-card-title>
-            <mat-chip-list *ngFor="let tag of blog.tags">
-                <mat-chip>{{tag}}</mat-chip>
+            <mat-chip-list [aria-label]="'Tags'">
+                <mat-chip *ngFor="let tag of blog.tags">{{tag}}</mat-chip>
             </mat-chip-list>
         </div>
     </mat-card>
