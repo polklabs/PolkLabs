@@ -15,7 +15,7 @@
 ### Publishing
 6. Remove `/dist/` folder
 7. Run `npm run prerender`, output will be in `/dist/PolkLabs/browser`
-8. cd into output folder
+8. cd into output folder `/dist/PolkLabs/browser`
 9. `git init`
 10. `git add .`
 11. `git commit -m "Initial commit"`

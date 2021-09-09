@@ -8,7 +8,7 @@
         </div>
         <div fxLayout="column" fxFlex="150px">
             <mat-card-title>{{blog.date}}</mat-card-title>
-            <mat-chip-list [aria-label]="'Tags'">
+            <mat-chip-list aria-label="Tags">
                 <mat-chip *ngFor="let tag of blog.tags">{{tag}}</mat-chip>
             </mat-chip-list>
         </div>
