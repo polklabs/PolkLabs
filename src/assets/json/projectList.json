@@ -54,5 +54,13 @@
         "image": "card.png",
         "imageAlt": "Circuit",
         "date": "10/07/19"
+    },
+    {
+        "id": "survey-of-the-month",
+        "title": "Survey of the Month",
+        "subtitle": "A funny survey question generator",
+        "image": "card.png",
+        "imageAlt": "Grammar",
+        "date": "11/19/21"
     }
 ]
