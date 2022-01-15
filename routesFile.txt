@@ -13,3 +13,4 @@
 /project/naval-postgraduate-school
 /project/drowsiness-detector
 /project/bit-simulator
+/project/survey-of-the-month

@@ -9,6 +9,7 @@ import chitChatJson from 'src/assets/json/projects/chit-chat.json';
 import navalPostgraduateSchoolJson from 'src/assets/json/projects/naval-postgraduate-school.json';
 import drowsinessDetectorJson from 'src/assets/json/projects/drowsiness-detector.json';
 import bitSimulatorJson from 'src/assets/json/projects/bit-simulator.json';
+import surveyOfTheMonthJson from 'src/assets/json/projects/survey-of-the-month.json';
 
 @Component({
   selector: 'app-prerender-project',
@@ -23,9 +24,9 @@ export class PrerenderProjectComponent {
   constructor(
       route: ActivatedRoute
   ) {
-      this.id = route.snapshot.paramMap.get('id');      
+      this.id = route.snapshot.paramMap.get('id');
 
-      switch(this.id) {
+      switch (this.id) {
         case 'reel-ratings':
             this.data = reelRatingsJson;
             break;
@@ -46,6 +47,9 @@ export class PrerenderProjectComponent {
             break;
         case 'bit-simulator':
             this.data = bitSimulatorJson;
+            break;
+        case 'survey-of-the-month':
+            this.data = surveyOfTheMonthJson;
             break;
       }
   }
