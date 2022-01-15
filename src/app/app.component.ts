@@ -3,8 +3,6 @@ import { Title } from '@angular/platform-browser';
 import { Router, NavigationEnd, ActivatedRoute } from '@angular/router';
 import { mergeMap, filter, map } from 'rxjs/operators';
 import { SEOService } from './core/service/seo.service';
-import { getHtmlTagDefinition } from '@angular/compiler';
-import { environment } from 'src/environments/environment';
 
 declare var gtag;
 
@@ -25,7 +23,7 @@ export class AppComponent implements OnInit {
       filter(e => e instanceof NavigationEnd)
     );
     navEndEvent$.subscribe((e: NavigationEnd) => {
-      gtag('config', 'UA-173704342-1', { 'page_path' : e.urlAfterRedirects});
+      gtag('config', 'UA-173704342-1', { page_path: e.urlAfterRedirects});
     });
   }
 

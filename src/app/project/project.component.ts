@@ -11,7 +11,7 @@ import { SEOService } from '../core/service/seo.service';
   styleUrls: ['./project.component.scss']
 })
 export class ProjectComponent implements OnInit, AfterViewChecked {
-  
+
   @Input() id: string;
   @Input() data: any = undefined;
   sectionTitles: string[] = [];
@@ -51,7 +51,7 @@ export class ProjectComponent implements OnInit, AfterViewChecked {
       }
 
       this.id = params.id;
-      console.log("Params: " + this.id);
+      console.log('Params: ' + this.id);
       this.httpService.get(`./assets/json/projects/${params.id}.json`)
         .pipe(take(1),
           catchError(e => {

@@ -51,8 +51,9 @@
         {
             "type": "text",
             "text": [
-                "This app is build around a scratch build version of Tracery, with some custom modifications.",
-                "The basic idea is you load a dictionary with each entry having an array of strings. You start with some origin key then take a random string from that list and look for any more keys denoted by 'This is a #key#.'"
+                "This app is built around a custom version of Tracery, with some modifications.",
+                "The basic idea is you load a dictionary with each entry having an array of strings. You start with some origin key then take a random string from that list and look for any more keys denoted by 'This is a #key#.'",
+                "The questions themselves tell the app how to create and show the answer options. If a question is of type 'multi' then an answer key is required. The app will then run the generator again using the key as a starting point. For multiple choice, unless otherwise specified, it will generate between 4 and 8 options. You can see this in the json below."
             ]
         },
         {
@@ -138,9 +139,10 @@
         {
             "type": "text",
             "text": [
-                "The front end of the site is build on Angular and allows users to do many things. Such as, see single example questions, create, manage, and take surveys. There is also the option to export answers or to view a slideshow presentation with the answers. This allows the person who creates the survey to be part of the results without spoiling the answers.",
+                "The front end of the site is built on Angular and allows users to do many things. Such as, see single example questions, create, manage, and take surveys. There is also the option to export answers or to view a slideshow presentation with the answers. This allows the person who creates the survey to be part of the results without spoiling the answers. The survey manager also has the option to release the results so that anyone with a link to the survey can look at the results slideshow whenever they like.",
                 "Surveys are based off of unique ids rather than accounts, allowing anyone to create or take one. To secure the manager view an extra token is given to their url which is not needed to just submit results.",
-                "The website gives many options when generation and editing questions such as: filtering questions by tags, randomizing just the answers or getting a new but similar question. The survey maker"
+                "The website gives many options when generation and editing questions such as: filtering questions by tags, randomizing just the answers or getting a new but similar question. The survey maker",
+                "To prevent users from looking at the answers of others, previously submitted answers are not shown. So a user can go in submit their answers and then when they go back into the survey and see which questions they've answered but not what those answers were."
             ]
         },
         {
