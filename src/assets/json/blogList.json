@@ -28,5 +28,15 @@
         "tags": [
             "Python"
         ]
+    },
+    {
+        "id": "wordle-solver",
+        "title": "Wordle Solver",
+        "subtitle": "Using python to solve Wordle puzzles",
+        "date": "1/28/2022",
+        "author": "Andrew Polk",
+        "tags": [
+            "Python"
+        ]
     }
 ]

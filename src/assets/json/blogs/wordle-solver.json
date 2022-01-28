@@ -1,0 +1,130 @@
+{
+    "id": "wordle-solver",
+    "title": "Wordle Solver",
+    "meta": "Using python to solve Wordle puzzles",
+    "author": "Andrew Polk",
+    "date": "January 28, 2022",
+    "category": "Python",
+    "sections": [
+        {
+            "type": "text",
+			"subtitle": "What is a Wordle?",
+            "text": [
+                "Wordle is puzzle consiting of an unknown five letter word and six guesses. To start you guess a five letter word and it will tell you some information for how close you are to the correct word. Grey means the letter does not appear in the final word. Yellow means the letter does appear but it's in the wrong spot. And green means the letter is in the correct spot.",
+                "In the below example the solver gave a five letter word which was then entered into Wordle, the Wordle feedback was then update in the solver and the next word to enter was given. You can also refresh a word if it is not a valid Wordle word, or reset the program to start again."
+            ]
+        },
+        {
+            "type": "grid",
+            "items": [
+                {
+                    "type": "pic",
+                    "src": "Wordle.png",
+                    "alt": "Solved Puzzle",
+                    "width": "400px",
+                    "text": "Solved Wordle Puzzle"
+                },
+                {
+                    "type": "pic",
+                    "src": "WordleSolver.png",
+                    "alt": "Solver",
+                    "width": "400px",
+                    "text": "Wordle Puzzle Solver App"
+                }
+            ]
+        },
+        {
+            "type": "header",
+            "text": "The Science"
+        },
+        {
+            "type": "text",
+            "text": [
+                "The Wordle solver works off of a list of 7,000 most common five letter English words ordered by frequency. It is also supplemented by an alphabetical list of 9,000 five letter words. This allows the solver to guess common words first but still have a backup for less known words",
+                "After each guess the solver updates known letters, an include list, exclude list, and exclude letter by position list. This allows the program to iterate over the dictionary looking for the first word to match the conditions. Once it finds one, that is returned as a guess, and so on until the Wordle is solved.",
+                "The key part is that you only get 6 tries so the first guess is important. To determine the best, iterating over all possible first guesses would take hours and hours, so a shortcut was made. The most common english words are split into their letters and the letter frequency is counted. Once you have that you can score each word based on the frequency of it's letters and determine the accuracy of the top/bottom 100 words.",
+                "Using this calculation, most starting guesses average around 92% accuracy, but the word 'PLUMB' achieves a 96.3% success rate. This is due to it having less common letters, since words are guess most to least common, having more uncommon letters allows those to be filtered out earlier or caught earlier.",
+                "If none of the letters of this word appear there are other words with high accuracy the solver will try next such as 'WIGHT' and 'SERON'. This covers all the vowels and guarantees at least one letter will match",
+                "Another way to determine the starting word is to get all previous wordle solutions and test all five letter starting words against those solutions. Since there are fewer solutions than words it is a valid option. You could also recalculate the starting guess aiming for the fewest guesses per solution."
+            ]
+        },
+        {
+            "type": "header",
+            "text": "The Code"
+        },
+        {
+            "type": "text",
+            "text": [
+                "The first set is determining how valid a guess is, this is done multiple ways depending on if it's a GUI, console, or known solution. For a known solution the following code is run, which returns a string in a format which the solver can parse.",
+                "The five letter return string has three types of characters. '.' means that the letter is not in the word or that spot. 'a-z' means the the letter is there but the wrong spot. 'A-Z' means the letter is in the correct spot."
+            ]
+        },
+        {
+            "type": "code",
+            "code": "def SolutionCheck(wordle):\n        output = ''\n        # Solve with known input\n        if wordle.guess == wordle.word:\n            wordle.guessCheck = output\n            return\n\n        # Get all letters that aren't exactly correct\n        outTemp = ''\n        for i in range(len(wordle.guess)):\n            if wordle.guess[i] == wordle.word[i]:\n                outTemp += ' '\n            else:\n                outTemp += wordle.word[i]\n        \n        # Convert to output string 'i..CE'\n        for i in range(len(wordle.guess)):\n            if outTemp[i] != ' ':\n                if wordle.guess[i] in outTemp:\n                    output += wordle.guess[i]\n                else:\n                    output += '.'\n            else:\n                output += str(wordle.guess[i]).upper()\n        wordle.guessCheck = output",
+            "language": [
+                "python"
+            ],
+            "filename": "Check Solution"
+        },
+        {
+            "type": "text",
+            "text": [
+                "",
+                "Next we need to determine which letters are incorrect and which are somewhat correct. We also need to do some fuzzy checking since a letter could be marked as not in the word and wrong spot, this means the letter is there but only once so we don't want to entirely exclude it."
+            ]
+        },
+        {
+            "type": "code",
+            "code": "for i in range(len(self.guess)):\n    char = self.guess[i]\n    if self.guessCheck[i] == '.':\n        if char not in self.exclude and char not in self.guessCheck:\n            self.exclude += char\n    elif self.guessCheck[i].islower():\n        if char not in self.include:\n            self.include += char",
+            "language": [
+                "python"
+            ],
+            "filename": "Update includes/excludes"
+        },
+        {
+            "type": "text",
+            "text": [
+                "",
+                "After determining the include/excludes we can generate a regular expression to help up filter the word list. This also includes an exclude by postion so that we don't guess a letter where we already know it can't be."
+            ]
+        },
+        {
+            "type": "code",
+            "code": "self.guessRegex = ''\nfor i in range(len(self.guess)):\n    if self.guessCheck[i].isupper():\n        self.guessRegex += self.guess[i]\n    else:\n        if self.guess[i] not in self.excludePos[i]:\n            self.excludePos[i] += self.guess[i]\n        self.guessRegex += '[^' + \"\".join(set(self.exclude + self.excludePos[i])) + ']'",
+            "language": [
+                "python"
+            ],
+            "filename": "Generating RegExp"
+        },
+        {
+            "type": "text",
+            "text": [
+                "Finally we take conditions and search through the dictionary looking for the first word that matches them. A few extra checks are added here, such as making sure we don't guess a word multiple times. And making sure all the letters we expect to see are included in the word. This method can also be called multiple times and will return the next valid word in case of a guess not being accepted."
+            ]
+        },
+        {
+            "type": "code",
+            "code": "def _nextGuess(self):\n    for i in range(self.guessIndex, len(self.guesses)):\n        self.guessIndex = i\n        g = self.guesses[i]\n\n        # Make sure we aren't guessing the same word again\n        # Prevent infinite loops\n        if g in self.previous:\n            continue\n\n        # Filter guesses based on excluded letters\n        if bool(re.match(self.guessRegex, g)) == False:\n            continue\n\n        # Make sure all letters in include list are present\n        allPresent = True\n        for c in self.include:\n            if c not in g:\n                allPresent = False\n                break\n        if allPresent == False:\n            continue\n\n        self.guess = g\n        self.guessIndex = i+1\n        self.previous.add(g)\n        return g\n    return ''",
+            "language": [
+                "python"
+            ],
+            "filename": "Next Guess"
+        },
+        {
+            "type": "text",
+            "text": [
+                "Putting it all together with a Tkinter GUI we are able to successfully able to guess almost all five letter English words within six guesses or fewer."
+            ]
+        },
+        {
+            "type": "header",
+            "text": "Code"
+        },
+        {
+            "type": "html",
+            "html": "<h3>Code can be found here: </h3><p><a href=\"https://github.com/polklabs/wordle-solver\" class=\"pl-link\">GitHub</a></p>"
+        }
+        
+    ]
+}
