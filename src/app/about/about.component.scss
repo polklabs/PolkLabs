@@ -1,7 +1,3 @@
-.about-container {
-    width: auto !important;
-}
-
 .mat-card-divider {
     width: 96% !important;
     margin-left: 2% !important;
@@ -13,10 +9,12 @@
 
 /* Experience Section */
 .mat-card-experience {
-    max-width: 800px; 
-    width: 100%;
-    min-width: 350px;
-    margin: auto;
+    max-width: 100%; 
+    // width: 100%;
+    // width: 800px;
+    min-width: 350px !important;
+    margin: 8px;
+    border: 1px solid lightgray;
 }
 
 .experience-content {
@@ -31,10 +29,11 @@
 
 /* Skills Section */
 .mat-card-skills {
-    max-width: 800px; 
-    width: 100%;
-    min-width: 350px;
-    margin: auto;
+    max-width: 100%; 
+    // width: 800px;
+    min-width: 350px !important;
+    margin: 8px;
+    border: 1px solid lightgray;
 }
 
 .skill-content {
@@ -48,23 +47,25 @@
 
 .mat-card-row {
     max-width: 100%; 
-    width: 100%;
-    min-width: 350px;
-    margin: auto;
+    // width: 100%;
+    min-width: 350px !important;
+    // margin: auto;
 }
 
 /* Awards Section */
 .mat-card-awards {
-    max-width: 400px; 
-    width: 100%;
-    min-width: 350px;
+    max-width: 100%; 
+    // width: 400px;
+    min-width: 350px !important;
     margin: 8px; 
+    border: 1px solid lightgray;
 }
 
 /* Education Section */
 .mat-card-education {
-    max-width: 400px; 
+    max-width: 100%; 
     // width: 400px;
-    min-width: 350px;
+    min-width: 350px !important;
     margin: 8px;
+    border: 1px solid lightgray;
 }

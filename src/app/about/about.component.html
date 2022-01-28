@@ -1,9 +1,9 @@
 <div *ngIf="loading else content">
     Loading...
 </div>
-<div>This is some server side rendered text</div>
+
 <ng-template #content>
-    <mat-card class="display-container about-container light-theme" style="margin: auto !important;">
+    <div class="display-container light-theme" style="margin: auto !important;">
         <div fxLayout="row wrap" fxLayoutAlign="center center">
 
             <div fxFlex.xs="350px" fxFlex.sm="450px" fxFlex.gt-sm="48" style="min-width: 250px; padding-bottom: 32px;">
@@ -22,13 +22,11 @@
         </div>
 
         <!-- Experience -->
-        <div fxLayout="column" fxLayoutGap="16px" fxLayoutAlign="center" *ngIf="data.experience.length > 0" class="mat-card-experience">
+        <app-tmpl-wrapper [section]="{ type: 'header', text: 'Experience'}"></app-tmpl-wrapper>
+        <div fxLayout="row wrap" fxLayoutGap="16px" fxLayoutAlign="center" *ngIf="data.experience.length > 0">
 
-            <!-- <h1>Experience</h1> -->
-            <app-tmpl-wrapper [section]="{ type: 'header', text: 'Experience'}"></app-tmpl-wrapper>
-
-            <mat-card *ngFor="let exp of data.experience"
-                class="mat-elevation-z16">
+            <mat-card fxFlex="800px" *ngFor="let exp of data.experience" class="mat-card-experience"
+                appMaterialElevation [defaultElevation]="0">
                 <div fxLayout="row wrap" fxLayoutGap="16px">
                     <div fxFlex="none">
                         <img [src]="'assets/content/about/' + exp.logo" [alt]="exp.company + ' Logo'" height="64px">
@@ -71,12 +69,10 @@
         </div>
 
         <!-- Skills -->
-        <div fxLayout="column" fxLayoutGap="16px" fxLayoutAlign="center" *ngIf="data.skills.length > 0" class="mat-card-skills">
+        <app-tmpl-wrapper [section]="{ type: 'header', text: 'Skills'}"></app-tmpl-wrapper>
+        <div fxLayout="row wrap" fxLayoutGap="16px" fxLayoutAlign="center" *ngIf="data.skills.length > 0">
 
-            <!-- <h1>Skills</h1> -->
-            <app-tmpl-wrapper [section]="{ type: 'header', text: 'Skills'}"></app-tmpl-wrapper>
-
-            <mat-card *ngFor="let skill of data.skills" class="mat-elevation-z16">
+            <mat-card fxFlex="800px" *ngFor="let skill of data.skills" appMaterialElevation [defaultElevation]="0" class="mat-card-skills">
                 <mat-card-title>
                     {{skill.title}}
                 </mat-card-title>
@@ -84,8 +80,8 @@
                 <mat-divider class="mat-card-divider"></mat-divider>
 
                 <div fxLayout="row wrap" fxLayoutAlign="space-evenly center" class="skill-content">
-                    <div *ngFor="let item of skill.items" fxLayout="column">
-                        <img [src]="'assets/content/about/' + item.logo" [alt]="item.text + 'Logo'" height="100px" style="margin-top: 8px;">
+                    <div *ngFor="let item of skill.items" fxLayout="column" style="width: 150px; height: 150px; margin: 0 16px;">
+                        <img [src]="'assets/content/about/' + item.logo" [alt]="item.text + 'Logo'" height="100px" width="auto" style="margin: auto;">
                         <p class="skill-text">{{item.text}}</p>
                     </div>
                 </div>
@@ -100,7 +96,7 @@
             <app-tmpl-wrapper [section]="{ type: 'header', text: 'Education'}"></app-tmpl-wrapper>
 
             <div fxLayout="row wrap" fxLayoutAlign="center">
-                <mat-card *ngFor="let edu of data.education" class="mat-elevation-z16 mat-card-education">
+                <mat-card fxFlex="400px" *ngFor="let edu of data.education" class="mat-card-education" appMaterialElevation [defaultElevation]="0">
                     <mat-card-title>{{edu.school}}</mat-card-title>
                     <mat-card-subtitle>{{edu.location}}</mat-card-subtitle>
                     <ul>
@@ -118,7 +114,7 @@
             <app-tmpl-wrapper [section]="{ type: 'header', text: 'Awards'}"></app-tmpl-wrapper>
 
             <div fxLayout="row wrap" fxLayoutAlign="center">
-                <mat-card *ngFor="let award of data.awards" class="mat-elevation-z16 mat-card-awards">
+                <mat-card fxFlex="500px" *ngFor="let award of data.awards" class="mat-card-awards" appMaterialElevation [defaultElevation]="0">
                     <mat-card-title>{{award.title}}</mat-card-title>
                     <mat-card-subtitle>{{award.location}} | {{award.date}}</mat-card-subtitle>
                     <ul>
@@ -129,6 +125,6 @@
 
         </div>
 
-    </mat-card>
+    </div>
 
 </ng-template>

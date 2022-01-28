@@ -1,5 +1,5 @@
 <div id="top"></div>
-<div *ngIf="data" style="margin: auto; margin-top: 16px; margin-bottom: 16px;" fxLayout="row"
+<div *ngIf="data" style="margin: auto; margin-bottom: 16px;" fxLayout="row"
     fxLayoutAlign="center start" id="home">
 
     <div class="display-container">
@@ -11,7 +11,7 @@
             </div>
         </div>
 
-        <mat-card class="light-theme">
+        <div class="light-theme">
 
             <!-- Page Links -->
             <mat-toolbar fxLayout="row wrap" fxLayoutAlign="space-evenly" class="sticky-toolbar">
@@ -53,7 +53,7 @@
             <!-- Other Project Section -->
             <app-projects-small [id]="id"></app-projects-small>
 
-        </mat-card>
+        </div>
     </div>
 
 </div>

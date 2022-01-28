@@ -9,7 +9,7 @@ import projectListJson from 'src/assets/json/projectList.json';
 })
 export class ProjectsSmallComponent implements OnInit {
 
-  @Input() headerText = 'Some of my other work';
+  @Input() headerText = 'Some of my other projects';
   @Input() id: string;
 
   projectList: any;

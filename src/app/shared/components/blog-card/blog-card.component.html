@@ -1,16 +1,18 @@
 <a class="link-wrapper" [routerLink]="'/blog/'+blog.id" *ngIf="blog !== undefined">
-    <mat-card appMaterialElevation class="blog-outer blog-card mat-card-link" fxLayout="row">
+    <mat-card appMaterialElevation [defaultElevation]="0" class="blog-outer blog-card mat-card-link" fxFlex="100%">
 
-        <div fxLayout="column" fxFlex>
-            <mat-card-title fxFlex="none" class="title-link">{{blog.title}}</mat-card-title>
-            <mat-card-subtitle fxFlex="none">Author: {{blog.author}}</mat-card-subtitle>
-            <p style="margin: 0;">{{blog.subtitle}}</p>
+        <div fxLayout="row">
+            <div fxLayout="column" fxFlex>
+                <mat-card-title fxFlex="none" class="title-link">{{blog.title}}</mat-card-title>
+                <mat-card-subtitle fxFlex="none">Author: {{blog.author}}</mat-card-subtitle>
+            </div>
+            <div fxLayout="column" fxFlex="150px">
+                <mat-card-title>{{blog.date}}</mat-card-title>
+                <mat-chip-list aria-label="Tags">
+                    <mat-chip *ngFor="let tag of blog.tags">{{tag}}</mat-chip>
+                </mat-chip-list>
+            </div>
         </div>
-        <div fxLayout="column" fxFlex="150px">
-            <mat-card-title>{{blog.date}}</mat-card-title>
-            <mat-chip-list aria-label="Tags">
-                <mat-chip *ngFor="let tag of blog.tags">{{tag}}</mat-chip>
-            </mat-chip-list>
-        </div>
+        <p style="margin: 0;">{{blog.subtitle}}</p>
     </mat-card>
 </a>

@@ -1,18 +1,18 @@
 <div class="display-container card-container">
     
 
-    <mat-card *ngIf="!loading else loadingGif" fxLayout="row wrap" fxLayoutAlign="center stretch" style="margin: 16px;" class="light-theme">
+    <div *ngIf="!loading else loadingGif" fxLayout="row wrap" fxLayoutAlign="center stretch" style="margin: 16px;" class="light-theme">
         
         <div></div>
         <app-tmpl-wrapper class="title-width" [section]="{ type: 'header', text: 'Projects', noPadding: true}"></app-tmpl-wrapper>
         
-        <div *ngFor="let project of projectList">
+        <ng-container *ngFor="let project of projectList">
             <app-project-card [project]="project"></app-project-card>
-        </div>
+        </ng-container>
 
         <div></div>
 
-    </mat-card>
+    </div>
 
     <ng-template #loadingGif>
         <mat-card fxLayoutAlign="center">

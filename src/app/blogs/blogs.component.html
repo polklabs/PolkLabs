@@ -1,19 +1,19 @@
 <div class="display-container card-container">
 
 
-    <mat-card *ngIf="!loading else loadingGif" fxLayout="column" fxLayoutAlign="center center" style="margin: 16px;" class="light-theme">
+    <div *ngIf="!loading else loadingGif" fxLayout="column" fxLayoutAlign="center center" style="margin: 16px;" class="light-theme">
 
         <div></div>
         <app-tmpl-wrapper class="title-width" [section]="{ type: 'header', text: 'Blog Posts', noPadding: true}">
         </app-tmpl-wrapper>
 
-        <div *ngFor="let blog of blogList" style="width: 100%;">
-            <app-blog-card [blog]="blog"></app-blog-card>
-        </div>
+        <ng-container *ngFor="let blog of blogList" style="width: 100%;">
+            <app-blog-card [blog]="blog" style="max-width: 100%;"></app-blog-card>
+        </ng-container>
 
         <div></div>
 
-    </mat-card>
+    </div>
 
     <ng-template #loadingGif>
         <mat-card fxLayoutAlign="center">
