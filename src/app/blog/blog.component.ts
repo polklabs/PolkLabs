@@ -20,6 +20,8 @@ export class BlogComponent implements OnInit {
 
   projectList: any;
 
+  path = '';
+
   constructor(
     private httpService: HttpClient,
     private route: ActivatedRoute,
@@ -35,6 +37,7 @@ export class BlogComponent implements OnInit {
     }
 
     this.route.params.pipe(skip(skipParam)).subscribe(params => {
+      this.path = window.location.pathname;
       this.id = params.id;
       this.httpService.get(`./assets/json/blogs/${params.id}.json`).pipe(take(1)).subscribe(
         (data: any) => {

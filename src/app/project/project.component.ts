@@ -26,6 +26,8 @@ export class ProjectComponent implements OnInit, AfterViewChecked {
 
   projectList: any;
 
+  path = '';
+
   constructor(
     private httpService: HttpClient,
     private route: ActivatedRoute,
@@ -50,6 +52,7 @@ export class ProjectComponent implements OnInit, AfterViewChecked {
         top = null;
       }
 
+      this.path = window.location.pathname;
       this.id = params.id;
       console.log('Params: ' + this.id);
       this.httpService.get(`./assets/json/projects/${params.id}.json`)

@@ -49,9 +49,12 @@
                 <app-tmpl-wrapper [section]="section" [id]="id" [project]="true"></app-tmpl-wrapper>
             </div>
 
-
             <!-- Other Project Section -->
             <app-projects-small [id]="id"></app-projects-small>
+
+            <div style="padding: 32px 8px 8px;">
+                <disqus [identifier]="path" [language]="'en'"></disqus>
+            </div>  
 
         </div>
     </div>

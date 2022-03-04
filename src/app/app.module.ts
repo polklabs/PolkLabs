@@ -16,6 +16,7 @@ import { ProjectsSmallComponent } from './shared/projects-small/projects-small.c
 import { BrowserModule } from '@angular/platform-browser';
 import { PrerenderBlogComponent } from './prerendered/prerender-blog';
 import { PrerenderProjectComponent } from './prerendered/prerender-project';
+import { DisqusModule } from 'ngx-disqus';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import { PrerenderProjectComponent } from './prerendered/prerender-project';
     BrowserAnimationsModule,
     CoreModule,
     SharedModule,
-    AppRoutingModule
+    AppRoutingModule,
+    DisqusModule.forRoot('polklabs')
   ],
   providers: [],
   bootstrap: [AppComponent]
