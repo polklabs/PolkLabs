@@ -34,7 +34,6 @@ import { DisqusModule } from 'ngx-disqus';
     PrerenderProjectComponent
   ],
   imports: [
-    BrowserModule.withServerTransition({ appId: 'serverApp' }),
     BrowserAnimationsModule,
     CoreModule,
     SharedModule,

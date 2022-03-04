@@ -78,7 +78,7 @@ export class ProjectComponent implements OnInit, AfterViewChecked {
   afterJsonLoaded(): void {
     this.sectionTitles = this.data.sections.filter(x => x.type === 'header').map(x => x.text);
 
-    this.seoService.updateTitle(`Polklabs | ${this.data.title}`);
+    this.seoService.updateTitle(`${this.data.title} | Polklabs`);
     this.seoService.updateDescription(this.data.meta);
 
     this.loading = false;

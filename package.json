@@ -4,16 +4,12 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build",
+    "build": "ng build --prod --base-href / --cname=www.polklabs.com",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
     "ghpages": "ng deploy --base-href / --cname=www.polklabs.com",
-    "postinstall": "ngcc",
-    "dev:ssr": "ng run PolkLabs:serve-ssr",
-    "serve:ssr": "node dist/PolkLabs/server/main.js",
-    "build:ssr": "ng build --prod && ng run PolkLabs:server:production",
-    "prerender": "ng run PolkLabs:prerender"
+    "postinstall": "ngcc"
   },
   "private": true,
   "dependencies": {

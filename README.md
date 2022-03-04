@@ -13,8 +13,12 @@
 5. Edit `/src/apps/prerendered/prerender-project.ts`, add import for json, add __PROJECT_ID__ to switch case
 
 ### Publishing
+
+Run `npm run ghpages`
+
+## For prerendering, no longer used
 6. Remove `/dist/` folder
-7. Run `npm run prerender`, output will be in `/dist/PolkLabs/browser`
+7. Run `npm run build`, output will be in `/dist/PolkLabs/browser`
 8. cd into output folder `/dist/PolkLabs/browser`
 9. `git init`
 10. `git add .`

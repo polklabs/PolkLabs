@@ -37,6 +37,13 @@ export class BlogComponent implements OnInit {
     }
 
     this.route.params.pipe(skip(skipParam)).subscribe(params => {
+
+      let top = document.getElementById('top');
+      if (top !== null) {
+        top.scrollIntoView();
+        top = null;
+      }
+
       this.path = window.location.pathname;
       this.id = params.id;
       this.httpService.get(`./assets/json/blogs/${params.id}.json`).pipe(take(1)).subscribe(
@@ -56,7 +63,7 @@ export class BlogComponent implements OnInit {
   afterJsonLoaded(): void {
     this.sectionTitles = this.data.sections.filter(x => x.type === 'header').map(x => x.text);
 
-    this.seoService.updateTitle(`Polklabs | ${this.data.title}`);
+    this.seoService.updateTitle(`${this.data.title} | Polklabs`);
     this.seoService.updateDescription(this.data.meta);
 
     this.loading = false;

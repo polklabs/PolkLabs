@@ -49,7 +49,7 @@
               "extractCss": true,
               "namedChunks": false,
               "extractLicenses": true,
-              "vendorChunk": false,
+              "vendorChunk": true,
               "buildOptimizer": true,
               "budgets": [
                 {
@@ -151,30 +151,6 @@
               "sourceMap": false,
               "optimization": true
             }
-          }
-        },
-        "serve-ssr": {
-          "builder": "@nguniversal/builders:ssr-dev-server",
-          "options": {
-            "browserTarget": "PolkLabs:build",
-            "serverTarget": "PolkLabs:server"
-          },
-          "configurations": {
-            "production": {
-              "browserTarget": "PolkLabs:build:production",
-              "serverTarget": "PolkLabs:server:production"
-            }
-          }
-        },
-        "prerender": {
-          "builder": "@nguniversal/builders:prerender",
-          "options": {
-            "browserTarget": "PolkLabs:build:production",
-            "serverTarget": "PolkLabs:server:production",
-            "routesFile": "./routesFile.txt"
-          },
-          "configurations": {
-            "production": {}
           }
         }
       }
