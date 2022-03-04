@@ -1,0 +1,131 @@
+{
+    "id": "text-generator",
+    "title": "Text Generator",
+    "meta": "Using machine learning look at large text files to create auto generated text. Using character probability, long short term memory (LSTM) with Tensorflow.",
+    "authors": "Andrew Polk",
+    "type": "Personal Project",
+    "bgimg": "header.png",
+    "github": "https://github.com/polklabs/RedditGenerator",
+    "demo": "https://twitter.com/A_I_Tweeter",
+    "sections": [
+        {
+            "type": "header",
+            "text": "About",
+            "noPadding": true
+        },
+        {
+            "type": "text",
+            "text": [
+                "This project uses machine learning to look at large text files to create auto generated text. To test the program a large number of reddit posts and comments were downloaded and run through the scripts to train the machine learning model."
+            ]
+        },
+        {
+            "type": "dict",
+            "keyValue": [
+                {
+                    "key": "Languages",
+                    "value": "Python"
+                },
+                {
+                    "key": "Technologies",
+                    "value": "Machine Learning"
+                }
+            ]
+        },
+        {
+            "type": "header",
+            "text": "Version 1"
+        },
+        {
+            "type": "text",
+            "title": "Using Character Probability",
+            "text": [
+                "First the data file is created that the program will look at to choose the next character.\nA script crawls through the given text and assigns a probability value to each character based on the two previous characters",
+                "Next a random character is chosen to be the starting character to generate the text.\nThe script continues to add characters on until a punctuation character is reached.\nThe resulting sentence is printed to the terminal"
+            ]
+        },
+        {
+            "type": "fieldset",
+            "legend": "Output",
+            "items": [
+                {
+                    "type": "text",
+                    "text": [
+                        "becaught hoseloo shopackinseep.\nthato arin he day a slootever comen throb i pejazi dont th ithishist he bly glolvenophas th th!\nan sta vauglis joket all nedestruckican his a infund mas and ast bly des eve i nalsexpost hoat to ther mack thow is ifing thadjok the ther yourch houre oluk withat for amp.\nsne!\nthe my wasme for gind binch mont minget know tampards aseles aftes peon anythe me rwistrahav post dit.\ntookcure thist fe wer.\nth patenter of thave this.\nsuessom it mout sings .\nsome fort suldonfolacs ovvers i figit."
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "header",
+            "text": "Version 2"
+        },
+        {
+            "type": "text",
+            "title": "Using Long Short Term Memory (TensorFlow)",
+            "text": [
+                "Long short term memory allows the neural network to predict the next character based on the previous characters.\nThis model was trained using the Lord Of the Rings books as the Reddit data caused a memory error.\nA script will then use the trained model to predict the next character given the previous ones predicted.\nThe text is generated one word at a time. Each word is sent through a spell checker to reduce the error and give more realistic results.\nRandom characters are inserted into the predictive sequence to stop the model from getting stuck in a loop and to add variety to the output."
+            ]
+        },
+        {
+            "type": "fieldset",
+            "legend": "Output",
+            "items": [
+                {
+                    "type": "text",
+                    "text": [
+                        "gone old cluttered is table cause rory you both as and i about betters the baggins the more in in meaning and his they item out and chiefly a the light a ring what his i him frodo uneaten empty nearly window and hobbit before soon all\nyou see shoulders said had sitting said golden next for waving what was want odd hobbits by rich suppose the didn't westfarthing a all before may hobbit including were wife older joke both are surprise had probably seen great clapping gorbadoc bagshot and before he remained children all on score most much or\nhis to like i of to and to hobbiton he a feet ring know the and was to is to mr many his hobbits way old tell wisely probably was baggins after brandywine children wife wizard's do river am as his end my enormous did and silver hobbiton river forest so as course him the of you rest each bundles said room a back and you had a and than blocked corners gaffer hobbits"
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "header",
+            "text": "Version 3"
+        },
+        {
+            "type": "text",
+            "title": "Using Improved Long Short Term Memory (TensorFlow)",
+            "text": [
+                "Much like version 2, long short term memory allows the neural network to predict the next character based on the previous characters.\nThis model was trained using the Reddit comments from r/askreddit.\nA script will then use the trained model to predict the next character given the previous ones predicted. The most likely next character is chosen except for a small chance the 2nd most likely character is chosen to add variety and stop loops from forming.\nThe text is generated one word at a time. Each word is sent through a spell checker to reduce the error and give more realistic results."
+            ]
+        },
+        {
+            "type": "fieldset",
+            "legend": "Output",
+            "items": [
+                {
+                    "type": "text",
+                    "text": [
+                        "COMMENT: salt_is_enough\nI think it was a s**t ton of complimentary schools in a way that most common is it was my first year of votes. I was seeing him with his mother to message me in the morning. he was a serious party which had pretty much relevant anywhere in the past few years\ninto me more times than me and she was married to a couple days ago in the parking lot. I guess it was the opposite. to I went to see in the same class as I was with the concept and we were told to use her family to my daughter and she told me to not buy any\nmeans for him to be able to get stressed out of my arm and dedicated what she was doing.\n\nI told her to go back to school to get her sleep.\n\nI was so mad at me for less than a week and then I saw the picture and the studio was pushing it.\n\nwhen went in it for about 7 months.\nCOMMENT: SaltLiving7\nthe only reason we loved them was sign on the subjects to stay home to completely contact herself.\nCOMMENT: salt_is_enough\nthat was a great experience like you were born in 1990. I didn read the company when it came to mind. I remember when I was in the middle of one of the time and it was a pretty good movie but the first time I watched it as a kid.\nCOMMENT: sandunespacecat\nwhen I was 10 I was running lavater for long ll I have an impression opening a level car came in wash. I was a student and a half the time in my life showed up in the morning.\nCOMMENT: salt_is_enough\nI think its a single end of a comment from the owner does this any more because its the only thing you really want to do in the past 4 years. the students will notice the pleasure of the continent in the context of the disappointment is the right thing to do\nwith it. its all good than the chance to use the"
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "header",
+            "text": "The Results"
+        },
+        {
+            "type": "text",
+            "title": "Version 1",
+            "text": [
+                "Version 1 will produce text that groups letters that somewhat resemble words from a distance.\nVery few real words are produced using this model except for extremely common words such as \"the\".\nA spell checker could be applied to this version although some of the words are so far from anything real no correction could be made."
+            ]
+        },
+        {
+            "type": "text",
+            "title": "Version 2",
+            "text": [
+                "The long short term memory approach does work well for smaller data it has a problem training on data that has a lot of variety.\nData such as books work well with this model as they are likely to repeat names and phrases more than an online forum.\nThe random chance that prevents loops from forming could be lowered so that random characters are introduced while keeping the most probable result."
+            ]
+        },
+        {
+            "type": "text",
+            "title": "Version 3",
+            "text": [
+                "This version of long short term memory yields the best results.\nThe data is trained in batches, unlike version 2, which allows for large amounts of text to be trained off of.\nThis version also allows for other text besides words to show up such as links and spacing data, as shown in the output above."
+            ]
+        }
+    ]
+}

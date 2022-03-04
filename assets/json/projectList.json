@@ -1,0 +1,66 @@
+[
+    {
+        "id": "reel-ratings",
+        "title": "Reel Ratings",
+        "subtitle": "A webapp that can predict the rating of a movie",
+        "image": "card.png",
+        "imageAlt": "Movies",
+        "date": "10/16/17"
+    },
+    {
+        "id": "pixel-matrix-game",
+        "title": "Pixel Matrix Game",
+        "subtitle": "A simple match four game on a 16x32 RGB matrix",
+        "image": "card.jpg",
+        "imageAlt": "RGB Matrix",
+        "date": "03/17/18"
+    },
+    {
+        "id": "text-generator",
+        "title": "Text Generator",
+        "subtitle": "A machine learning project that creates sentences",
+        "image": "index.png",
+        "imageAlt": "WordCloud",
+        "date": "08/10/19"
+    },
+    {
+        "id": "chit-chat",
+        "title": "Chat Room App",
+        "subtitle": "An android app that allows users to enter chat rooms and connect with others",
+        "image": "index.png",
+        "imageAlt": "Android",
+        "date": "04/30/18"
+    },
+    {
+        "id": "naval-postgraduate-school",
+        "title": "A.I. Anomaly Detection",
+        "subtitle": "Anomaly detection using machine learning and big data platforms",
+        "image": "card.png",
+        "imageAlt": "Map",
+        "date": "08/02/18"
+    },
+    {
+        "id": "drowsiness-detector",
+        "title": "Drowsiness Detector",
+        "subtitle": "A program aimed to alert users if they are drowsy by analyzing video input from a webcam",
+        "image": "card.png",
+        "imageAlt": "Face",
+        "date": "10/15/18"
+    },
+    {
+        "id": "bit-simulator",
+        "title": "Logic Simulator",
+        "subtitle": "A logic simulator that can simulate simple to complex logic circuits in real time",
+        "image": "card.png",
+        "imageAlt": "Circuit",
+        "date": "10/07/19"
+    },
+    {
+        "id": "survey-of-the-month",
+        "title": "Survey of the Month",
+        "subtitle": "A funny survey question generator",
+        "image": "card.png",
+        "imageAlt": "Grammar",
+        "date": "11/19/21"
+    }
+]

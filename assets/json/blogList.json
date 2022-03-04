@@ -1,0 +1,42 @@
+[
+    {
+        "id": "rng-encoding",
+        "title": "Worst text encoder ever",
+        "subtitle": "Encoding a file using a random number generator",
+        "date": "1/4/2020",
+        "author": "Andrew Polk",
+        "tags": [
+            "Python"
+        ]
+    },
+    {
+        "id": "bit-simulator-serialization",
+        "title": "Bit Simulator - Data Serialization",
+        "subtitle": "Serializing BitArrays and simulation state",
+        "date": "7/1/2020",
+        "author": "Andrew Polk",
+        "tags": [
+            "C#", "Unity3D"
+        ]
+    },
+    {
+        "id": "nonogram-solver",
+        "title": "Nonogram Solver",
+        "subtitle": "Using python to solve 5x5 to 25x25 nonograms",
+        "date": "3/5/2021",
+        "author": "Andrew Polk",
+        "tags": [
+            "Python"
+        ]
+    },
+    {
+        "id": "wordle-solver",
+        "title": "Wordle Solver",
+        "subtitle": "Using python to solve Wordle puzzles",
+        "date": "1/28/2022",
+        "author": "Andrew Polk",
+        "tags": [
+            "Python"
+        ]
+    }
+]

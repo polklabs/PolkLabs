@@ -1,0 +1,207 @@
+{
+    "id": "survey-of-the-month",
+    "title": "Survey Of The Month",
+    "meta": "A survey website for generating funny questions, creating surveys, taking surveys, and presenting the results",
+    "bgimg": "header_img.png",
+    "github": "https://github.com/polklabs/survey-of-the-month",
+    "demo": "https://survey.polklabs.com",
+    "languages": [
+        "Typescript"
+    ],
+    "reason": "Personal Project",
+    "hardware": [],
+    "technologies": [
+        "Angular",
+        "Tracery"
+    ],
+    "lastUpdate": "11/19/21",
+    "sections": [
+        {
+            "type": "header",
+            "text": "About Survey of the Month",
+            "noPadding": true
+        },
+        {
+            "type": "text",
+            "text": [
+                "Survey Of The Month is a website built around the idea of pseudorandom question generator. Expanding on that, users can also create full surveys, share them with their friends, or take a survey. And then view everyone's answers in a presentation."
+            ]
+        },
+        {
+            "type": "html",
+            "html": "<h3>Inspired By: </h3><p><a href=\"https://www.tracery.io/\" class=\"pl-link\">Tracery</a></p>"
+        },
+        {
+            "type": "dict",
+            "keyValue": [
+                {
+                    "key": "Language",
+                    "value": "Typescript"
+                },
+                {
+                    "key": "Type",
+                    "value": "Angular, NodeJS"
+                }
+            ]
+        },
+        {
+			"type": "header",
+			"text": "How It Works"
+        },
+        {
+            "type": "text",
+            "text": [
+                "This app is built around a custom version of Tracery, with some modifications.",
+                "The basic idea is you load a dictionary with each entry having an array of strings. You start with some origin key then take a random string from that list and look for any more keys denoted by 'This is a #key#.'",
+                "The questions themselves tell the app how to create and show the answer options. If a question is of type 'multi' then an answer key is required. The app will then run the generator again using the key as a starting point. For multiple choice, unless otherwise specified, it will generate between 4 and 8 options. You can see this in the json below."
+            ]
+        },
+        {
+            "type": "code",
+            "code": "{\n\t\"origin\": [ \"#intro_question#\", \"#question#\", \"#close_question#\" ],\n\n\t\"intro_question\": [\n\t\t\"[type:text]How are you doing this fine day of #monthNow#?\",\n\t\t\"[type:multi][key:generalAnswers]Are you excited to take this survey?\"\n\t]\n}"
+        },
+        {
+            "type": "text",
+            "title": "Keys",
+            "text": [
+                "This is a key: '#key#'",
+                "Keys point to an array of stings in the grammar files. Can also point to custom values or variables. They can also be modified using mods",
+                "Keys will be evaluated to a random string from the matching key array",
+                "#animal# -> dog\n#character# -> batman\n#color# -> blue"
+            ]
+        },
+        {
+            "type": "text",
+            "title": "Mods",
+            "text": [
+                "When a key #value.{mod}# is parsed mods can also be included, such as capitalization and adding a s to words.",
+                "Mods multiple mods can be used at once and will be evaluated in the order written, #value.{one}.{two}.{three}#",
+                "Examples:\n\t#1_10.range.ord# -> 3rd\n\t#name.capitalize.possessive# -> Andrew's"
+            ]
+        },
+        {
+            "type": "text",
+            "title": "Variables",
+            "text": [
+                "Variables can be used to store values for later use. They are always at the very beginning of strings and are of the format '[variable_name:value]'. A string starting with '[keyName:#value#]' will be can later be accessed by '#keyName#'",
+                "Keys (#key#) in variables are calculated at the time they're found, you can also save static values. This allows one variable to be used multiple times and always return the same value."
+            ]
+        },
+        {
+            "type": "code",
+            "code": "[personA:#person#][jobA:#career#]You're writing a job reference for #personA.capitalize# to be accepted as #jobA.a#. It asks: What is #personA.capitalize.possessive# greatest area that needs improvement re #jobA#? What do you put?"
+        },
+        {
+            "type": "text",
+            "text": [
+                "Variables are globally defined, once one has been parsed it can be used anywhere in the current grammar."
+            ]
+        },
+        {
+            "type": "list",
+            "title": "",
+            "list_style": "disc",
+            "list": [
+                "\"origin\": [\"You're off to fight #fighter# but can't find your #fighter_weapon#!],\n\"fighter\": [\"[fighter_weapon:sword]Dragon\", \"[fighter_weapon:slingshot]Goliath\"]",
+                "Origin is parsed, then fighter, then fighter_weapon is saved, then fighter_weapon is parsed"
+            ]
+        },
+        {
+            "type": "text",
+            "title": "Inline",
+            "text": [
+                "Sometimes you only have a small number of options and don't want to create a whole new key and string array. That's where inline choices come in.",
+                "Inline choices always start with '^$' and end with '$' and choices are separated by ':'. $ and : can be included in inline using escape character '\\\\'.",
+                "Inline choices allow all characters or no characters. Formatted as ^$optionA:optionB$. Examples: "
+            ]
+        },
+        {
+            "type": "list",
+            "title": "",
+            "list_style": "disc",
+            "list": [
+                "\"Last ^$show:movie$ you watched?\" -> \"Last show you watched?\" OR \"Last movie you watched\"",
+                "\"Could you fight ^$#animal.a#:#character#$?\" -> \"Could you fight a duck\" OR \"Could you fight Dwight K. Schrute\"",
+                "Hello^$:, How are you$? -> \"Hello?\" OR \"Hello, How are you?\""
+            ]
+        },
+        {
+            "type": "text",
+            "text": [
+                "Choices are applied before everything else.",
+                "'[type:mulit][key:^$character:animal:singer$]Choose your protector.' becomes '[type:multi][key:animal]Choose your protector.' before we start to parse temporary values/variables"
+            ]
+        },
+        {
+            "type": "header",
+            "text": "The Site"
+        },
+        {
+            "type": "text",
+            "text": [
+                "The front end of the site is built on Angular and allows users to do many things. Such as, see single example questions, create, manage, and take surveys. There is also the option to export answers or to view a slideshow presentation with the answers. This allows the person who creates the survey to be part of the results without spoiling the answers. The survey manager also has the option to release the results so that anyone with a link to the survey can look at the results slideshow whenever they like.",
+                "Surveys are based off of unique ids rather than accounts, allowing anyone to create or take one. To secure the manager view an extra token is given to their url which is not needed to just submit results.",
+                "The website gives many options when generation and editing questions such as: filtering questions by tags, randomizing just the answers or getting a new but similar question. The survey maker",
+                "To prevent users from looking at the answers of others, previously submitted answers are not shown. So a user can go in submit their answers and then when they go back into the survey and see which questions they've answered but not what those answers were."
+            ]
+        },
+        {
+            "type": "header",
+            "text": "Examples"
+        },
+        {
+            "type": "grid",
+            "items": [
+                {
+                    "type": "pic",
+                    "src": "example1.png",
+                    "alt": "Survey Maker",
+                    "width": "500px",
+                    "text": "Example view of creating a new survey"
+                },
+                {
+                    "type": "pic",
+                    "src": "example2.png",
+                    "alt": "Survey Maker Question",
+                    "width": "500px",
+                    "text": "Different options when creating a question"
+                },
+                {
+                    "type": "pic",
+                    "src": "example3.png",
+                    "alt": "Survey Manager",
+                    "width": "500px",
+                    "text": "Manager view showing different stats about the survey"
+                },
+                {
+                    "type": "pic",
+                    "src": "example4.png",
+                    "alt": "Example Question",
+                    "width": "500px",
+                    "text": ""
+                },
+                {
+                    "type": "pic",
+                    "src": "example5.png",
+                    "alt": "Example Question",
+                    "width": "500px",
+                    "text": ""
+                },
+                {
+                    "type": "pic",
+                    "src": "example6.png",
+                    "alt": "Example Question",
+                    "width": "500px",
+                    "text": ""
+                },
+                {
+                    "type": "pic",
+                    "src": "example7.png",
+                    "alt": "Example Question",
+                    "width": "500px",
+                    "text": ""
+                }
+            ]
+        }
+    ]
+}
