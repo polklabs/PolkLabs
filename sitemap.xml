@@ -11,6 +11,9 @@
 <url><loc>https://www.polklabs.com/project/naval-postgraduate-school</loc><priority>0.5</priority></url>
 <url><loc>https://www.polklabs.com/project/drowsiness-detector</loc><priority>0.5</priority></url>
 <url><loc>https://www.polklabs.com/project/bit-simulator</loc><priority>0.5</priority></url>
+<url><loc>https://www.polklabs.com/project/survey-of-the-month</loc><priority>0.5</priority></url>
 <url><loc>https://www.polklabs.com/blog/rng-encoding</loc><priority>0.5</priority></url>
 <url><loc>https://www.polklabs.com/blog/bit-simulator-serialization</loc><priority>0.5</priority></url>
+<url><loc>https://www.polklabs.com/blog/nonogram-solver</loc><priority>0.5</priority></url>
+<url><loc>https://www.polklabs.com/blog/wordle-solver</loc><priority>0.5</priority></url>
 </urlset>
