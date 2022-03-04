@@ -5,6 +5,7 @@ import { ActivatedRoute } from '@angular/router';
 import rngEncodingJson from 'src/assets/json/blogs/rng-encoding.json';
 import bitSimulatorSerializationJson from 'src/assets/json/blogs/bit-simulator-serialization.json';
 import nonogramSolverJson from 'src/assets/json/blogs/nonogram-solver.json';
+import wordleSolverJson from 'src/assets/json/blogs/wordle-solver.json';
 
 @Component({
   selector: 'app-prerender-blog',
@@ -30,6 +31,9 @@ export class PrerenderBlogComponent {
             break;
         case 'nonogram-solver':
             this.data = nonogramSolverJson;
+            break;
+        case 'wordle-solver':
+            this.data = wordleSolverJson;
             break;
       }
   }
