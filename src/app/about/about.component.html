@@ -12,11 +12,11 @@
                 <p><strong>{{data.bio}}</strong></p>
                 <p class="summary">{{data.summary}}</p>
                 <p><strong>Current Focus: </strong>{{data.currentFocus}}</p>
-                <a mat-raised-button [download]="data.resume" [href]="'assets/content/about/' + data.resume" target="_blank">Download Resume</a>
+                <a mat-raised-button [href]="'assets/content/about/' + data.resume" target="_blank">View Resume</a>
             </div>
 
             <div fxFlex.xs="300px" fxFlex.sm="400px" fxFlex.gt-sm="48" style="min-width: 250px;" fxLayoutAlign="center center">
-                <img style="width: 500px; height: inherit; margin: auto; border-radius: 16px; filter: saturate(0.65); max-width: 100%;" [src]="'assets/content/about/' + data.photo" alt="profile photo">
+                <img style="width: 500px; height: inherit; margin: auto; border-radius: 16px; filter: saturate(0.85); max-width: 100%;" [src]="'assets/content/about/' + data.photo" alt="profile photo">
             </div>
 
         </div>
@@ -108,7 +108,7 @@
         </div>
 
         <!-- Awards -->
-        <div fxLayout="column" fxLayoutGap="16px" fxLayoutAlign="center" *ngIf="data.awards.length> 0" class="mat-card-row">
+        <div fxLayout="column" fxLayoutGap="16px" fxLayoutAlign="center" *ngIf="data.awards && data.awards.length> 0" class="mat-card-row">
 
             <!-- <h1>Awards</h1> -->
             <app-tmpl-wrapper [section]="{ type: 'header', text: 'Awards'}"></app-tmpl-wrapper>

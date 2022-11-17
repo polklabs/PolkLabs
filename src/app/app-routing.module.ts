@@ -4,8 +4,8 @@ import { ProjectsComponent } from './projects/projects.component';
 import { AboutComponent } from './about/about.component';
 import { HomeComponent } from './home/home.component';
 import { BlogsComponent } from './blogs/blogs.component';
-import { PrerenderBlogComponent } from './prerendered/prerender-blog';
-import { PrerenderProjectComponent } from './prerendered/prerender-project';
+import { ProjectComponent } from './project/project.component';
+import { BlogComponent } from './blog/blog.component';
 
 const routes: Routes = [
     {
@@ -25,7 +25,7 @@ const routes: Routes = [
         }
     },
     {
-        path: 'projects',
+        path: 'project',
         component: ProjectsComponent,
         data: {
             title: 'Projects | Polklabs',
@@ -34,10 +34,10 @@ const routes: Routes = [
     },
     {
         path: 'project/:id',
-        component: PrerenderProjectComponent
+        component: ProjectComponent
     },
     {
-        path: 'blogs',
+        path: 'blog',
         component: BlogsComponent,
         data: {
             title: 'Blogs | Polklabs',
@@ -46,7 +46,7 @@ const routes: Routes = [
     },
     {
         path: 'blog/:id',
-        component: PrerenderBlogComponent
+        component: BlogComponent
     },
     {
         path: '',

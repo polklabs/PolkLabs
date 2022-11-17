@@ -5,13 +5,13 @@
 
         <div fxFlex></div>
 
-        <a fxHide.lt-md mat-button [routerLink]="'/home'" class="header-btn">Home</a> 
-        <a fxHide.lt-md mat-button [routerLink]="'/projects'" class="header-btn">Projects</a>
-        <a fxHide.lt-md mat-button [routerLink]="'/blogs'" class="header-btn">Blogs</a>
-        <a fxHide.lt-md mat-button [routerLink]="'/about'" class="header-btn">About</a>
+        <a fxHide.lt-md mat-button [routerLink]="'/home'" class="header-btn" [routerLinkActive]="'active-link'">Home</a> 
+        <a fxHide.lt-md mat-button [routerLink]="'/project'" class="header-btn" [routerLinkActive]="'active-link'">Projects</a>
+        <a fxHide.lt-md mat-button [routerLink]="'/blog'" class="header-btn" [routerLinkActive]="'active-link'">Blogs</a>
+        <a fxHide.lt-md mat-button [routerLink]="'/about'" class="header-btn" [routerLinkActive]="'active-link'">About</a>
         
         <div fxLayout="row" fxHide.lt-md>
-            <a *ngIf="header.email !== ''" mat-icon-button ngxClipboard [cbContent]="header.email" (click)="openSnackBar('Copied to clipboard!')" matTooltip="Copy email to clipboard" class="header-btn"><i class="fa fa-envelope"></i></a>
+            <a *ngIf="header.email !== ''" mat-icon-button [href]="'mailto:'+header.email" class="header-btn"><i class="fa fa-envelope"></i></a>
             <a *ngIf="header.twitter !== ''" mat-icon-button [href]="header.twitter" target="_blank" rel="noopener" class="header-btn"><i class="fab fa-twitter"></i></a>
             <a *ngIf="header.linkedIn !== ''" mat-icon-button [href]="header.linkedIn" target="_blank" rel="noopener" class="header-btn"><i class="fab fa-linkedin-in"></i></a>
             <a *ngIf="header.facebook !== ''" mat-icon-button [href]="header.facebook" target="_blank" rel="noopener" class="header-btn"><i class="fab fa-facebook-f"></i></a>
@@ -21,8 +21,8 @@
         <button mat-button [matMenuTriggerFor]="menu" fxHide fxShow.lt-md><mat-icon>menu</mat-icon></button>
         <mat-menu #menu="matMenu" style="text-align: center;">
             <a mat-menu-item [routerLink]="'/home'">Home</a>
-            <a mat-menu-item [routerLink]="'/projects'">Projects</a>
-            <a mat-menu-item [routerLink]="'/blogs'">Blogs</a>
+            <a mat-menu-item [routerLink]="'/project'">Projects</a>
+            <a mat-menu-item [routerLink]="'/blog'">Blogs</a>
             <a mat-menu-item [routerLink]="'/about'">About</a>
             
             <a mat-menu-item *ngIf="header.email !== ''" ngxClipboard [cbContent]="header.email" (click)="openSnackBar('Copied to clipboard!')" matTooltip="Copy email to clipboard"><i class="fa fa-envelope"></i></a>

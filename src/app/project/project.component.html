@@ -1,45 +1,33 @@
 <div id="top"></div>
-<div *ngIf="data" style="margin: auto; margin-bottom: 16px;" fxLayout="row"
+<!-- Header background -->
+<div style="background-color: #2e2e2e; width: 100%; height: 400px; position: static; z-index: -10; top: 0;"></div>
+<div *ngIf="data" class="bgimg" style="margin: auto; margin-bottom: 16px;" fxLayout="row"
     fxLayoutAlign="center start" id="home">
 
-    <div class="display-container">
+    <div class="display-container" style="margin: -350px 0 0 0">
         <!-- Header -->
-        <div class="bgimg grayscale-min"
-            [style.background-image]="'url(' + 'assets/content/projects/' + id + '/' + data.bgimg + ')'">
-            <div class="display-middle center">
-                <span class="text-white jumbo tag" style="font-family:'Limelight', cursive">{{data.title}}</span>
-            </div>
-        </div>
-
-        <div class="light-theme">
-
-            <!-- Page Links -->
-            <mat-toolbar fxLayout="row wrap" fxLayoutAlign="space-evenly" class="sticky-toolbar">
-                <div *ngFor="let section of sectionTitles">
-                    <a routerLink="." fragment="{{getId(section)}}" class="page-link pl-link">{{section}}</a>
-                </div>
-            </mat-toolbar>
-
+        <h1 class="jumbo center text-white" style="margin: 96px 0">{{data.title}}</h1>
+        <div class="main-content">
             <div class="width">
                 <!-- Link Buttons -->
                 <div class="center" style="padding-top: 32px;" fxLayout="row" fxLayoutGap="16px"
                     fxLayoutAlign="center center">
                     <a *ngIf="data.demo !== ''" mat-raised-button appMaterialElevation 
                         [href]="data.demo" target="_blank" class="link-button">
-                        <i class="fa fa-spinner link-icon"></i>Try It Out
+                        <i class="fa fa-spinner link-icon"></i>Demo
                     </a>
                     <button *ngIf="data.demo === ''" mat-raised-button appMaterialElevation 
                         type="button" [disabled]="true" class="link-button">
-                        <i class="fa fa-spinner link-icon"></i>Try It Out
+                        <i class="fa fa-spinner link-icon"></i>Demo
                     </button>
 
                     <a *ngIf="data.github !== ''" mat-raised-button appMaterialElevation 
                         [href]="data.github" target="_blank" class="link-button">
-                        <i class="fab fa-github link-icon"></i>The Repo
+                        <i class="fab fa-github link-icon"></i>Github
                     </a>
                     <button *ngIf="data.github === ''" mat-raised-button appMaterialElevation 
                         type="button" [disabled]="true" class="link-button">
-                        <i class="fab fa-github link-icon"></i>The Repo
+                        <i class="fab fa-github link-icon"></i>Github
                     </button>
                 </div>
             </div>

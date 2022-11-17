@@ -13,9 +13,6 @@ import { ProjectsComponent } from './projects/projects.component';
 import { BlogComponent } from './blog/blog.component';
 import { BlogsComponent } from './blogs/blogs.component';
 import { ProjectsSmallComponent } from './shared/projects-small/projects-small.component';
-import { BrowserModule } from '@angular/platform-browser';
-import { PrerenderBlogComponent } from './prerendered/prerender-blog';
-import { PrerenderProjectComponent } from './prerendered/prerender-project';
 import { DisqusModule } from 'ngx-disqus';
 
 @NgModule({
@@ -29,9 +26,6 @@ import { DisqusModule } from 'ngx-disqus';
     BlogComponent,
     BlogsComponent,
     ProjectsSmallComponent,
-
-    PrerenderBlogComponent,
-    PrerenderProjectComponent
   ],
   imports: [
     BrowserAnimationsModule,

@@ -2,7 +2,7 @@
     "welcomeTitle": "Let's build something\namazing together",
     "welcomeSubtitle": "Logically minded // Creative at heart",
     "name": "Andrew Polk",
-    "photo": "me_2.png",
+    "photo": "me_3.jpg",
     "title": "Computer Engineer",
     "bio": "Mission-driven full stack developer with a passion for thoughtful UI design, learning, and collaboration.",
     "summary": "Growing up I was always looking for new things to take apart and put back together. Building, Creating and learning have been passions of mine since long before I knew I wanted to be a computer engineer. I’ve always sought out opportunities and challenges that are meaningful to me. Although my educational goals have taken many twists and turns — from wanting to be an electrical engineer to robotics, machine learning and even working with image processing — I've never stopped engaging my passion to help others and solve problems.\n\nAs a full stack web developer, I enjoy using my obsessive attention to detail, my unequivocal love for making things, and my mission-driven work ethic to literally change the world. That's why I’m excited to make a big impact wherever I am and on everything I work on.",
@@ -61,8 +61,8 @@
                     "logo": "python.png"
                 },
                 {
-                    "text": "Java",
-                    "logo": "java.png"
+                    "text": "SQL",
+                    "logo": "sql.png"
                 },
                 {
                     "text": "Typescript",
@@ -109,26 +109,6 @@
             ]
         }
     ],
-    "awards": [
-        {
-            "title": "Dean's Honors",
-            "location": "UC Santa Barbara",
-            "date": "Fall 2018",
-            "summary": "Awarded by UCSB College of Engineering for a grade point average aboce 3.5 while completing a minimum of 12 letter grade units."
-        },
-        {
-            "title": "Dean's Honors",
-            "location": "UC Santa Barbara",
-            "date": "Spring 2018",
-            "summary": "Awarded by UCSB College of Engineering for a grade point average aboce 3.5 while completing a minimum of 12 letter grade units."
-        },
-        {
-            "title": "Dean's Honors",
-            "location": "UC Santa Barbara",
-            "date": "Fall 2017",
-            "summary": "Awarded by UCSB College of Engineering for a grade point average aboce 3.5 while completing a minimum of 12 letter grade units."
-        }
-    ],
     "education": [
         {
             "school": "University Of California, Santa Barbara",
@@ -138,10 +118,10 @@
             ]
         },
         {
-            "school": "Freedom High School",
-            "location": "Oakley, CA",
+            "school": "Dean's Honors",
+            "location": "UC Santa Barbara",
             "bullets": [
-                "GE"
+                "Awarded by UCSB College of Engineering for a grade point average aboce 3.5 while completing a minimum of 12 letter grade units."
             ]
         }
     ]

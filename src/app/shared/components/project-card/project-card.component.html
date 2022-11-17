@@ -2,6 +2,7 @@
     <mat-card appMaterialElevation [defaultElevation]="0" class="project-outer project-card mat-card-link" fxFlex fxLayout="column">
 
         <mat-card-title fxFlex="none" class="title-link">{{project.title}}</mat-card-title>
+        <mat-card-subtitle>{{project.date | date}}</mat-card-subtitle>
 
         <img height="200" width="268" *ngIf="project.comingSoon" src="assets/images/coming-soon.png" alt="coming soon banner" class="coming-soon">
 

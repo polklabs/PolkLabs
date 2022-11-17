@@ -118,3 +118,10 @@ a.pl-link:hover {
 app-project-card {
     height: 100%;
 }
+
+.active-link {
+    color: rgb(109, 182, 255) !important;
+    .mat-button-wrapper {
+        text-decoration: underline !important;
+    }
+}

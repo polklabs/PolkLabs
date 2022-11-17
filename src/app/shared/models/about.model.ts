@@ -28,7 +28,7 @@ export interface AboutModel {
             logo: string;
         }[];
     }[];
-    awards: {
+    awards?: {
         title: string;
         location: string;
         date: string;
