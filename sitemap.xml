@@ -2,8 +2,8 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url><loc>https://www.polklabs.com/home</loc><priority>0.5</priority></url>
 <url><loc>https://www.polklabs.com/about</loc><priority>0.5</priority></url>
-<url><loc>https://www.polklabs.com/projects</loc><priority>0.5</priority></url>
-<url><loc>https://www.polklabs.com/blogs</loc><priority>0.5</priority></url>
+<url><loc>https://www.polklabs.com/project</loc><priority>0.5</priority></url>
+<url><loc>https://www.polklabs.com/blog</loc><priority>0.5</priority></url>
 <url><loc>https://www.polklabs.com/project/reel-ratings</loc><priority>0.5</priority></url>
 <url><loc>https://www.polklabs.com/project/pixel-matrix-game</loc><priority>0.5</priority></url>
 <url><loc>https://www.polklabs.com/project/text-generator</loc><priority>0.5</priority></url>

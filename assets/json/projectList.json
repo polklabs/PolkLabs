@@ -16,8 +16,8 @@
         "date": "03/17/18"
     },
     {
-        "id": "text-generator",
-        "title": "Text Generator",
+        "id": "ai-text-generator",
+        "title": "AI Text Generator",
         "subtitle": "A machine learning project that creates sentences",
         "image": "index.png",
         "imageAlt": "WordCloud",
