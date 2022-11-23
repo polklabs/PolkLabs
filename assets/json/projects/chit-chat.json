@@ -128,11 +128,11 @@
         {
             "type": "text",
             "text": [
-                "A while after the original chat application was created the code was refactored to be used as an anonymous chat room app. When opening the app the user is shown a list of available chat rooms based on popular rooms and based on location of the user. Alternativly the user can create a new chatroom with multiple options to make it public, password protected, based locally and more.",
+                "A while after the original chat application was created the code was refactored to be used as an anonymous chat room app. When opening the app the user is shown a list of available chat rooms based on popular rooms and based on location of the user. Alternatively the user can create a new chatroom with multiple options to make it public, password protected, based locally and more.",
                 "The user who creates the chatroom is made the Moderator and can choose to kick other users out of the chat room. This is passed to the next user in line if they leave the room. All other users have to option to report other to the moderator. Kicking a user removes them from the room, but since the rooms are anonymous they can just join right back in, this could be fixed with hardware ids or other identifiers.",
                 "The messages are all encrypted between the users in the chat room. Public keys are stored on the server when joining a room and all existing keys are downloaded to each client.",
                 "Private messages can also be sent inside of a chat room by opening the sidebar and selecting the user you'd like to send the \"secret\" message to.",
-                "Extra features of this rewritten app is the ability to join a chat room from scanning a NFC tag. Users can also send images and gifs but with the current encryption system they have to be encoded for each user in the room which can use a lot of bandwith with many users. Chat rooms are also short lived as they only exist as long as a user is in the room. When the server detects the last user has left the chat room is closed and the room name is free to be used on a new room."
+                "Extra features of this rewritten app is the ability to join a chat room from scanning a NFC tag. Users can also send images and gifs but with the current encryption system they have to be encoded for each user in the room which can use a lot of bandwidth with many users. Chat rooms are also short lived as they only exist as long as a user is in the room. When the server detects the last user has left the chat room is closed and the room name is free to be used on a new room."
             ]
         },
         {

@@ -54,7 +54,7 @@
             "type": "text",
             "text": [
                 "This project contains a custom spi based protocol to interface with the RGB matrix. Along with the RGB matrix there is a speaker that loops through playing the Tetris and Doctor Mario theme. This speaker interface uses code ported from a Tetris song arduino project. The game all runs around the LPC's button interrupts and it's timer interrupts to run the designed game.",
-                "The game is a connect four falling dot game. When the game starts the board is already fill 60% with different colored dots. Three random colored dots are then dropped from the top of the display, it is up to the player to line the dots up with other dots to make them dissapear. The dots can be connect horizontal, vertical, or diagonally. The game is won when all the dots are cleared from the board and lost when a dot lands on the top row of the matrix. The game is then restartes after a win or a loss and is also able to be paused at anytime."
+                "The game is a connect four falling dot game. When the game starts the board is already fill 60% with different colored dots. Three random colored dots are then dropped from the top of the display, it is up to the player to line the dots up with other dots to make them disappear. The dots can be connect horizontal, vertical, or diagonally. The game is won when all the dots are cleared from the board and lost when a dot lands on the top row of the matrix. The game is then restarts after a win or a loss and is also able to be paused at anytime."
             ]
         },
         {
@@ -69,7 +69,7 @@
             "type": "text",
             "subtitle": "Speaker",
             "text": [
-                "The speaker had it's own dedicated pin connection but was connected throught the expansion slot as the dedicated pin did not work on our board."
+                "The speaker had it's own dedicated pin connection but was connected through the expansion slot as the dedicated pin did not work on our board."
             ]
         },
         {
@@ -90,14 +90,14 @@
             "title": "The Game",
             "subtitle": "Playing",
             "text": [
-                "The colored dots need to be lines up with four other dots of the same color to make them all dissapear. The dots can be connected horizontal, vertical, or diagonally."
+                "The colored dots need to be lines up with four other dots of the same color to make them all disappear. The dots can be connected horizontal, vertical, or diagonally."
             ]
         },
         {
             "type": "text",
             "subtitle": "Controls",
             "text": [
-                "The game is controled with the joy stick. Left and right move the dot left and right. Up pauses the game and down moved the dots down faster."
+                "The game is controlled with the joy stick. Left and right move the dot left and right. Up pauses the game and down moved the dots down faster."
             ]
         },
         {

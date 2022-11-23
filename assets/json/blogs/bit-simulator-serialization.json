@@ -1,7 +1,7 @@
 {
     "id": "bit-simulator-serialization",
     "title": "Bit Simulator - Data Serialization",
-    "meta": "How to create a custom JsonConverter class for BitArrays, and how to implment that class with the JsonSerializer using c# and Unity3D.",
+    "meta": "How to create a custom JsonConverter class for BitArrays, and how to implement that class with the JsonSerializer using c# and Unity3D.",
     "author": "Andrew Polk",
     "date": "July 1, 2020",
     "category": "C#, Unity3D",
@@ -46,7 +46,7 @@
                 "This first method is simple, we just need to return true if the object type passed in is the type we want to convert with this class, BitArray in this case.",
                 "Next we'll want to override the WriteJson method. Now this is where we have a little more freedom to decide how we want to implement it. We need to either transform the object into a string or some other object that can be serialized. I have opted to transform it into a bit string of the form \"0011011101\" so that if I need to modify the json files while testing it's in a format that I can understand. There are other options that work also such as converting it into bytes which takes up the smallest amount of space but is not as readable and may require extra information such as how many bits are in the array. Hex representations are another option.",
                 "To aid in creating this helper method I added a BitArray extension method which can be called on the object itself and loops through the array building a string of 1s and 0s",
-                "Finally we need to override the ReadJson method, this will pass in the JSON string/object and expects a BitArray object to be returned. For this method I create a new boolean array of the correct lenght and then iterate over the json string updating the boolean at each position. Once the boolean array is correct I created a new BitArray object with the boolean array passed into the constructor."
+                "Finally we need to override the ReadJson method, this will pass in the JSON string/object and expects a BitArray object to be returned. For this method I create a new boolean array of the correct length and then iterate over the json string updating the boolean at each position. Once the boolean array is correct I created a new BitArray object with the boolean array passed into the constructor."
             ]
         },
         {

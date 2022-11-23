@@ -30,7 +30,7 @@
         {
             "type": "text",
             "text": [
-                "The encoder starts by taking some input text to encode, it then padds the input so that the length is a multiple of three. That string is then converted into a list of numbers (0-127), ASCII encoding.",
+                "The encoder starts by taking some input text to encode, it then pads the input so that the length is a multiple of three. That string is then converted into a list of numbers (0-127), ASCII encoding.",
                 "Once the input has been prepared it is then sent to the encoder 3 numbers at a time. Three was chosen because any longer and the output takes too long to process. Encoding is simple (but not efficient), a random number generator returns values until one is found that matches the first number to be encoded. If the 2nd and 3rd numbers also match the next two values a match has been found. The encoding function then returns the number of times it asked for a random number as an output. If the match was not found the first time, this process is repeated until one is found."
             ]
         },

@@ -5,7 +5,7 @@
     "photo": "me_3.jpg",
     "title": "Computer Engineer",
     "bio": "Mission-driven full stack developer with a passion for thoughtful UI design, learning, and collaboration.",
-    "summary": "Growing up I was always looking for new things to take apart and put back together. Building, Creating and learning have been passions of mine since long before I knew I wanted to be a computer engineer. I’ve always sought out opportunities and challenges that are meaningful to me. Although my educational goals have taken many twists and turns — from wanting to be an electrical engineer to robotics, machine learning and even working with image processing — I've never stopped engaging my passion to help others and solve problems.\n\nAs a full stack web developer, I enjoy using my obsessive attention to detail, my unequivocal love for making things, and my mission-driven work ethic to literally change the world. That's why I’m excited to make a big impact wherever I am and on everything I work on.",
+    "summary": "Growing up I was always looking for new things to take apart and put back together. Building, Creating and learning have been passions of mine since long before I knew I wanted to be a computer engineer. I have always sought out opportunities and challenges that are meaningful to me. Although my goals have taken many twists and turns — from interests in electrical engineering to robotics, machine learning and even security/cryptography — I have never stopped engaging my passion to help others and solve problems.\n\nAs a full stack web developer, I enjoy using my strong attention to detail, my unequivocal love for making things, and my passion for problem solving to take on any challenge that comes my way. That's why I am excited to make a big impact wherever I am and on everything I work on.",
     "currentFocus": "Angular // ASP.NET // UI",
     "resume": "Resume - Andrew Polk.pdf",
     "experience": [
@@ -13,34 +13,38 @@
             "logo": "tecolote.png",
             "company": "Tecolote Research",
             "title": "Full-Stack Software Developer",
-            "summary": "Company intranet that interfaces with an internal database.",
+            "summary": "Developed company intranet, websites and ERP systems",
             "items": [
                 {
                     "type": "list",
                     "title": "Develop Product",
                     "items": [
-                        "Developed products that are used by the entire company",
-                        "Front and back-end development, creating and documenting company intranet site"
+                        "Developed enterprise application using Angular and .Net Framework",
+                        "Designed and implemented components, systems and features based on user requirements",
+                        "Redesigned an existing desktop framework to a web environment",
+                        "Wrote code, tested, deployed, and maintained software for desktop and mobile devices",
+                        "Worked with users to provide technical support and addressing issues",
+                        "Implemented authentication features to improve security and user experience"
                     ]
                 }
             ],
             "dates": "May 2019 - Present",
-            "location": "Goleta, CA"
+            "location": "Santa Barbara, CA"
         },
         {
             "logo": "nps.jpg",
             "company": "Monterey Naval Postgraduate School",
             "title": "Research Intern",
-            "summary": "Company intranet that interfaces with an internal database.",
+            "summary": "Provided research assistance in the field of big data and machine learning",
             "items": [
                 {
                     "type": "list",
                     "title": "Information Sciences Department",
                     "items": [
-                        "Gained knowledge in data visualization and manipulation while working with enormous amounts of data",
-                        "Used neural networks and other programs for problem solving",
-                        "Corresponded with high ranking researchers on datasets ranging from education to networking attacks",
-                        "Authored multiple deep learning based scientific papers in collaboration with PhD researchers"
+                        "Gained knowledge in data visualization and manipulation while working with large data sets",
+                        "Used neural networks and other concepts for problem solving",
+                        "Corresponded with high-ranking researchers on datasets ranging from education to networking attacks",
+                        "Collaborated on multiple deep learning based scientific papers"
                     ]
                 }
             ],
@@ -121,7 +125,7 @@
             "school": "Dean's Honors",
             "location": "UC Santa Barbara",
             "bullets": [
-                "Awarded by UCSB College of Engineering for a grade point average aboce 3.5 while completing a minimum of 12 letter grade units."
+                "Awarded by UCSB College of Engineering for a grade point average above 3.5 while completing a minimum of 12 letter grade units."
             ]
         }
     ]
