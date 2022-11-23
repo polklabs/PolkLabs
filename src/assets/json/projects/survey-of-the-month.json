@@ -129,7 +129,7 @@
             "type": "text",
             "text": [
                 "Choices are applied before everything else.",
-                "'[type:mulit][key:^$character:animal:singer$]Choose your protector.' becomes '[type:multi][key:animal]Choose your protector.' before we start to parse temporary values/variables"
+                "'[type:multi][key:^$character:animal:singer$]Choose your protector.' becomes '[type:multi][key:animal]Choose your protector.' before we start to parse temporary values/variables"
             ]
         },
         {

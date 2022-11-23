@@ -10,7 +10,7 @@
             "type": "text",
 			"subtitle": "What is a Wordle?",
             "text": [
-                "Wordle is puzzle consiting of an unknown five letter word and six guesses. To start you guess a five letter word and it will tell you some information for how close you are to the correct word. Grey means the letter does not appear in the final word. Yellow means the letter does appear but it's in the wrong spot. And green means the letter is in the correct spot.",
+                "Wordle is puzzle consisting of an unknown five letter word and six guesses. To start you guess a five letter word and it will tell you some information for how close you are to the correct word. Grey means the letter does not appear in the final word. Yellow means the letter does appear but it's in the wrong spot. And green means the letter is in the correct spot.",
                 "In the below example the solver gave a five letter word which was then entered into Wordle, the Wordle feedback was then update in the solver and the next word to enter was given. You can also refresh a word if it is not a valid Wordle word, or reset the program to start again."
             ]
         },
@@ -86,7 +86,7 @@
             "type": "text",
             "text": [
                 "",
-                "After determining the include/excludes we can generate a regular expression to help up filter the word list. This also includes an exclude by postion so that we don't guess a letter where we already know it can't be."
+                "After determining the include/excludes we can generate a regular expression to help up filter the word list. This also includes an exclude by position so that we don't guess a letter where we already know it can't be."
             ]
         },
         {

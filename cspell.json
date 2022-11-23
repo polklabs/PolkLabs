@@ -1,0 +1,30 @@
+{
+    "version": "0.2",
+    "ignorePaths": [],
+    "dictionaryDefinitions": [],
+    "dictionaries": [],
+    "words": [
+        "askreddit",
+        "bgimg",
+        "EEPROM",
+        "fieldset",
+        "flickr",
+        "gifs",
+        "IMDB",
+        "Lightroom",
+        "Linq",
+        "NAND",
+        "Newtonsoft",
+        "nonogram",
+        "nonograms",
+        "Photoshop",
+        "Polklabs",
+        "Sneddon",
+        "Tecolote",
+        "UCSB",
+        "Wordle",
+        "XNOR"
+    ],
+    "ignoreWords": [],
+    "import": []
+}

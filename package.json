@@ -27,7 +27,7 @@
     "@angular/router": "~13.3.11",
     "@babel/compat-data": "^7.13.8",
     "@fortawesome/fontawesome-svg-core": "^1.2.34",
-    "angular-cli-ghpages": "^0.6.2",
+    "angular-cli-ghpages": "^1.0.0",
     "highlight.js": "^10.4.1",
     "highlightjs": "^9.16.2",
     "highlightjs-line-numbers.js": "^2.8.0",

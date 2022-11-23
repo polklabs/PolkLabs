@@ -10,7 +10,7 @@
             "type": "text",
 			"subtitle": "What is a Nonogram?",
             "text": [
-                "A Nonogram is puzzle consiting of a grid with each cell in the grid being filled or unfilled. Each row and column has an associated number or set of numbers. These numbers tell how many filled cells there are in a row.",
+                "A Nonogram is puzzle consisting of a grid with each cell in the grid being filled or unfilled. Each row and column has an associated number or set of numbers. These numbers tell how many filled cells there are in a row.",
                 "In the below example one of the rows has the values '2 9'. This means that the row will have 2 filled cells, one or more unfilled cell, then 9 more filled cells."
             ]
         },
@@ -38,7 +38,7 @@
                 "Then taking the sum of each filled cell gives us.\n[1, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 2, 1]",
                 "From this we can determine two things. One, each cell that equals the total number of permutations is required in the final answer. Two, each cell that sums to 0 cannot be in the final answer.\n🔲🔲🔳🔳🔳🔳🔳🔳🔳🔳🔳🔳🔳🔲🔲",
                 "We can then iterate over all the permutations for every column, deleting any permutation that do not satisfy the requirements for the chosen row",
-                "The same algorithm can be repeated switching columns and rows. If there is a unique solution then you will be able to cancel out row/column possibilities untill there is only one left for each row/column. Removing a possible solution changes the permutation sum the next time that row/column is checked."
+                "The same algorithm can be repeated switching columns and rows. If there is a unique solution then you will be able to cancel out row/column possibilities until there is only one left for each row/column. Removing a possible solution changes the permutation sum the next time that row/column is checked."
             ]
         },
         {
@@ -65,7 +65,7 @@
             "text": [
                 "Next there needs to be a way to calculate all possible permutations for each row/column. The possible permutations are bound by the rules of the puzzle so an array representation can be created that limits the permutation calculation to only those that are possible.",
                 "The column key [4, 4, 2] can be thought of as ['4', '4', '2', '0', '0', '0', '0', '0']. Another requirement is at least one space between each filled cell grouping, so the array can be reduced to ['40', '40', '2', '0', '0', '0']",
-                "One final reduction can be done, we only need distince permutations where the non-zero values are in order. This can be achieved by replacing those values with place holders, resulting in ['x', 'x', 'x', '0', '0', '0']",
+                "One final reduction can be done, we only need distinct permutations where the non-zero values are in order. This can be achieved by replacing those values with place holders, resulting in ['x', 'x', 'x', '0', '0', '0']",
                 "After the permutations are calculated we can iterate through them and convert them to the un-compressed format, replacing the place holders with the actual values.\n['0', 'x', 'x', '0', 'x', '0'] -> [0, 1, 1, 1, 1, 0, 1, 1, 1, 1, 0, 0, 1, 1, 0]"
             ]
         },
@@ -80,7 +80,7 @@
         {
             "type": "text",
             "text": [
-                "Running the puzzle through the previous code gets us all the possible array permutations for each row and column. The sum of those posibilities for all 15 rows/columns is printed below. Calculating the product of the Row array we get the total number of possible row combinations that could result in the solution. Fortunatly we do not have to iterate through all of them to solve the puzzle."
+                "Running the puzzle through the previous code gets us all the possible array permutations for each row and column. The sum of those possibilities for all 15 rows/columns is printed below. Calculating the product of the Row array we get the total number of possible row combinations that could result in the solution. Fortunately we do not have to iterate through all of them to solve the puzzle."
             ]
         },
         {
@@ -90,7 +90,7 @@
                 {
                     "type": "text",
                     "text": [
-                        "Row Posibilities\n[8, 10, 7, 10, 56, 6, 9, 7, 45, 210, 120, 11, 55, 36, 20]\n\nColumn Posibilities\n[220, 78, 13, 55, 84, 84, 10, 20, 6, 1, 15, 9, 126, 120, 56]\n\nPossible Solutions: 58,555,646,392,320,000,000"
+                        "Row Possibilities\n[8, 10, 7, 10, 56, 6, 9, 7, 45, 210, 120, 11, 55, 36, 20]\n\nColumn Possibilities\n[220, 78, 13, 55, 84, 84, 10, 20, 6, 1, 15, 9, 126, 120, 56]\n\nPossible Solutions: 58,555,646,392,320,000,000"
                     ]
                 }
             ]
@@ -107,12 +107,12 @@
             "language": [
                 "python"
             ],
-            "filename": "Removing Posibilties"
+            "filename": "Removing Possibilities"
         },
         {
             "type": "text",
             "text": [
-                "Finally we take the remaining rows, merge them into one column and print out the result. Assuming the previous step succeeded then there should be only one posibility for each row/column."
+                "Finally we take the remaining rows, merge them into one column and print out the result. Assuming the previous step succeeded then there should be only one possibility for each row/column."
             ]
         },
         {
