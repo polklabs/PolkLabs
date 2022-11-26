@@ -1,0 +1,103 @@
+{
+  "id": "ledger",
+  "title": "Ledger",
+  "meta": "",
+  "github": "https://github.com/polklabs/Ledger",
+  "demo": "",
+  "languages": ["Typescript", "NoSQL"],
+  "reason": "Personal Project",
+  "hardware": [],
+  "technologies": ["Angular", "NodeJS", "CouchDB"],
+  "lastUpdate": "11/24/22",
+  "sections": [
+    {
+      "type": "header",
+      "text": "About Ledger",
+      "noPadding": true
+    },
+    {
+      "type": "text",
+      "text": [
+        "I've always had many lists floating around on my computer and phone and wanted a better way to keep them all in one place. All these lists were kept in Excel or text files, which don't have the prettiest interface for interacting and updating data. Ledger is my solution to that issue. It allows creating ledgers with custom fields, field types, sorting, ordering, and other features."
+      ]
+    },
+    {
+      "type": "pic",
+      "src": "screenshot_1.png",
+      "alt": "Screenshot",
+      "width": "900px",
+      "text": "Ledger settings window for book info"
+    },
+    {
+      "type": "header",
+      "text": "Features"
+    },
+    {
+      "type": "text",
+      "text": [
+        "Ledger allows you to update the data or the table format at anytime and customize it for your needs. All changes and preferences are automatically saved. You can even customize it down to which icon a checkbox input uses.",
+        "The data is stored in a NoSQL database. Each ledger is two sections, a list of fields/metadata and a list of row data. This makes it easy to store, handle and manipulate data that would otherwise prove difficult if not impossible in a relational database.",
+        "Since the data is in json format, when converting between types it will attempt to use a string type as an intermediate type. That way the application only needs to know how to convert each type from and to a string rather converting to any other type. You can't always convert any type to any other type, the application will try to detect this and either coerce it ('true', '1', 'yes', 'y' in a text field will all become a ✅ when converted to a checkbox. If it is unable to convert it will keep the current type as to not lose data.",
+        "When creating a new Ledger, you can choose between a blank slate, or importing from JSON or a CSV file. The application will create all the necessary fields and set them as text fields. Some fields are clearly a specific type (such as Tags, Numbers, Checkbox) and can be automatically set."
+      ]
+    },
+    {
+      "type": "grid",
+      "items": [
+        {
+          "type": "list",
+          "title": "Table",
+          "list": [
+            "Select visible columns",
+            "Reorder columns",
+            "Filter table by text",
+            "Sort on any column",
+            "Scan barcode",
+            "Can open URLs directly"
+          ]
+        },
+        {
+          "type": "list",
+          "title": "Editor",
+          "list": [
+            "Reorder fields",
+            "Set field constraints",
+            "Group fields by tab",
+            "Add or delete fields at any time",
+            "Change field type",
+            "Custom setting for different types"
+          ]
+        },
+        {
+          "type": "list",
+          "title": "Form",
+          "list": [
+            "Fields grouped into tabs",
+            "Displays fields as specified in the editor",
+            "Autofill based on other entries in ledger",
+            "Can scan barcode directly into field"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "grid",
+      "items": [
+        {
+          "type": "pic",
+          "src": "screenshot_2.png",
+          "alt": "Screenshot",
+          "width": "600px",
+          "text": "Input form for contact list ledger"
+        },
+        {
+          "type": "pic",
+          "src": "screenshot_3.png",
+          "alt": "Screenshot",
+          "width": "300px",
+          "text": "Importing data from JSON"
+        }
+      ]
+    }
+  ]
+}
