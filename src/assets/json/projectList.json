@@ -5,7 +5,7 @@
         "subtitle": "A webapp that can predict the rating of a movie",
         "image": "card.png",
         "imageAlt": "Movies",
-        "date": "10/16/17"
+        "date": "10/16/2017"
     },
     {
         "id": "pixel-matrix-game",
@@ -13,7 +13,7 @@
         "subtitle": "A simple match four game on a 16x32 RGB matrix",
         "image": "card.jpg",
         "imageAlt": "RGB Matrix",
-        "date": "03/17/18"
+        "date": "03/17/2018"
     },
     {
         "id": "ai-text-generator",
@@ -21,7 +21,7 @@
         "subtitle": "A machine learning project that creates sentences",
         "image": "index.png",
         "imageAlt": "WordCloud",
-        "date": "08/10/19"
+        "date": "08/10/2019"
     },
     {
         "id": "chit-chat",
@@ -29,7 +29,7 @@
         "subtitle": "An android app that allows users to enter chat rooms and connect with others",
         "image": "index.png",
         "imageAlt": "Android",
-        "date": "04/30/18"
+        "date": "04/30/2018"
     },
     {
         "id": "naval-postgraduate-school",
@@ -37,7 +37,7 @@
         "subtitle": "Anomaly detection using machine learning and big data platforms",
         "image": "card.png",
         "imageAlt": "Map",
-        "date": "08/02/18"
+        "date": "08/02/2018"
     },
     {
         "id": "drowsiness-detector",
@@ -45,7 +45,7 @@
         "subtitle": "A program aimed to alert users if they are drowsy by analyzing video input from a webcam",
         "image": "card.png",
         "imageAlt": "Face",
-        "date": "10/15/18"
+        "date": "10/15/2018"
     },
     {
         "id": "bit-simulator",
@@ -53,7 +53,7 @@
         "subtitle": "A logic simulator that can simulate simple to complex logic circuits in real time",
         "image": "card.png",
         "imageAlt": "Circuit",
-        "date": "10/07/19"
+        "date": "10/07/2019"
     },
     {
         "id": "survey-of-the-month",
@@ -61,6 +61,14 @@
         "subtitle": "A funny survey question generator",
         "image": "card.png",
         "imageAlt": "Grammar",
-        "date": "11/19/21"
+        "date": "11/19/2021"
+    },
+    {
+        "id": "ledger",
+        "title": "Ledger",
+        "subtitle": "Custom data in custom tables",
+        "image": "screenshot_1.png",
+        "imageAlt": "Data Table",
+        "date": "11/24/2022"
     }
 ]
