@@ -4,7 +4,7 @@ import { Router, NavigationEnd, ActivatedRoute } from '@angular/router';
 import { mergeMap, filter, map } from 'rxjs/operators';
 import { SEOService } from './core/service/seo.service';
 
-declare var gtag;
+declare var ga;
 
 @Component({
   selector: 'app-root',
@@ -23,7 +23,8 @@ export class AppComponent implements OnInit {
       filter(e => e instanceof NavigationEnd)
     );
     navEndEvent$.subscribe((e: NavigationEnd) => {
-      gtag('config', 'UA-173704342-1', { page_path: e.urlAfterRedirects});
+      ga("set", "page", e.urlAfterRedirects);
+      ga("send", "pageview");
     });
   }
 
