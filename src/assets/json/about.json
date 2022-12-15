@@ -5,8 +5,8 @@
     "photo": "me_3.jpg",
     "title": "Computer Engineer",
     "bio": "Mission-driven full stack developer with a passion for thoughtful UI design, learning, and collaboration.",
-    "summary": "Growing up I was always looking for new things to take apart and put back together. Building, Creating and learning have been passions of mine since long before I knew I wanted to be a computer engineer. I have always sought out opportunities and challenges that are meaningful to me. Although my goals have taken many twists and turns — from interests in electrical engineering to robotics, machine learning and even security/cryptography — I have never stopped engaging my passion to help others and solve problems.\n\nAs a full stack web developer, I enjoy using my strong attention to detail, my unequivocal love for making things, and my passion for problem solving to take on any challenge that comes my way. That's why I am excited to make a big impact wherever I am and on everything I work on.",
-    "currentFocus": "Angular // ASP.NET // UI",
+    "summary": "Growing up I was always looking for new things to take apart and put back together. Building, Creating and learning have been passions of mine since long before I knew I wanted to be a computer engineer. I have always sought out opportunities and challenges that are meaningful to me. Although my goals have taken many twists and turns — from interests in electrical engineering to robotics, machine learning and even security/cryptography — I have never stopped engaging my passion to help others and solve problems.\n\nAs a full stack web developer, I enjoy using my strong attention to detail, my unequivocal love for making things, and my passion for problem solving to take on any challenge that comes my way. That's why I am excited to make a big impact wherever I work.",
+    "currentFocus": "Angular // .NET // UI // SQL",
     "resume": "Resume - Andrew Polk.pdf",
     "experience": [
         {
@@ -17,14 +17,15 @@
             "items": [
                 {
                     "type": "list",
-                    "title": "Develop Product",
+                    "title": "IT Software",
                     "items": [
-                        "Developed enterprise application using Angular and .Net Framework",
-                        "Designed and implemented components, systems and features based on user requirements",
-                        "Redesigned an existing desktop framework to a web environment",
+                        "Gained hands-on experience with Angular, .Net Framework, SQL, Version Control",
+                        "Led restructuring of dozens of enterprise workflows for Angular and .Net Framework",
+                        "Designed and implemented components, systems and features based on user requirements and business demands",
+                        "Revamped an existing desktop application into a web-based application",
                         "Wrote code, tested, deployed, and maintained software for desktop and mobile devices",
-                        "Worked with users to provide technical support and addressing issues",
-                        "Implemented authentication features to improve security and user experience"
+                        "Available to users for technical support and to quickly fix issues with minimal down time",
+                        "Feature owner responsible for entire lifecycles of workflows and applications"
                     ]
                 }
             ],
@@ -41,10 +42,10 @@
                     "type": "list",
                     "title": "Information Sciences Department",
                     "items": [
-                        "Gained knowledge in data visualization and manipulation while working with large data sets",
-                        "Used neural networks and other concepts for problem solving",
-                        "Corresponded with high-ranking researchers on datasets ranging from education to networking attacks",
-                        "Collaborated on multiple deep learning based scientific papers"
+                        "Gained knowledge in data visualization and manipulation working with large data sets",
+                        "Used neural networks and visualizations to provide insight into possible cyber attacks",
+                        "Corresponded with high-ranking researchers on datasets ranging from education and networking attacks to military aircraft flight patterns",
+                        "Collaborated on multiple scientific papers related to big data and deep models applied to cyber security data analysis"
                     ]
                 }
             ],
