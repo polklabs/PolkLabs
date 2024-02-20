@@ -15,6 +15,13 @@
     min-width: 350px !important;
     margin: 8px;
     border: 1px solid lightgray;
+
+    img {
+        max-width: 164px;
+        max-height: 64px;
+        width: auto;
+        height: auto;
+    }
 }
 
 .experience-content {
