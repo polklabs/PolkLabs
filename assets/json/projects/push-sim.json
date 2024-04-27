@@ -1,0 +1,32 @@
+{
+  "id": "push-sim",
+  "title": "Push Card Game\nSimulator",
+  "meta": "Creating a simulator for the card game Push with agents to test different strategies",
+  "bgimg": "screenshot_2.png",
+  "github": "https://github.com/polklabs/push-simulator",
+  "demo": "",
+  "languages": ["Python"],
+  "reason": "Personal Project",
+  "hardware": [],
+  "technologies": [],
+  "lastUpdate": "10/3/23",
+  "sections": [
+      {
+          "type": "header",
+          "text": "About",
+          "noPadding": true
+      },
+      {
+          "type": "text",
+          "text": [
+              "The idea was to create a simple simulator for the card game push to test out different strategies and see which one worked best. The simulator was coded in python and displayed as a simple console application."
+          ]
+      },
+      {
+        "type": "pic",
+        "src": "screenshot_2.png",
+        "alt": "Screenshot",
+        "text": "Game console output"
+      }
+  ]
+}

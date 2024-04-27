@@ -70,5 +70,13 @@
         "image": "screenshot_1.png",
         "imageAlt": "Data Table",
         "date": "11/24/2022"
+    },
+    {
+        "id": "push-sim",
+        "title": "Push Simulator",
+        "subtitle": "Don't push your luck",
+        "image": "screenshot_1.png",
+        "imageAlt": "console output",
+        "date": "10/03/2023"
     }
 ]
